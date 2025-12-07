@@ -268,7 +268,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=Azure/azure-service-operator
-export VERSION=2.16.0
+export VERSION=2.17.0
 
 function generate_url {
   echo "https://github.com/Azure/azure-service-operator/releases/download/v${VERSION}/azureserviceoperator_customresourcedefinitions_v${VERSION}.yaml"
