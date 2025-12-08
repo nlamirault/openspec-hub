@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.apps.v1.StatefulSetUpdateStrategy",
+  "description": "StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.",
+  "type": "object",
+  "properties": {
+    "rollingUpdate": {
+      "$ref": "#/definitions/io.k8s.api.apps.v1.RollingUpdateStatefulSetStrategy",
+      "description": "RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType."
+    },
+    "type": {
+      "description": "Type indicates the type of the StatefulSetUpdateStrategy. Default is RollingUpdate.",
+      "type": "string"
+    }
+  },
+  "required": null
+}

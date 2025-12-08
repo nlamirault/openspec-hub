@@ -31,15 +31,23 @@ kustomize)
   crd_url=$(generate_url)
   download_crd_kustomize "${CRD_DIR}" "${crd_url}"
   ;;
+swagger)
+  swagger_file=$(generate_url)
+  download_swagger "${CRD_DIR}" "${swagger_file}"
+  ;;
 *)
   log_error "Invalid choice value: ${choice}. Must be 'individual' or 'bundle'."
   exit 1
   ;;
 esac
 
-for crd in "${FILES[@]}"; do
-  crd_file="${CRD_DIR}/${crd}"
-  manage_crd "${crd_file}" "${JSON_SCHEMA_DIR}"
-done
+if [ "${choice}" != "swagger" ]; then
+  for crd in "${FILES[@]}"; do
+    crd_file="${CRD_DIR}/${crd}"
+    manage_crd "${crd_file}" "${JSON_SCHEMA_DIR}"
+  done
+else
+  manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}/${APP}"
+fi
 
 rm -fr "${SCRIPT_DIR}/crds"
