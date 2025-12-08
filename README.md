@@ -49,6 +49,7 @@ A collection of JSON schemas extracted from Kubernetes Custom Resource Definitio
 
 ### Infrastructure & Autoscaling
 
+- **Kubernetes** - Core Kubernetes API
 - **KEDA** - Event-driven autoscaling for Kubernetes workloads
 - **Karpenter AWS** - Node autoscaling for Amazon EKS
 - **Karpenter Azure** - Node autoscaling for Azure AKS
