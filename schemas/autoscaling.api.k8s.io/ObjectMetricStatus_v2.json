@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.autoscaling.v2.ObjectMetricStatus",
+  "description": "ObjectMetricStatus indicates the current value of a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).",
+  "type": "object",
+  "properties": {
+    "current": {
+      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricValueStatus",
+      "description": "current contains the current value for the given metric"
+    },
+    "describedObject": {
+      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.CrossVersionObjectReference",
+      "description": "DescribedObject specifies the descriptions of a object,such as kind,name apiVersion"
+    },
+    "metric": {
+      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricIdentifier",
+      "description": "metric identifies the target metric by name and selector"
+    }
+  },
+  "required": [
+    "metric",
+    "current",
+    "describedObject"
+  ]
+}
