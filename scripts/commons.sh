@@ -114,11 +114,33 @@ function manage_swagger_file {
 
   log_info "[Swagger] OpenAPI spec file: ${swagger_dir}/swagger.json"
   mkdir -p "${output_path}"
+  # jq -c '
+  #   .definitions
+  #   | to_entries[]
+  #   | {
+  #       name: .key,
+  #       schema: {
+  #         "$schema": "http://json-schema.org/draft-07/schema#",
+  #         "title": .key,
+  #         "description": .value.description,
+  #         "type": "object",
+  #         "properties": .value.properties,
+  #         "required": .value.required
+  #       }
+  #     }
+  # ' swagger.json |
+  #   while IFS= read -r line; do
+  #     name=$(echo "$line" | jq -r '.name')
+  #     schema=$(echo "$line" | jq -r '.schema')
+  #     log_debug "[Swagger] ${name}.json"
+  #     echo "$schema" | jq '.' >"${output_path}/$name.json"
+  #   done
+
   jq -c '
     .definitions
     | to_entries[]
     | {
-        name: .key,
+        raw_name: .key,
         schema: {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "title": .key,
@@ -130,9 +152,19 @@ function manage_swagger_file {
       }
   ' swagger.json |
     while IFS= read -r line; do
-      name=$(echo "$line" | jq -r '.name')
+
+      raw=$(echo "$line" | jq -r '.raw_name')
       schema=$(echo "$line" | jq -r '.schema')
-      log_debug "[Swagger] ${name}.json"
-      echo "$schema" | jq '.' >"${output_path}/$name.json"
+
+      IFS='.' read -ra parts <<<"$raw"
+      kind="${parts[-1]}"
+      version="${parts[-2]}"
+      group="${parts[-3]}"
+      dir="$output_path/${group}.api.k8s.io"
+      mkdir -p "$dir"
+      filename="${kind}_${version}.json"
+      log_debug "[Swagger] In ${dir} ${filename}"
+      echo "${schema}" | jq '.' >"${dir}/${filename}"
+
     done
 }

@@ -47,7 +47,7 @@ if [ "${choice}" != "swagger" ]; then
     manage_crd "${crd_file}" "${JSON_SCHEMA_DIR}"
   done
 else
-  manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}/${APP}"
+  manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}"
 fi
 
 rm -fr "${SCRIPT_DIR}/crds"
