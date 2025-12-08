@@ -30,6 +30,14 @@ A collection of JSON schemas extracted from Kubernetes Custom Resource Definitio
 
 - **Azure Service Operator** - 250+ Azure services management
 
+### Databases
+
+- **Clickhouse Operator** - ClickHouse database cluster management
+- **Cloudnative PG** - PostgreSQL database operator for Kubernetes
+- **Dragonfly Operator** - Dragonfly in-memory datastore management
+- **MariaDB Operator** - MariaDB database deployment and management
+- **MySQL Operator** - MySQL database cluster orchestration
+
 ### GitOps & Deployment
 
 - **Argo CD** - GitOps continuous delivery
