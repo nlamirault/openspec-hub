@@ -42,4 +42,4 @@ for crd in "${FILES[@]}"; do
   manage_crd "${crd_file}" "${JSON_SCHEMA_DIR}"
 done
 
-# rm -fr "${SCRIPT_DIR}/crds"
+rm -fr "${SCRIPT_DIR}/crds"
