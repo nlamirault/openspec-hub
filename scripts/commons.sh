@@ -86,8 +86,9 @@ function download_crd_kustomize {
   log_debug "[url] Kustomize: ${url}"
   kustomize build "${url}" >"${crd_dir}/${bundle_file}"
   [ -f "${crd_dir}/${bundle_file}}" ] && log_error "Bundle file not exists" && exit 1
+  log_info "[kustomize] ${crd_dir}/${bundle_file}"
   kubectl slice -q -f "${crd_dir}/${bundle_file}" -t "{{.metadata.name}}.yaml" -o "${crd_dir}"
-  rm "${crd_dir}/${bundle_file}"
+  # rm "${crd_dir}/${bundle_file}"
 }
 
 function manage_crd {
