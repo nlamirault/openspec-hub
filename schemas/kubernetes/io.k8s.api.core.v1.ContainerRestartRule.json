@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.core.v1.ContainerRestartRule",
+  "description": "ContainerRestartRule describes how a container exit is handled.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "Specifies the action taken on a container exit if the requirements are satisfied. The only possible value is \"Restart\" to restart the container.",
+      "type": "string"
+    },
+    "exitCodes": {
+      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerRestartRuleOnExitCodes",
+      "description": "Represents the exit codes to check on container exits."
+    }
+  },
+  "required": [
+    "action"
+  ]
+}

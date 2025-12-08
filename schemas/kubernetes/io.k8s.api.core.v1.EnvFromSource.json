@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.core.v1.EnvFromSource",
+  "description": "EnvFromSource represents the source of a set of ConfigMaps or Secrets",
+  "type": "object",
+  "properties": {
+    "configMapRef": {
+      "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapEnvSource",
+      "description": "The ConfigMap to select from"
+    },
+    "prefix": {
+      "description": "Optional text to prepend to the name of each environment variable. May consist of any printable ASCII characters except '='.",
+      "type": "string"
+    },
+    "secretRef": {
+      "$ref": "#/definitions/io.k8s.api.core.v1.SecretEnvSource",
+      "description": "The Secret to select from"
+    }
+  },
+  "required": null
+}

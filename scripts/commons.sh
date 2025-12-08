@@ -91,6 +91,14 @@ function download_crd_kustomize {
   rm "${crd_dir}/${bundle_file}"
 }
 
+function download_swagger {
+  local swagger_dir=$1
+  local url=$2
+
+  log_debug "[url] Swagger: ${url}"
+  curl -sSL "${url}" -o "${swagger_dir}/swagger.json"
+}
+
 function manage_crd {
   local crd_file=$1
   local jsonschema_dir=$2
@@ -98,4 +106,33 @@ function manage_crd {
   log_debug "[kubernetes] CRD file: ${crd_file}"
   yq e '.kind == "CustomResourceDefinition"' "${crd_file}" &>/dev/null
   generate_json_schema "${crd_file}" "${jsonschema_dir}"
+}
+
+function manage_swagger_file {
+  local swagger_dir=$1
+  local output_path=$2
+
+  log_info "[Swagger] OpenAPI spec file: ${swagger_dir}/swagger.json"
+  mkdir -p "${output_path}"
+  jq -c '
+    .definitions
+    | to_entries[]
+    | {
+        name: .key,
+        schema: {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": .key,
+          "description": .value.description,
+          "type": "object",
+          "properties": .value.properties,
+          "required": .value.required
+        }
+      }
+  ' swagger.json |
+    while IFS= read -r line; do
+      name=$(echo "$line" | jq -r '.name')
+      schema=$(echo "$line" | jq -r '.schema')
+      log_debug "[Swagger] ${name}.json"
+      echo "$schema" | jq '.' >"${output_path}/$name.json"
+    done
 }

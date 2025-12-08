@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.core.v1.SleepAction",
+  "description": "SleepAction describes a \"sleep\" action.",
+  "type": "object",
+  "properties": {
+    "seconds": {
+      "description": "Seconds is the number of seconds to sleep.",
+      "format": "int64",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "seconds"
+  ]
+}

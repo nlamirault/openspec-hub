@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "io.k8s.api.core.v1.NodeCondition",
+  "description": "NodeCondition contains condition information for a node.",
+  "type": "object",
+  "properties": {
+    "lastHeartbeatTime": {
+      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "description": "Last time we got an update on a given condition."
+    },
+    "lastTransitionTime": {
+      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "description": "Last time the condition transit from one status to another."
+    },
+    "message": {
+      "description": "Human readable message indicating details about last transition.",
+      "type": "string"
+    },
+    "reason": {
+      "description": "(brief) reason for the condition's last transition.",
+      "type": "string"
+    },
+    "status": {
+      "description": "Status of the condition, one of True, False, Unknown.",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type of node condition.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "status"
+  ]
+}
