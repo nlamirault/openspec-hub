@@ -14,7 +14,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kedacore/keda
-export VERSION=2.18.0
+export VERSION=2.18.2
 
 function generate_url {
   echo "https://github.com/kedacore/keda/releases/download/v${VERSION}/keda-${VERSION}-crds.yaml"
