@@ -10,7 +10,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=cybozu-go/moco
-export VERSION=0.30.0
+export VERSION=0.31.0
 
 function generate_url {
   echo "https://github.com/cybozu-go/moco/config/crd?ref=v${VERSION}"
