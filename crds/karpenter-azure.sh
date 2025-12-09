@@ -6,8 +6,6 @@
 export choice=individual
 export FILES=(
   "karpenter.azure.com_aksnodeclasses.yaml"
-  "karpenter.sh_nodeclaims.yaml"
-  "karpenter.sh_nodepools.yaml"
 )
 
 # renovate: datasource=github-tags depName=Azure/karpenter-provider-azure

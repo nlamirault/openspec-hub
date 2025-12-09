@@ -6,9 +6,6 @@
 export choice=individual
 export FILES=(
   "karpenter.k8s.aws_ec2nodeclasses.yaml"
-  "karpenter.sh_nodeclaims.yaml"
-  "karpenter.sh_nodeoverlays.yaml"
-  "karpenter.sh_nodepools.yaml"
 )
 
 # renovate: datasource=github-tags depName=aws/karpenter-provider-aws
