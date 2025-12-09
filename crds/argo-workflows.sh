@@ -16,7 +16,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=argoproj/argo-workflows
-export VERSION=3.7.4
+export VERSION=3.7.5
 
 function generate_url {
   local crd_file=$1
