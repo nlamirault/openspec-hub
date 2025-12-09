@@ -34,6 +34,21 @@
   ],
   packageRules: [
     {
+      matchFileNames: [
+        'crds/*.sh',
+      ],
+      postUpgradeTasks: {
+        commands: [
+          'bash -c "APP=$(basename {{{packageFile}}} .sh) && ./scripts/schema-store.sh \\"${APP}\\""',
+        ],
+        fileFilters: [
+          'crds/*.sh',
+          'schemas/**/*',
+        ],
+        executionMode: 'branch',
+      },
+    },
+    {
       matchDatasources: [
         'docker',
       ],
