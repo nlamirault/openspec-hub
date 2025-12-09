@@ -53,7 +53,7 @@ A collection of JSON schemas extracted from Kubernetes Custom Resource Definitio
 - **KEDA** - Event-driven autoscaling for Kubernetes workloads
 - **Karpenter AWS** - Node autoscaling for Amazon EKS
 - **Karpenter Azure** - Node autoscaling for Azure AKS
-- **VPA (Vertical Pod Autoscaler)** - Automatic resource scaling
+- **Vertical Pod Autoscaler** - Automatic resource scaling
 
 ### Observability
 
