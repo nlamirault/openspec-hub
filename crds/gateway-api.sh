@@ -13,7 +13,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/gateway-api
-export VERSION=1.4.0
+export VERSION=1.4.1
 
 function generate_url {
   local crd_file=$1
