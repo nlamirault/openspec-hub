@@ -18,7 +18,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=cloudnative-pg/cloudnative-pg
-export VERSION=1.27.1
+export VERSION=1.28.0
 
 function generate_url {
   echo "https://github.com/cloudnative-pg/cloudnative-pg/config/crd?ref=v${VERSION}"
