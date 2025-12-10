@@ -6,7 +6,7 @@
 export choice=swagger
 
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
-export VERSION=1.34.2
+export VERSION=1.34.3
 
 function generate_url {
   echo "https://raw.githubusercontent.com/kubernetes/kubernetes/refs/tags/v${VERSION}/api/openapi-spec/swagger.json"
