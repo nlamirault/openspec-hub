@@ -18,7 +18,7 @@ export FILES=(
   "users.k8s.mariadb.com.yaml"
 )
 
-# renovate: datasource=github-tags depName=mariadb-operator
+# renovate: datasource=github-tags depName=mariadb-operator/mariadb-operator
 export VERSION=25.10.2
 
 function generate_url {
