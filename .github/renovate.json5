@@ -37,21 +37,6 @@
   ],
   packageRules: [
     {
-      matchFileNames: [
-        'crds/*.sh',
-      ],
-      postUpgradeTasks: {
-        commands: [
-          'bash -c "make build \\"$(basename {{{packageFile}}} .sh)\\""',
-        ],
-        fileFilters: [
-          'crds/*.sh',
-          'schemas/**/*',
-        ],
-        executionMode: 'branch',
-      },
-    },
-    {
       matchDatasources: [
         'docker',
       ],
@@ -151,4 +136,13 @@
       ],
     },
   ],
+  postUpgradeTasks: {
+    commands: [
+      "make build $(basename {{{packageFile}}} .sh)",
+    ],
+    fileFilters: [
+      'crds/*.sh',
+      'schemas/**/*',
+    ],
+    executionMode: 'branch',
 }
