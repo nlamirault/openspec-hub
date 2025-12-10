@@ -145,5 +145,8 @@
       'schemas/**/*',
     ],
     executionMode: 'branch',
-  }
+  },
+  allowedCommands: [
+    "^make build"
+  ],
 }
