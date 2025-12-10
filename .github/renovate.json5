@@ -16,6 +16,9 @@
     '@nlamirault',
   ],
   reviewersFromCodeOwners: true,
+  allowedCommands: [
+    "make build"
+  ],
   labels: [
     'kind/renovate',
     'lifecycle/active',
@@ -39,7 +42,7 @@
       ],
       postUpgradeTasks: {
         commands: [
-          'bash -c "APP=$(basename {{{packageFile}}} .sh) && ./scripts/schema-store.sh \\"${APP}\\""',
+          'bash -c "make build \\"$(basename {{{packageFile}}} .sh)\\""',
         ],
         fileFilters: [
           'crds/*.sh',
