@@ -12,7 +12,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=open-telemetry/opentelemetry-operator
-export VERSION=0.140.0
+export VERSION=0.141.0
 
 function generate_url {
   echo "https://github.com/open-telemetry/opentelemetry-operator/config/crd?ref=v${VERSION}"
