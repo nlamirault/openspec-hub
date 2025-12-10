@@ -145,4 +145,5 @@
       'schemas/**/*',
     ],
     executionMode: 'branch',
+  }
 }
