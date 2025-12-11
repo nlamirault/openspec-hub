@@ -134,17 +134,18 @@
       ],
     },
   ],
-  postUpgradeTasks: {
-    commands: [
-      "make build CRD={{{packageFile}}}",
-    ],
-    fileFilters: [
-      'crds/*.sh',
-      'schemas/**/*',
-    ],
-    executionMode: 'branch',
-  },
-  allowedCommands: [
-    "^make build CRD=.+$",
-  ],
+  // NOT WORKING:
+  //postUpgradeTasks: {
+  //  commands: [
+  //    "make build CRD={{{packageFile}}}",
+  //  ],
+  //  fileFilters: [
+  //    'crds/*.sh',
+  //    'schemas/**/*',
+  //  ],
+  //  executionMode: 'branch',
+  //},
+  //allowedCommands: [
+  //  "^make build CRD=.+$",
+  //],
 }
