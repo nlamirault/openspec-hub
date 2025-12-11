@@ -51,5 +51,5 @@ init: ## Initialize environment
 	uv venv && uv pip install
 
 .PHONY: build
-build: guard-APP ## Update CRD for an application
-	@scripts/schema-store.sh "${APP}"
+build: guard-CRD ## Update CRD for an application
+	@scripts/schema-store.sh $$(basename "${CRD}" .sh)

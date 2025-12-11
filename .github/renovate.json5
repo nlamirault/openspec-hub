@@ -145,6 +145,6 @@
     executionMode: 'branch',
   },
   allowedCommands: [
-    "^make build \$\(basename [^\s]* \.sh\)$"
+    "^make build [^\s]+$"
   ],
 }
