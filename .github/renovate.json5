@@ -136,7 +136,7 @@
   ],
   postUpgradeTasks: {
     commands: [
-      "make build $(basename {{{packageFile}}} .sh)",
+      "make build CRD={{{packageFile}}}",
     ],
     fileFilters: [
       'crds/*.sh',
@@ -145,6 +145,6 @@
     executionMode: 'branch',
   },
   allowedCommands: [
-    "^make build [^\s]+$"
+    "^make build CRD=[^\s]+$"
   ],
 }
