@@ -145,6 +145,6 @@
     executionMode: 'branch',
   },
   allowedCommands: [
-    "^make build CRD=[^\s]+$"
+    "^make build CRD=[\w\/\.\-]+$",
   ],
 }
