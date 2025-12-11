@@ -1,4 +1,5 @@
 {
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
     'config:recommended',
     ':dependencyDashboard',
@@ -16,9 +17,6 @@
     '@nlamirault',
   ],
   reviewersFromCodeOwners: true,
-  allowedCommands: [
-    "make build"
-  ],
   labels: [
     'kind/renovate',
     'lifecycle/active',
@@ -147,6 +145,6 @@
     executionMode: 'branch',
   },
   allowedCommands: [
-    "^make build"
+    "^make build.*"
   ],
 }
