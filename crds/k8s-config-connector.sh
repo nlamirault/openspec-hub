@@ -15,7 +15,7 @@ export FILES=(
   
   # Storage
   "storage_v1beta1_storagebucket.yaml"
-  "storage_v1beta1_storagebucketiammember.yaml"
+  "storage_v1beta1_storagebucketaccesscontrol.yaml"
   
   # IAM
   "iam_v1beta1_iamserviceaccount.yaml"
@@ -40,7 +40,7 @@ export FILES=(
   "kms_v1beta1_kmscryptokey.yaml"
   
   # Cloud Functions
-  "cloudfunctions_v1beta1_cloudfunction.yaml"
+  "cloudfunctions_v1beta1_cloudfunctionsfunction.yaml"
   
   # Pub/Sub
   "pubsub_v1beta1_pubsubtopic.yaml"
