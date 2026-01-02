@@ -19,7 +19,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=mariadb-operator/mariadb-operator
-export VERSION=v25.10.3
+export VERSION=25.10.3
 
 function generate_url {
   echo "https://github.com/mariadb-operator/mariadb-operator/config/crd?ref=v${VERSION}"
