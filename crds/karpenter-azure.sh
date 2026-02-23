@@ -9,7 +9,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=Azure/karpenter-provider-azure
-export VERSION=1.6.7
+export VERSION=1.7.2
 
 function generate_url {
   local crd_file=$1
