@@ -3,11 +3,13 @@
 # SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # SPDX-License-Identifier: Apache-2.0
 
-reset_color="\\e[0m"
-color_red="\\e[31m"
-color_green="\\e[32m"
+color_reset="\\e[0m"
 color_blue="\\e[36m"
+color_green="\\e[32m"
 color_yellow="\\e[33m"
+color_gray="\\e[90m"
+color_red="\\e[31m"
+
 
 # Define log levels
 LOG_LEVEL_ERROR=0
@@ -19,11 +21,11 @@ LOG_LEVEL_TRACE=4
 # Set default log level (can be overridden by env or arg)
 LOG_LEVEL="${LOG_LEVEL:=$LOG_LEVEL_INFO}"
 
-function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🟡 $*${reset_color}"; }
-function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${reset_color}"; }
-function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${reset_color}"; }
-function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟠 $*${reset_color}"; }
-function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${reset_color}"; }
+function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_reset}⚪ $*${color_reset}"; }
+function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${color_reset}"; }
+function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${color_reset}"; }
+function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟡 $*${color_reset}"; }
+function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${color_reset}"; }
 
 function generate_output_filename {
   local crd_file=$1
