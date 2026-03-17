@@ -15,7 +15,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=grafana/grafana-operator
-export VERSION=5.21.3
+export VERSION=5.22.2
 
 function generate_url {
   local crd_file=$1
