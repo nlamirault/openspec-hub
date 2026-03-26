@@ -18,7 +18,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=external-secrets/external-secrets
-VERSION=v1.2.0
+VERSION=v1.3.2
 
 function generate_url {
   echo "https://github.com/prometheus-operator/prometheus-operator/releases/download/v${VERSION}/bundle.yaml"
