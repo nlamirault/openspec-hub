@@ -38,6 +38,14 @@
         "slug": "accesscontextmanager.cnrm.cloud.google.com/v1beta1/accesscontextmanagerserviceperimeterresource"
       }
     ],
+    "acm.services.k8s.aws": [
+      {
+        "kind": "certificate",
+        "version": "v1alpha1",
+        "file": "acm.services.k8s.aws/certificate_v1alpha1.json",
+        "slug": "acm.services.k8s.aws/v1alpha1/certificate"
+      }
+    ],
     "acme.cert-manager.io": [
       {
         "kind": "challenge",
@@ -50,6 +58,40 @@
         "version": "v1",
         "file": "acme.cert-manager.io/order_v1.json",
         "slug": "acme.cert-manager.io/v1/order"
+      }
+    ],
+    "acmpca.services.k8s.aws": [
+      {
+        "kind": "certificate",
+        "version": "v1alpha1",
+        "file": "acmpca.services.k8s.aws/certificate_v1alpha1.json",
+        "slug": "acmpca.services.k8s.aws/v1alpha1/certificate"
+      },
+      {
+        "kind": "certificateauthority",
+        "version": "v1alpha1",
+        "file": "acmpca.services.k8s.aws/certificateauthority_v1alpha1.json",
+        "slug": "acmpca.services.k8s.aws/v1alpha1/certificateauthority"
+      },
+      {
+        "kind": "certificateauthorityactivation",
+        "version": "v1alpha1",
+        "file": "acmpca.services.k8s.aws/certificateauthorityactivation_v1alpha1.json",
+        "slug": "acmpca.services.k8s.aws/v1alpha1/certificateauthorityactivation"
+      }
+    ],
+    "addons.cluster.x-k8s.io": [
+      {
+        "kind": "clusterresourceset",
+        "version": "v1alpha3",
+        "file": "addons.cluster.x-k8s.io/clusterresourceset_v1alpha3.json",
+        "slug": "addons.cluster.x-k8s.io/v1alpha3/clusterresourceset"
+      },
+      {
+        "kind": "clusterresourcesetbinding",
+        "version": "v1alpha3",
+        "file": "addons.cluster.x-k8s.io/clusterresourcesetbinding_v1alpha3.json",
+        "slug": "addons.cluster.x-k8s.io/v1alpha3/clusterresourcesetbinding"
       }
     ],
     "admissionregistration.api.k8s.io": [
@@ -656,6 +698,62 @@
         "slug": "apigateway.cnrm.cloud.google.com/v1alpha1/apigatewaygateway"
       }
     ],
+    "apigatewayv2.services.k8s.aws": [
+      {
+        "kind": "api",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/api_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/api"
+      },
+      {
+        "kind": "apimapping",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/apimapping_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/apimapping"
+      },
+      {
+        "kind": "authorizer",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/authorizer_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/authorizer"
+      },
+      {
+        "kind": "deployment",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/deployment_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/deployment"
+      },
+      {
+        "kind": "domainname",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/domainname_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/domainname"
+      },
+      {
+        "kind": "integration",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/integration_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/integration"
+      },
+      {
+        "kind": "route",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/route_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/route"
+      },
+      {
+        "kind": "stage",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/stage_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/stage"
+      },
+      {
+        "kind": "vpclink",
+        "version": "v1alpha1",
+        "file": "apigatewayv2.services.k8s.aws/vpclink_v1alpha1.json",
+        "slug": "apigatewayv2.services.k8s.aws/v1alpha1/vpclink"
+      }
+    ],
     "apigee.cnrm.cloud.google.com": [
       {
         "kind": "apigeeaddonsconfig",
@@ -972,6 +1070,20 @@
         "version": "v1alpha1",
         "file": "apphub.cnrm.cloud.google.com/apphubdiscoveredworkload_v1alpha1.json",
         "slug": "apphub.cnrm.cloud.google.com/v1alpha1/apphubdiscoveredworkload"
+      }
+    ],
+    "applicationautoscaling.services.k8s.aws": [
+      {
+        "kind": "scalabletarget",
+        "version": "v1alpha1",
+        "file": "applicationautoscaling.services.k8s.aws/scalabletarget_v1alpha1.json",
+        "slug": "applicationautoscaling.services.k8s.aws/v1alpha1/scalabletarget"
+      },
+      {
+        "kind": "scalingpolicy",
+        "version": "v1alpha1",
+        "file": "applicationautoscaling.services.k8s.aws/scalingpolicy_v1alpha1.json",
+        "slug": "applicationautoscaling.services.k8s.aws/v1alpha1/scalingpolicy"
       }
     ],
     "apps.api.k8s.io": [
@@ -2060,6 +2172,20 @@
         "slug": "binaryauthorization.cnrm.cloud.google.com/v1beta1/binaryauthorizationpolicy"
       }
     ],
+    "bootstrap.cluster.x-k8s.io": [
+      {
+        "kind": "kubeadmconfig",
+        "version": "v1alpha3",
+        "file": "bootstrap.cluster.x-k8s.io/kubeadmconfig_v1alpha3.json",
+        "slug": "bootstrap.cluster.x-k8s.io/v1alpha3/kubeadmconfig"
+      },
+      {
+        "kind": "kubeadmconfigtemplate",
+        "version": "v1alpha3",
+        "file": "bootstrap.cluster.x-k8s.io/kubeadmconfigtemplate_v1alpha3.json",
+        "slug": "bootstrap.cluster.x-k8s.io/v1alpha3/kubeadmconfigtemplate"
+      }
+    ],
     "cache.azure.com": [
       {
         "kind": "redis",
@@ -2430,6 +2556,50 @@
         "slug": "clouddms.cnrm.cloud.google.com/v1alpha1/clouddmsprivateconnection"
       }
     ],
+    "cloudfront.services.k8s.aws": [
+      {
+        "kind": "cachepolicy",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/cachepolicy_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/cachepolicy"
+      },
+      {
+        "kind": "distribution",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/distribution_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/distribution"
+      },
+      {
+        "kind": "function",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/function_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/function"
+      },
+      {
+        "kind": "originaccesscontrol",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/originaccesscontrol_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/originaccesscontrol"
+      },
+      {
+        "kind": "originrequestpolicy",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/originrequestpolicy_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/originrequestpolicy"
+      },
+      {
+        "kind": "responseheaderspolicy",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/responseheaderspolicy_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/responseheaderspolicy"
+      },
+      {
+        "kind": "vpcorigin",
+        "version": "v1alpha1",
+        "file": "cloudfront.services.k8s.aws/vpcorigin_v1alpha1.json",
+        "slug": "cloudfront.services.k8s.aws/v1alpha1/vpcorigin"
+      }
+    ],
     "cloudfunctions.cnrm.cloud.google.com": [
       {
         "kind": "cloudfunctionsfunction",
@@ -2510,6 +2680,112 @@
         "version": "v1alpha1",
         "file": "cloudtasks.cnrm.cloud.google.com/tasksqueue_v1alpha1.json",
         "slug": "cloudtasks.cnrm.cloud.google.com/v1alpha1/tasksqueue"
+      }
+    ],
+    "cloudtrail.services.k8s.aws": [
+      {
+        "kind": "eventdatastore",
+        "version": "v1alpha1",
+        "file": "cloudtrail.services.k8s.aws/eventdatastore_v1alpha1.json",
+        "slug": "cloudtrail.services.k8s.aws/v1alpha1/eventdatastore"
+      },
+      {
+        "kind": "trail",
+        "version": "v1alpha1",
+        "file": "cloudtrail.services.k8s.aws/trail_v1alpha1.json",
+        "slug": "cloudtrail.services.k8s.aws/v1alpha1/trail"
+      }
+    ],
+    "cloudwatch.services.k8s.aws": [
+      {
+        "kind": "dashboard",
+        "version": "v1alpha1",
+        "file": "cloudwatch.services.k8s.aws/dashboard_v1alpha1.json",
+        "slug": "cloudwatch.services.k8s.aws/v1alpha1/dashboard"
+      },
+      {
+        "kind": "metricalarm",
+        "version": "v1alpha1",
+        "file": "cloudwatch.services.k8s.aws/metricalarm_v1alpha1.json",
+        "slug": "cloudwatch.services.k8s.aws/v1alpha1/metricalarm"
+      },
+      {
+        "kind": "metricstream",
+        "version": "v1alpha1",
+        "file": "cloudwatch.services.k8s.aws/metricstream_v1alpha1.json",
+        "slug": "cloudwatch.services.k8s.aws/v1alpha1/metricstream"
+      }
+    ],
+    "cloudwatchlogs.services.k8s.aws": [
+      {
+        "kind": "loggroup",
+        "version": "v1alpha1",
+        "file": "cloudwatchlogs.services.k8s.aws/loggroup_v1alpha1.json",
+        "slug": "cloudwatchlogs.services.k8s.aws/v1alpha1/loggroup"
+      }
+    ],
+    "cluster.x-k8s.io": [
+      {
+        "kind": "cluster",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/cluster_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/cluster"
+      },
+      {
+        "kind": "clusterclass",
+        "version": "v1alpha4",
+        "file": "cluster.x-k8s.io/clusterclass_v1alpha4.json",
+        "slug": "cluster.x-k8s.io/v1alpha4/clusterclass"
+      },
+      {
+        "kind": "machine",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/machine_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/machine"
+      },
+      {
+        "kind": "machinedeployment",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/machinedeployment_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/machinedeployment"
+      },
+      {
+        "kind": "machinedrainrule",
+        "version": "v1beta1",
+        "file": "cluster.x-k8s.io/machinedrainrule_v1beta1.json",
+        "slug": "cluster.x-k8s.io/v1beta1/machinedrainrule"
+      },
+      {
+        "kind": "machinehealthcheck",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/machinehealthcheck_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/machinehealthcheck"
+      },
+      {
+        "kind": "machinepool",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/machinepool_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/machinepool"
+      },
+      {
+        "kind": "machineset",
+        "version": "v1alpha3",
+        "file": "cluster.x-k8s.io/machineset_v1alpha3.json",
+        "slug": "cluster.x-k8s.io/v1alpha3/machineset"
+      }
+    ],
+    "clusterctl.cluster.x-k8s.io": [
+      {
+        "kind": "metadata",
+        "version": "v1alpha3",
+        "file": "clusterctl.cluster.x-k8s.io/metadata_v1alpha3.json",
+        "slug": "clusterctl.cluster.x-k8s.io/v1alpha3/metadata"
+      },
+      {
+        "kind": "provider",
+        "version": "v1alpha3",
+        "file": "clusterctl.cluster.x-k8s.io/provider_v1alpha3.json",
+        "slug": "clusterctl.cluster.x-k8s.io/v1alpha3/provider"
       }
     ],
     "cognitiveservices.azure.com": [
@@ -3220,6 +3496,20 @@
         "version": "v1api20231001",
         "file": "containerservice.azure.com/trustedaccessrolebinding_v1api20231001.json",
         "slug": "containerservice.azure.com/v1api20231001/trustedaccessrolebinding"
+      }
+    ],
+    "controlplane.cluster.x-k8s.io": [
+      {
+        "kind": "kubeadmcontrolplane",
+        "version": "v1alpha3",
+        "file": "controlplane.cluster.x-k8s.io/kubeadmcontrolplane_v1alpha3.json",
+        "slug": "controlplane.cluster.x-k8s.io/v1alpha3/kubeadmcontrolplane"
+      },
+      {
+        "kind": "kubeadmcontrolplanetemplate",
+        "version": "v1alpha4",
+        "file": "controlplane.cluster.x-k8s.io/kubeadmcontrolplanetemplate_v1alpha4.json",
+        "slug": "controlplane.cluster.x-k8s.io/v1alpha4/kubeadmcontrolplanetemplate"
       }
     ],
     "coordination.api.k8s.io": [
@@ -5516,6 +5806,76 @@
         "slug": "eks.services.k8s.aws/v1alpha1/podidentityassociation"
       }
     ],
+    "elasticache.services.k8s.aws": [
+      {
+        "kind": "cachecluster",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/cachecluster_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/cachecluster"
+      },
+      {
+        "kind": "cacheparametergroup",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/cacheparametergroup_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/cacheparametergroup"
+      },
+      {
+        "kind": "cachesubnetgroup",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/cachesubnetgroup_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/cachesubnetgroup"
+      },
+      {
+        "kind": "replicationgroup",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/replicationgroup_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/replicationgroup"
+      },
+      {
+        "kind": "serverlesscache",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/serverlesscache_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/serverlesscache"
+      },
+      {
+        "kind": "serverlesscachesnapshot",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/serverlesscachesnapshot_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/serverlesscachesnapshot"
+      },
+      {
+        "kind": "snapshot",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/snapshot_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/snapshot"
+      },
+      {
+        "kind": "user",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/user_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/user"
+      },
+      {
+        "kind": "usergroup",
+        "version": "v1alpha1",
+        "file": "elasticache.services.k8s.aws/usergroup_v1alpha1.json",
+        "slug": "elasticache.services.k8s.aws/v1alpha1/usergroup"
+      }
+    ],
+    "emrcontainers.services.k8s.aws": [
+      {
+        "kind": "jobrun",
+        "version": "v1alpha1",
+        "file": "emrcontainers.services.k8s.aws/jobrun_v1alpha1.json",
+        "slug": "emrcontainers.services.k8s.aws/v1alpha1/jobrun"
+      },
+      {
+        "kind": "virtualcluster",
+        "version": "v1alpha1",
+        "file": "emrcontainers.services.k8s.aws/virtualcluster_v1alpha1.json",
+        "slug": "emrcontainers.services.k8s.aws/v1alpha1/virtualcluster"
+      }
+    ],
     "entra.azure.com": [
       {
         "kind": "securitygroup",
@@ -6588,6 +6948,20 @@
         "slug": "insights.azure.com/v1api20230601/workbook"
       }
     ],
+    "ipam.cluster.x-k8s.io": [
+      {
+        "kind": "ipaddress",
+        "version": "v1alpha1",
+        "file": "ipam.cluster.x-k8s.io/ipaddress_v1alpha1.json",
+        "slug": "ipam.cluster.x-k8s.io/v1alpha1/ipaddress"
+      },
+      {
+        "kind": "ipaddressclaim",
+        "version": "v1alpha1",
+        "file": "ipam.cluster.x-k8s.io/ipaddressclaim_v1alpha1.json",
+        "slug": "ipam.cluster.x-k8s.io/v1alpha1/ipaddressclaim"
+      }
+    ],
     "k8s.mariadb.com": [
       {
         "kind": "backup",
@@ -6802,6 +7176,14 @@
         "slug": "keyvault.azure.com/v1api20210401preview/vault"
       }
     ],
+    "kinesis.services.k8s.aws": [
+      {
+        "kind": "stream",
+        "version": "v1alpha1",
+        "file": "kinesis.services.k8s.aws/stream_v1alpha1.json",
+        "slug": "kinesis.services.k8s.aws/v1alpha1/stream"
+      }
+    ],
     "kms.cnrm.cloud.google.com": [
       {
         "kind": "kmsautokeyconfig",
@@ -6920,6 +7302,50 @@
         "slug": "kustomize.toolkit.fluxcd.io/v1/kustomization"
       }
     ],
+    "lambda.services.k8s.aws": [
+      {
+        "kind": "alias",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/alias_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/alias"
+      },
+      {
+        "kind": "codesigningconfig",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/codesigningconfig_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/codesigningconfig"
+      },
+      {
+        "kind": "eventsourcemapping",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/eventsourcemapping_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/eventsourcemapping"
+      },
+      {
+        "kind": "function",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/function_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/function"
+      },
+      {
+        "kind": "functionurlconfig",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/functionurlconfig_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/functionurlconfig"
+      },
+      {
+        "kind": "layerversion",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/layerversion_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/layerversion"
+      },
+      {
+        "kind": "version",
+        "version": "v1alpha1",
+        "file": "lambda.services.k8s.aws/version_v1alpha1.json",
+        "slug": "lambda.services.k8s.aws/v1alpha1/version"
+      }
+    ],
     "logging.cnrm.cloud.google.com": [
       {
         "kind": "logginglink",
@@ -7024,6 +7450,50 @@
         "version": "v1beta1",
         "file": "memcache.cnrm.cloud.google.com/memcacheinstance_v1beta1.json",
         "slug": "memcache.cnrm.cloud.google.com/v1beta1/memcacheinstance"
+      }
+    ],
+    "memorydb.services.k8s.aws": [
+      {
+        "kind": "acl",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/acl_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/acl"
+      },
+      {
+        "kind": "cluster",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/cluster_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/cluster"
+      },
+      {
+        "kind": "multiregioncluster",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/multiregioncluster_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/multiregioncluster"
+      },
+      {
+        "kind": "parametergroup",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/parametergroup_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/parametergroup"
+      },
+      {
+        "kind": "snapshot",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/snapshot_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/snapshot"
+      },
+      {
+        "kind": "subnetgroup",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/subnetgroup_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/subnetgroup"
+      },
+      {
+        "kind": "user",
+        "version": "v1alpha1",
+        "file": "memorydb.services.k8s.aws/user_v1alpha1.json",
+        "slug": "memorydb.services.k8s.aws/v1alpha1/user"
       }
     ],
     "memorystore.cnrm.cloud.google.com": [
@@ -7358,6 +7828,14 @@
         "version": "v1",
         "file": "monitoring.coreos.com/thanosruler_v1.json",
         "slug": "monitoring.coreos.com/v1/thanosruler"
+      }
+    ],
+    "mq.services.k8s.aws": [
+      {
+        "kind": "broker",
+        "version": "v1alpha1",
+        "file": "mq.services.k8s.aws/broker_v1alpha1.json",
+        "slug": "mq.services.k8s.aws/v1alpha1/broker"
       }
     ],
     "netapp.cnrm.cloud.google.com": [
@@ -7738,6 +8216,26 @@
         "version": "v1beta1",
         "file": "networkconnectivity.cnrm.cloud.google.com/networkconnectivityspoke_v1beta1.json",
         "slug": "networkconnectivity.cnrm.cloud.google.com/v1beta1/networkconnectivityspoke"
+      }
+    ],
+    "networkfirewall.services.k8s.aws": [
+      {
+        "kind": "firewall",
+        "version": "v1alpha1",
+        "file": "networkfirewall.services.k8s.aws/firewall_v1alpha1.json",
+        "slug": "networkfirewall.services.k8s.aws/v1alpha1/firewall"
+      },
+      {
+        "kind": "firewallpolicy",
+        "version": "v1alpha1",
+        "file": "networkfirewall.services.k8s.aws/firewallpolicy_v1alpha1.json",
+        "slug": "networkfirewall.services.k8s.aws/v1alpha1/firewallpolicy"
+      },
+      {
+        "kind": "rulegroup",
+        "version": "v1alpha1",
+        "file": "networkfirewall.services.k8s.aws/rulegroup_v1alpha1.json",
+        "slug": "networkfirewall.services.k8s.aws/v1alpha1/rulegroup"
       }
     ],
     "networking.api.k8s.io": [
@@ -8246,6 +8744,14 @@
         "slug": "openreports.io/v1alpha1/report"
       }
     ],
+    "opensearchservice.services.k8s.aws": [
+      {
+        "kind": "domain",
+        "version": "v1alpha1",
+        "file": "opensearchservice.services.k8s.aws/domain_v1alpha1.json",
+        "slug": "opensearchservice.services.k8s.aws/v1alpha1/domain"
+      }
+    ],
     "opentelemetry.io": [
       {
         "kind": "instrumentation",
@@ -8280,6 +8786,50 @@
         "slug": "operationalinsights.azure.com/v1api20210601/workspace"
       }
     ],
+    "operator.cluster.x-k8s.io": [
+      {
+        "kind": "addonprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/addonprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/addonprovider"
+      },
+      {
+        "kind": "bootstrapprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/bootstrapprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/bootstrapprovider"
+      },
+      {
+        "kind": "controlplaneprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/controlplaneprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/controlplaneprovider"
+      },
+      {
+        "kind": "coreprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/coreprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/coreprovider"
+      },
+      {
+        "kind": "infrastructureprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/infrastructureprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/infrastructureprovider"
+      },
+      {
+        "kind": "ipamprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/ipamprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/ipamprovider"
+      },
+      {
+        "kind": "runtimeextensionprovider",
+        "version": "v1alpha2",
+        "file": "operator.cluster.x-k8s.io/runtimeextensionprovider_v1alpha2.json",
+        "slug": "operator.cluster.x-k8s.io/v1alpha2/runtimeextensionprovider"
+      }
+    ],
     "ops.crossplane.io": [
       {
         "kind": "cronoperation",
@@ -8298,6 +8848,20 @@
         "version": "v1alpha1",
         "file": "ops.crossplane.io/watchoperation_v1alpha1.json",
         "slug": "ops.crossplane.io/v1alpha1/watchoperation"
+      }
+    ],
+    "organizations.services.k8s.aws": [
+      {
+        "kind": "account",
+        "version": "v1alpha1",
+        "file": "organizations.services.k8s.aws/account_v1alpha1.json",
+        "slug": "organizations.services.k8s.aws/v1alpha1/account"
+      },
+      {
+        "kind": "organizationalunit",
+        "version": "v1alpha1",
+        "file": "organizations.services.k8s.aws/organizationalunit_v1alpha1.json",
+        "slug": "organizations.services.k8s.aws/v1alpha1/organizationalunit"
       }
     ],
     "orgpolicy.cnrm.cloud.google.com": [
@@ -8340,6 +8904,14 @@
         "version": "v1alpha1",
         "file": "oslogin.cnrm.cloud.google.com/osloginsshpublickey_v1alpha1.json",
         "slug": "oslogin.cnrm.cloud.google.com/v1alpha1/osloginsshpublickey"
+      }
+    ],
+    "pipes.services.k8s.aws": [
+      {
+        "kind": "pipe",
+        "version": "v1alpha1",
+        "file": "pipes.services.k8s.aws/pipe_v1alpha1.json",
+        "slug": "pipes.services.k8s.aws/v1alpha1/pipe"
       }
     ],
     "pkg.api.k8s.io": [
@@ -8534,6 +9106,32 @@
         "slug": "privilegedaccessmanager.cnrm.cloud.google.com/v1alpha1/privilegedaccessmanagerentitlement"
       }
     ],
+    "prometheusservice.services.k8s.aws": [
+      {
+        "kind": "alertmanagerdefinition",
+        "version": "v1alpha1",
+        "file": "prometheusservice.services.k8s.aws/alertmanagerdefinition_v1alpha1.json",
+        "slug": "prometheusservice.services.k8s.aws/v1alpha1/alertmanagerdefinition"
+      },
+      {
+        "kind": "loggingconfiguration",
+        "version": "v1alpha1",
+        "file": "prometheusservice.services.k8s.aws/loggingconfiguration_v1alpha1.json",
+        "slug": "prometheusservice.services.k8s.aws/v1alpha1/loggingconfiguration"
+      },
+      {
+        "kind": "rulegroupsnamespace",
+        "version": "v1alpha1",
+        "file": "prometheusservice.services.k8s.aws/rulegroupsnamespace_v1alpha1.json",
+        "slug": "prometheusservice.services.k8s.aws/v1alpha1/rulegroupsnamespace"
+      },
+      {
+        "kind": "workspace",
+        "version": "v1alpha1",
+        "file": "prometheusservice.services.k8s.aws/workspace_v1alpha1.json",
+        "slug": "prometheusservice.services.k8s.aws/v1alpha1/workspace"
+      }
+    ],
     "protection.crossplane.io": [
       {
         "kind": "clusterusage",
@@ -8600,6 +9198,20 @@
         "version": "v1api20250901",
         "file": "quota.azure.com/quota_v1api20250901.json",
         "slug": "quota.azure.com/v1api20250901/quota"
+      }
+    ],
+    "ram.services.k8s.aws": [
+      {
+        "kind": "permission",
+        "version": "v1alpha1",
+        "file": "ram.services.k8s.aws/permission_v1alpha1.json",
+        "slug": "ram.services.k8s.aws/v1alpha1/permission"
+      },
+      {
+        "kind": "resourceshare",
+        "version": "v1alpha1",
+        "file": "ram.services.k8s.aws/resourceshare_v1alpha1.json",
+        "slug": "ram.services.k8s.aws/v1alpha1/resourceshare"
       }
     ],
     "rbac.api.k8s.io": [
@@ -9602,6 +10214,26 @@
         "slug": "resources.azure.com/v1api20200601/resourcegroup"
       }
     ],
+    "route53.services.k8s.aws": [
+      {
+        "kind": "healthcheck",
+        "version": "v1alpha1",
+        "file": "route53.services.k8s.aws/healthcheck_v1alpha1.json",
+        "slug": "route53.services.k8s.aws/v1alpha1/healthcheck"
+      },
+      {
+        "kind": "hostedzone",
+        "version": "v1alpha1",
+        "file": "route53.services.k8s.aws/hostedzone_v1alpha1.json",
+        "slug": "route53.services.k8s.aws/v1alpha1/hostedzone"
+      },
+      {
+        "kind": "recordset",
+        "version": "v1alpha1",
+        "file": "route53.services.k8s.aws/recordset_v1alpha1.json",
+        "slug": "route53.services.k8s.aws/v1alpha1/recordset"
+      }
+    ],
     "run.cnrm.cloud.google.com": [
       {
         "kind": "runjob",
@@ -9616,12 +10248,178 @@
         "slug": "run.cnrm.cloud.google.com/v1beta1/runservice"
       }
     ],
+    "runtime.cluster.x-k8s.io": [
+      {
+        "kind": "extensionconfig",
+        "version": "v1alpha1",
+        "file": "runtime.cluster.x-k8s.io/extensionconfig_v1alpha1.json",
+        "slug": "runtime.cluster.x-k8s.io/v1alpha1/extensionconfig"
+      }
+    ],
     "s3.services.k8s.aws": [
       {
         "kind": "bucket",
         "version": "v1alpha1",
         "file": "s3.services.k8s.aws/bucket_v1alpha1.json",
         "slug": "s3.services.k8s.aws/v1alpha1/bucket"
+      }
+    ],
+    "sagemaker.services.k8s.aws": [
+      {
+        "kind": "app",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/app_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/app"
+      },
+      {
+        "kind": "dataqualityjobdefinition",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/dataqualityjobdefinition_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/dataqualityjobdefinition"
+      },
+      {
+        "kind": "domain",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/domain_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/domain"
+      },
+      {
+        "kind": "endpoint",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/endpoint_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/endpoint"
+      },
+      {
+        "kind": "endpointconfig",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/endpointconfig_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/endpointconfig"
+      },
+      {
+        "kind": "featuregroup",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/featuregroup_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/featuregroup"
+      },
+      {
+        "kind": "hyperparametertuningjob",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/hyperparametertuningjob_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/hyperparametertuningjob"
+      },
+      {
+        "kind": "inferencecomponent",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/inferencecomponent_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/inferencecomponent"
+      },
+      {
+        "kind": "labelingjob",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/labelingjob_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/labelingjob"
+      },
+      {
+        "kind": "model",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/model_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/model"
+      },
+      {
+        "kind": "modelbiasjobdefinition",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/modelbiasjobdefinition_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/modelbiasjobdefinition"
+      },
+      {
+        "kind": "modelexplainabilityjobdefinition",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/modelexplainabilityjobdefinition_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/modelexplainabilityjobdefinition"
+      },
+      {
+        "kind": "modelpackage",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/modelpackage_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/modelpackage"
+      },
+      {
+        "kind": "modelpackagegroup",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/modelpackagegroup_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/modelpackagegroup"
+      },
+      {
+        "kind": "modelqualityjobdefinition",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/modelqualityjobdefinition_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/modelqualityjobdefinition"
+      },
+      {
+        "kind": "monitoringschedule",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/monitoringschedule_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/monitoringschedule"
+      },
+      {
+        "kind": "notebookinstance",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/notebookinstance_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/notebookinstance"
+      },
+      {
+        "kind": "notebookinstancelifecycleconfig",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/notebookinstancelifecycleconfig_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/notebookinstancelifecycleconfig"
+      },
+      {
+        "kind": "pipeline",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/pipeline_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/pipeline"
+      },
+      {
+        "kind": "pipelineexecution",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/pipelineexecution_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/pipelineexecution"
+      },
+      {
+        "kind": "processingjob",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/processingjob_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/processingjob"
+      },
+      {
+        "kind": "project",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/project_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/project"
+      },
+      {
+        "kind": "space",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/space_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/space"
+      },
+      {
+        "kind": "trainingjob",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/trainingjob_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/trainingjob"
+      },
+      {
+        "kind": "transformjob",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/transformjob_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/transformjob"
+      },
+      {
+        "kind": "userprofile",
+        "version": "v1alpha1",
+        "file": "sagemaker.services.k8s.aws/userprofile_v1alpha1.json",
+        "slug": "sagemaker.services.k8s.aws/v1alpha1/userprofile"
       }
     ],
     "scheduling.api.k8s.io": [
@@ -9854,6 +10652,12 @@
         "version": "v1alpha1",
         "file": "services.k8s.aws/fieldexport_v1alpha1.json",
         "slug": "services.k8s.aws/v1alpha1/fieldexport"
+      },
+      {
+        "kind": "iamroleselector",
+        "version": "v1alpha1",
+        "file": "services.k8s.aws/iamroleselector_v1alpha1.json",
+        "slug": "services.k8s.aws/v1alpha1/iamroleselector"
       }
     ],
     "serviceusage.cnrm.cloud.google.com": [
@@ -9874,6 +10678,20 @@
         "version": "v1alpha1",
         "file": "serviceusage.cnrm.cloud.google.com/serviceusageconsumerquotaoverride_v1alpha1.json",
         "slug": "serviceusage.cnrm.cloud.google.com/v1alpha1/serviceusageconsumerquotaoverride"
+      }
+    ],
+    "sfn.services.k8s.aws": [
+      {
+        "kind": "activity",
+        "version": "v1alpha1",
+        "file": "sfn.services.k8s.aws/activity_v1alpha1.json",
+        "slug": "sfn.services.k8s.aws/v1alpha1/activity"
+      },
+      {
+        "kind": "statemachine",
+        "version": "v1alpha1",
+        "file": "sfn.services.k8s.aws/statemachine_v1alpha1.json",
+        "slug": "sfn.services.k8s.aws/v1alpha1/statemachine"
       }
     ],
     "signalrservice.azure.com": [
