@@ -1,202 +1,60 @@
-# CRD Schema Store
+# OpenSpec Hub
 
-A collection of JSON schemas extracted from Kubernetes Custom Resource Definitions (CRDs) for popular cloud-native applications and operators.
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-## Supported Applications & Operators
+A collection of JSON schemas extracted from Kubernetes Custom Resource Definitions (CRDs) for popular cloud-native operators and controllers.
 
-### AWS Controllers for Kubernetes (ACK)
+## Overview
 
-- **Bedrock Agent** - AI agent management
-- **DynamoDB** - NoSQL database service
-- **EC2** - Compute instances and networking
-- **ECR** - Container registry
-- **ECS** - Container service
-- **EKS** - Kubernetes service
-- **EventBridge** - Event-driven architectures
-- **IAM** - Identity and access management
-- **Kafka (MSK)** - Managed streaming for Apache Kafka
-- **KMS** - Key management service
-- **RDS** - Relational database service
-- **S3** - Object storage
-- **Secrets Manager** - Secret storage and rotation
-- **SNS** - Notification service
-- **SQS** - Message queuing service
+OpenSpec Hub provides ready-to-use JSON Schema files for Kubernetes CRDs. Use them in your IDE or CI pipeline to get validation and autocomplete for resources like ArgoCD Applications, Flux Kustomizations, Prometheus rules, External Secrets, and 70+ more.
 
-### Google Cloud
-
-- **GCP Config Connector** - Google Cloud resource management
-
-### Azure
-
-- **Azure Service Operator** - 250+ Azure services management
-
-### Databases
-
-- **Clickhouse Operator** - ClickHouse database cluster management
-- **Cloudnative PG** - PostgreSQL database operator for Kubernetes
-- **Dragonfly Operator** - Dragonfly in-memory datastore management
-- **MariaDB Operator** - MariaDB database deployment and management
-- **MySQL Operator** - MySQL database cluster orchestration
-
-### GitOps & Deployment
-
-- **Argo CD** - GitOps continuous delivery
-- **Argo Events** - Event-driven workflow automation
-- **Argo Rollouts** - Progressive delivery and blue-green deployments
-- **Argo Workflows** - Container-native workflow engine
-- **Flux** - GitOps toolkit for Kubernetes
-- **Kargo** - GitOps promotion engine
-
-### Infrastructure & Autoscaling
-
-- **Kubernetes** - Core Kubernetes API
-- **KEDA** - Event-driven autoscaling for Kubernetes workloads
-- **Karpenter AWS** - Node autoscaling for Amazon EKS
-- **Karpenter Azure** - Node autoscaling for Azure AKS
-- **Vertical Pod Autoscaler** - Automatic resource scaling
-
-### Observability
-
-- **Grafana Operator** - Grafana instance management
-- **OpenTelemetry Operator** - OpenTelemetry instrumentation and data collection
-- **Prometheus Operator** - Monitoring and alerting
-- **OpenReports** - Standardized reports (findings, policy results, etc.)
-
-### Security & Secrets
-
-- **External Secrets** - External secret management integration
-
-### Networking & Service Mesh
-
-- **Gateway API** - Next-generation ingress and traffic management
-- **Istio** - Service mesh for secure, fast, and reliable service-to-service communication
-- **KGateway** - Envoy-based API gateway for Kubernetes
-- **Envoy Gateway** - Envoy Proxy as a Kubernetes API Gateway
-
-### Feature Management & Configuration
-
-- **Open Feature Operator** - Standardizing Feature Flagging
-
-## Schema Organization
-
-Schemas are organized by API group and follow the naming convention:
+Schemas are served directly from GitHub:
 
 ```
-schemas/{api-group}/{kind}_{version}.json
+https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/{api-group}/{kind}_{version}.json
 ```
 
-For example:
+## Quick start
 
-- `schemas/argoproj.io/application_v1alpha1.json`
-- `schemas/external-secrets.io/externalsecret_v1alpha1.json`
-- `schemas/monitoring.coreos.com/prometheus_v1.json`
-
-## Usage
-
-### IDE Integration
-
-#### VSCode
-
-Add the following to your VSCode `settings.json`:
-
-```json
-{
-  "yaml.schemas": {
-    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json": [
-      "*/applications/*.yaml",
-      "*/applications/*.yml"
-    ],
-    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/monitoring.coreos.com/prometheus_v1.json": [
-      "*/prometheus/*.yaml",
-      "*/prometheus/*.yml"
-    ]
-  }
-}
-```
-
-#### yaml-language-server
-
-For file-specific schema validation, add a comment at the top of your YAML files:
+Add a comment to any YAML file to enable validation:
 
 ```yaml
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata:
-  name: my-app
-# ... rest of your YAML
 ```
 
-This provides inline validation and autocomplete for the specific CRD schema without global IDE configuration.
+Or configure VSCode globally in `settings.json`:
 
-### CLI Tools
-
-Use with tools like `yq`, `kubeval`, or custom validation scripts:
-
-```bash
-# Validate an ArgoCD Application
-curl -s https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json | \
-  yq eval 'validate(.)' my-application.yaml
-```
-
-## Development
-
-### Prerequisites
-
-- `bash` shell
-- `yq` (YAML processor)
-- `curl` or `wget`
-- `slice` kubectl plugin
-- Python 3.8+ with `uv` (for development environment)
-
-### Adding New Applications
-
-1. Create a new script in `crds/` directory following the naming convention `{app-name}.sh`
-2. Define the required variables and functions:
-
-```bash
-#!/usr/bin/env bash
-
-# 'individual' for separate files
-# 'bundle' for single file,
-# 'kustomize' for kustomize directory
-export choice=individual
-export FILES=(
-  "crd-file1.yaml"
-  "crd-file2.yaml"
-)
-
-# renovate: datasource=github-tags depName=org/repo
-export VERSION=1.0.0
-
-function generate_url {
-  local crd_file=$1
-  echo "https://raw.githubusercontent.com/org/repo/v${VERSION}/manifests/${crd_file}"
+```json
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json": [
+      "*/applications/*.yaml"
+    ]
+  }
 }
 ```
 
-3. Build the schemas:
+## Documentation
 
-```bash
-make build APP=your-app-name
-```
+Documentation follows the [Diátaxis](https://diataxis.fr/) framework — see [`docs/`](docs/) for the full index.
 
-### Project Structure
+| Type              | Documents                                                                                                                                                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Tutorials**     | [Your first schema validation](docs/tutorials/getting-started.md)                                                                                                                                                        |
+| **How-to guides** | [Configure VSCode](docs/how-to/howto-vscode.md) · [yaml-language-server](docs/how-to/howto-yaml-language-server.md) · [Validate with CLI](docs/how-to/howto-validate.md) · [Add a new CRD](docs/how-to/howto-add-crd.md) |
+| **Reference**     | [Supported schemas](docs/reference/schemas.md) · [CRD script format](docs/reference/crd-scripts.md) ·                  |
+| **Explanation**   | [Architecture](docs/explanation/architecture.md) · [Schema extraction](docs/explanation/schema-extraction.md)                                                                                                            |
 
-```
-├── crds/                   # CRD download scripts
-├── schemas/                # Generated JSON schemas (organized by API group)
-├── scripts/
-│   ├── commons.sh          # Common utility functions
-│   └── schema-store.sh     # Main schema generation script
-├── Makefile                # Build automation
-└── README.md               # This file
-```
+## Supported applications
+
+See the [supported schemas reference](docs/reference/schemas.md) for the full list with API groups.
 
 ## Contributing
 
-Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-See the [LICENSE](LICENSE) file for details.
+See [LICENSE](LICENSE).
