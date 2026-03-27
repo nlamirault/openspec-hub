@@ -123,11 +123,18 @@ if (otherGroups.length > 0) {
 <Layout title="Home">
 	<div class="max-w-6xl mx-auto px-6 py-16">
 		<header class="mb-20 text-center">
-			<h1 class="text-6xl font-black text-gray-900 mb-6 tracking-tight leading-none">
-				The Universal <span class="text-blue-600">CRD</span> Store
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+				<span class="relative flex h-2 w-2">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+				</span>
+				<span class="text-[10px] font-black text-blue-600 uppercase tracking-widest">Open Source Registry</span>
+			</div>
+			<h1 class="text-7xl font-black text-gray-900 mb-6 tracking-tighter leading-none">
+				OpenSpec <span class="text-blue-600">HUB</span>
 			</h1>
-			<p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-				Standardized JSON schemas for <strong class="text-gray-900">{totalResources}</strong> Kubernetes resources from <strong class="text-gray-900">{groups.length}</strong> API groups.
+			<p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+				The central directory for Kubernetes Custom Resource Definitions. Explore <strong class="text-gray-900">{totalResources}</strong> standardized schemas across the cloud-native ecosystem.
 			</p>
 			
 			<div class="mt-12 flex justify-center gap-4">

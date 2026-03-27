@@ -1,5 +1,5 @@
 {
-  "name": "crd-schema-store-web",
+  "name": "openspec-hub",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
