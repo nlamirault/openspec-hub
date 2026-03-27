@@ -102,11 +102,11 @@ Add the following to your VSCode `settings.json`:
 ```json
 {
   "yaml.schemas": {
-    "https://raw.githubusercontent.com/nlamirault/crd-schema-store/main/schemas/argoproj.io/application_v1alpha1.json": [
+    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json": [
       "*/applications/*.yaml",
       "*/applications/*.yml"
     ],
-    "https://raw.githubusercontent.com/nlamirault/crd-schema-store/main/schemas/monitoring.coreos.com/prometheus_v1.json": [
+    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/monitoring.coreos.com/prometheus_v1.json": [
       "*/prometheus/*.yaml",
       "*/prometheus/*.yml"
     ]
@@ -119,7 +119,7 @@ Add the following to your VSCode `settings.json`:
 For file-specific schema validation, add a comment at the top of your YAML files:
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/nlamirault/crd-schema-store/main/schemas/argoproj.io/application_v1alpha1.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -135,7 +135,7 @@ Use with tools like `yq`, `kubeval`, or custom validation scripts:
 
 ```bash
 # Validate an ArgoCD Application
-curl -s https://raw.githubusercontent.com/nlamirault/crd-schema-store/main/schemas/argoproj.io/application_v1alpha1.json | \
+curl -s https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json | \
   yq eval 'validate(.)' my-application.yaml
 ```
 

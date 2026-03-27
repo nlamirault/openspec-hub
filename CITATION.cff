@@ -17,5 +17,5 @@ keywords:
   - json-schema
   - cloud-native
 license: Apache-2.0
-repository-code: https://github.com/nlamirault/crd-schema-store
-url: https://github.com/nlamirault/crd-schema-store
+repository-code: https://github.com/nlamirault/openspec-hub
+url: https://github.com/nlamirault/openspec-hub
