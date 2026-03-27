@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+---
+repos:
+# Core
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+  - id: trailing-whitespace
+    name: "📁 filesystem /📝 files - check whitespace"
+    stages: [pre-commit]
+  - id: end-of-file-fixer
+    name: "📁 filesystem /📝 files - check end of file"
+    stages: [pre-commit]
+  - id: check-added-large-files
+    name: "📁 filesystem /📝 files - check large files"
+    stages: [pre-commit]
+  - id: check-executables-have-shebangs
+    name: "📁 filesystem /⚙️ exec · Verify shebang presence"
+    stages: [pre-commit]
+  - id: check-shebang-scripts-are-executable
+    name: "📁 filesystem /⚙️ exec · Verify script permissions"
+    stages: [pre-commit]
+- repo: local
+  hooks:
+  - id: hawkeye
+    name: "✅ Hawkeye / License header"
+    entry: bash -c 'hawkeye format'
+    language: system
+    pass_filenames: true
+    files: \.*$
+    args: []
+# Lint
+- repo: https://github.com/compilerla/conventional-pre-commit
+  rev: v4.4.0
+  hooks:
+  - id: conventional-pre-commit
+    name: "✅ git / Coventional commits"
+    stages: [commit-msg]
+    args: [] # optional: list of Conventional Commits types to allow e.g. [feat, fix, ci, chore, test]
+# CI/CD
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.33.3
+  hooks:
+  - id: check-renovate
+    name: "✅ renovate / Validate Renovate configuration"
+    stages: [pre-commit]
+    additional_dependencies: ["json5"]
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.33.3
+  hooks:
+  - id: check-github-actions
+    name: "✅ github-actions / Validate Github Actions configuration"
+    stages: [pre-commit]
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.33.3
+  hooks:
+  - id: check-github-workflows
+    name: "✅ github-actions / Validate Github Actions workflow"
+    stages: [pre-commit]
+# Security
+- repo: https://github.com/gitleaks/gitleaks
+  rev: v8.27.2
+  hooks:
+  - id: gitleaks
+    name: "🔒 security / Detect hardcoded secrets"
