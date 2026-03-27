@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import catalog from '../../public/data/catalog.json';
+import { 
+	Cloud, 
+	Database, 
+	Network, 
+	ShieldCheck, 
+	Settings2, 
+	Activity, 
+	Cpu, 
+	GitBranch,
+	Layers
+} from 'lucide-react';
+
+const groups = Object.entries(catalog.groups);
+const totalResources = Object.values(catalog.groups).flat().length;
+
+// Categorization Logic
+const categories = [
+	{ 
+		name: "AWS Infrastructure", 
+		icon: Cloud, 
+		color: "text-orange-500", 
+		bg: "bg-orange-50", 
+		border: "border-orange-100",
+		match: (g: string) => g.includes('aws') || g.includes('amazon') 
+	},
+	{ 
+		name: "Google Cloud", 
+		icon: Cloud, 
+		color: "text-blue-500", 
+		bg: "bg-blue-50", 
+		border: "border-blue-100",
+		match: (g: string) => g.includes('google') || g.includes('cnrm') 
+	},
+	{ 
+		name: "Azure Ecosystem", 
+		icon: Cloud, 
+		color: "text-sky-600", 
+		bg: "bg-sky-50", 
+		border: "border-sky-100",
+		match: (g: string) => g.includes('azure') || g.includes('microsoft') 
+	},
+	{ 
+		name: "GitOps & Deployment", 
+		icon: GitBranch, 
+		color: "text-emerald-600", 
+		bg: "bg-emerald-50", 
+		border: "border-emerald-100",
+		match: (g: string) => g.includes('argoproj') || g.includes('fluxcd') || g.includes('kargo') 
+	},
+	{ 
+		name: "Databases & Storage", 
+		icon: Database, 
+		color: "text-indigo-600", 
+		bg: "bg-indigo-50", 
+		border: "border-indigo-100",
+		match: (g: string) => g.includes('dbfor') || g.includes('redis') || g.includes('mariadb') || g.includes('mysql') || g.includes('postgresql') || g.includes('clickhouse')
+	},
+	{ 
+		name: "Observability", 
+		icon: Activity, 
+		color: "text-rose-500", 
+		bg: "bg-rose-50", 
+		border: "border-rose-100",
+		match: (g: string) => g.includes('monitoring') || g.includes('grafana') || g.includes('opentelemetry') || g.includes('prometheus')
+	},
+	{ 
+		name: "Networking & Mesh", 
+		icon: Network, 
+		color: "text-violet-600", 
+		bg: "bg-violet-50", 
+		border: "border-violet-100",
+		match: (g: string) => g.includes('networking') || g.includes('istio') || g.includes('gateway') || g.includes('envoy')
+	},
+	{ 
+		name: "Security", 
+		icon: ShieldCheck, 
+		color: "text-red-600", 
+		bg: "bg-red-50", 
+		border: "border-red-100",
+		match: (g: string) => g.includes('security') || g.includes('cert-manager') || g.includes('external-secrets') || g.includes('iam') || g.includes('kms')
+	},
+	{ 
+		name: "Core Kubernetes", 
+		icon: Cpu, 
+		color: "text-blue-700", 
+		bg: "bg-blue-50", 
+		border: "border-blue-100",
+		match: (g: string) => g.includes('k8s.io') 
+	}
+];
+
+// Group the actual data into categories
+const groupedData = categories.map(cat => {
+	const matchedGroups = groups.filter(([name]) => cat.match(name));
+	return {
+		...cat,
+		groups: matchedGroups,
+		count: matchedGroups.reduce((acc, [_, res]) => acc + res.length, 0)
+	};
+}).filter(cat => cat.groups.length > 0);
+
+// Anything left over goes into "Other"
+const matchedGroupNames = new Set(groupedData.flatMap(cat => cat.groups.map(([name]) => name)));
+const otherGroups = groups.filter(([name]) => !matchedGroupNames.has(name));
+
+if (otherGroups.length > 0) {
+	groupedData.push({
+		name: "Other Extensions",
+		icon: Layers,
+		color: "text-gray-500",
+		bg: "bg-gray-50",
+		border: "border-gray-200",
+		groups: otherGroups,
+		count: otherGroups.reduce((acc, [_, res]) => acc + res.length, 0),
+		match: () => true
+	});
+}
+---
+
+<Layout title="Home">
+	<div class="max-w-6xl mx-auto px-6 py-16">
+		<header class="mb-20 text-center">
+			<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+				<span class="relative flex h-2 w-2">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+				</span>
+				<span class="text-[10px] font-black text-blue-600 uppercase tracking-widest">Open Source Registry</span>
+			</div>
+			<h1 class="text-7xl font-black text-gray-900 mb-6 tracking-tighter leading-none">
+				OpenSpec <span class="text-blue-600">HUB</span>
+			</h1>
+			<p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+				The central directory for Kubernetes Custom Resource Definitions. Explore <strong class="text-gray-900">{totalResources}</strong> standardized schemas across the cloud-native ecosystem.
+			</p>
+			
+			<div class="mt-12 flex justify-center gap-4">
+				<div class="px-6 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm flex items-center gap-3">
+					<div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+						<Settings2 size={20} />
+					</div>
+					<div class="text-left">
+						<div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Total Schemas</div>
+						<div class="text-xl font-black text-gray-900 leading-none">{totalResources.toLocaleString()}</div>
+					</div>
+				</div>
+				<div class="px-6 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm flex items-center gap-3">
+					<div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
+						<Layers size={20} />
+					</div>
+					<div class="text-left">
+						<div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">API Groups</div>
+						<div class="text-xl font-black text-gray-900 leading-none">{groups.length}</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{groupedData.map(cat => (
+				<div class={`p-8 border rounded-3xl transition-all hover:shadow-xl group hover:-translate-y-1 bg-white ${cat.border}`}>
+					<div class="flex items-start justify-between mb-8">
+						<div class={`w-14 h-14 rounded-2xl flex items-center justify-center ${cat.bg} ${cat.color} group-hover:scale-110 transition-transform shadow-sm`}>
+							<cat.icon size={28} />
+						</div>
+						<div class="text-right">
+							<div class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Resources</div>
+							<div class="text-2xl font-black text-gray-900">{cat.count}</div>
+						</div>
+					</div>
+					
+					<h2 class="text-xl font-bold text-gray-900 mb-2">{cat.name}</h2>
+					<p class="text-sm text-gray-500 mb-6 leading-relaxed">
+						{cat.groups.length} API groups found in this ecosystem.
+					</p>
+
+					<div class="space-y-2">
+						<div class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">Popular Groups</div>
+						<div class="flex flex-wrap gap-1.5">
+							{cat.groups.slice(0, 5).map(([name]) => (
+								<div class="px-2.5 py-1 bg-gray-50 border border-gray-100 rounded-lg text-[10px] font-bold text-gray-500 hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-colors cursor-default">
+									{name.split('.').slice(0, 2).join('.')}
+								</div>
+							))}
+							{cat.groups.length > 5 && (
+								<div class="text-[10px] font-bold text-gray-300 flex items-center ml-1">
+									+ {cat.groups.length - 5} more
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<footer class="mt-32 text-center border-t border-gray-100 pt-16 pb-20">
+			<h3 class="text-2xl font-black text-gray-900 mb-4">Want to contribute?</h3>
+			<p class="text-gray-500 mb-8 max-w-lg mx-auto leading-relaxed text-sm">
+				The CRD Schema Store is an open-source project. You can add new operators or cloud providers by contributing to the repository.
+			</p>
+			<a 
+				href="https://github.com/nlamirault/crd-schema-store" 
+				class="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-full font-bold text-sm hover:bg-gray-800 transition-colors shadow-lg"
+			>
+				View on GitHub
+			</a>
+		</footer>
+	</div>
+</Layout>
