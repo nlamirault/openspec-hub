@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import catalog from '../../public/data/catalog.json';
-import { 
-	Cloud, 
-	Database, 
-	Network, 
-	ShieldCheck, 
-	Settings2, 
-	Activity, 
-	Cpu, 
+import {
+	Cloud,
+	Database,
+	Network,
+	ShieldCheck,
+	Settings2,
+	Activity,
+	Cpu,
 	GitBranch,
 	Layers
 } from 'lucide-react';
@@ -18,77 +18,77 @@ const totalResources = Object.values(catalog.groups).flat().length;
 
 // Categorization Logic
 const categories = [
-	{ 
-		name: "AWS Infrastructure", 
-		icon: Cloud, 
-		color: "text-orange-500", 
-		bg: "bg-orange-50", 
+	{
+		name: "AWS Infrastructure",
+		icon: Cloud,
+		color: "text-orange-500",
+		bg: "bg-orange-50",
 		border: "border-orange-100",
-		match: (g: string) => g.includes('aws') || g.includes('amazon') 
+		match: (g: string) => g.includes('aws') || g.includes('amazon')
 	},
-	{ 
-		name: "Google Cloud", 
-		icon: Cloud, 
-		color: "text-blue-500", 
-		bg: "bg-blue-50", 
+	{
+		name: "Google Cloud",
+		icon: Cloud,
+		color: "text-blue-500",
+		bg: "bg-blue-50",
 		border: "border-blue-100",
-		match: (g: string) => g.includes('google') || g.includes('cnrm') 
+		match: (g: string) => g.includes('google') || g.includes('cnrm')
 	},
-	{ 
-		name: "Azure Ecosystem", 
-		icon: Cloud, 
-		color: "text-sky-600", 
-		bg: "bg-sky-50", 
+	{
+		name: "Azure Ecosystem",
+		icon: Cloud,
+		color: "text-sky-600",
+		bg: "bg-sky-50",
 		border: "border-sky-100",
-		match: (g: string) => g.includes('azure') || g.includes('microsoft') 
+		match: (g: string) => g.includes('azure') || g.includes('microsoft')
 	},
-	{ 
-		name: "GitOps & Deployment", 
-		icon: GitBranch, 
-		color: "text-emerald-600", 
-		bg: "bg-emerald-50", 
+	{
+		name: "GitOps & Deployment",
+		icon: GitBranch,
+		color: "text-emerald-600",
+		bg: "bg-emerald-50",
 		border: "border-emerald-100",
-		match: (g: string) => g.includes('argoproj') || g.includes('fluxcd') || g.includes('kargo') 
+		match: (g: string) => g.includes('argoproj') || g.includes('fluxcd') || g.includes('kargo')
 	},
-	{ 
-		name: "Databases & Storage", 
-		icon: Database, 
-		color: "text-indigo-600", 
-		bg: "bg-indigo-50", 
+	{
+		name: "Databases & Storage",
+		icon: Database,
+		color: "text-indigo-600",
+		bg: "bg-indigo-50",
 		border: "border-indigo-100",
 		match: (g: string) => g.includes('dbfor') || g.includes('redis') || g.includes('mariadb') || g.includes('mysql') || g.includes('postgresql') || g.includes('clickhouse')
 	},
-	{ 
-		name: "Observability", 
-		icon: Activity, 
-		color: "text-rose-500", 
-		bg: "bg-rose-50", 
+	{
+		name: "Observability",
+		icon: Activity,
+		color: "text-rose-500",
+		bg: "bg-rose-50",
 		border: "border-rose-100",
 		match: (g: string) => g.includes('monitoring') || g.includes('grafana') || g.includes('opentelemetry') || g.includes('prometheus')
 	},
-	{ 
-		name: "Networking & Mesh", 
-		icon: Network, 
-		color: "text-violet-600", 
-		bg: "bg-violet-50", 
+	{
+		name: "Networking & Mesh",
+		icon: Network,
+		color: "text-violet-600",
+		bg: "bg-violet-50",
 		border: "border-violet-100",
 		match: (g: string) => g.includes('networking') || g.includes('istio') || g.includes('gateway') || g.includes('envoy')
 	},
-	{ 
-		name: "Security", 
-		icon: ShieldCheck, 
-		color: "text-red-600", 
-		bg: "bg-red-50", 
+	{
+		name: "Security",
+		icon: ShieldCheck,
+		color: "text-red-600",
+		bg: "bg-red-50",
 		border: "border-red-100",
 		match: (g: string) => g.includes('security') || g.includes('cert-manager') || g.includes('external-secrets') || g.includes('iam') || g.includes('kms')
 	},
-	{ 
-		name: "Core Kubernetes", 
-		icon: Cpu, 
-		color: "text-blue-700", 
-		bg: "bg-blue-50", 
+	{
+		name: "Core Kubernetes",
+		icon: Cpu,
+		color: "text-blue-700",
+		bg: "bg-blue-50",
 		border: "border-blue-100",
-		match: (g: string) => g.includes('k8s.io') 
+		match: (g: string) => g.includes('k8s.io')
 	}
 ];
 
@@ -136,7 +136,7 @@ if (otherGroups.length > 0) {
 			<p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
 				The central directory for Kubernetes Custom Resource Definitions. Explore <strong class="text-gray-900">{totalResources}</strong> standardized schemas across the cloud-native ecosystem.
 			</p>
-			
+
 			<div class="mt-12 flex justify-center gap-4">
 				<div class="px-6 py-3 bg-white border border-gray-200 rounded-2xl shadow-sm flex items-center gap-3">
 					<div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
@@ -171,7 +171,7 @@ if (otherGroups.length > 0) {
 							<div class="text-2xl font-black text-gray-900">{cat.count}</div>
 						</div>
 					</div>
-					
+
 					<h2 class="text-xl font-bold text-gray-900 mb-2">{cat.name}</h2>
 					<p class="text-sm text-gray-500 mb-6 leading-relaxed">
 						{cat.groups.length} API groups found in this ecosystem.
@@ -201,8 +201,8 @@ if (otherGroups.length > 0) {
 			<p class="text-gray-500 mb-8 max-w-lg mx-auto leading-relaxed text-sm">
 				The CRD Schema Store is an open-source project. You can add new operators or cloud providers by contributing to the repository.
 			</p>
-			<a 
-				href="https://github.com/nlamirault/crd-schema-store" 
+			<a
+				href="https://github.com/nlamirault/crd-schema-store"
 				class="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-full font-bold text-sm hover:bg-gray-800 transition-colors shadow-lg"
 			>
 				View on GitHub

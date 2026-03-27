@@ -32,10 +32,10 @@ const groups = Object.entries(catalog.groups);
 					<span class="text-xl font-black text-gray-900 tracking-tighter">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
 				</a>
 				<div class="relative">
-					<input 
-						type="text" 
-						id="search-sidebar" 
-						placeholder="Search resources..." 
+					<input
+						type="text"
+						id="search-sidebar"
+						placeholder="Search resources..."
 						class="w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 					/>
 				</div>
@@ -47,7 +47,7 @@ const groups = Object.entries(catalog.groups);
 						<ul class="space-y-0.5">
 							{resources.map(res => (
 								<li class="resource-item" data-kind={res.kind}>
-									<a 
+									<a
 										href={`/schemas/${res.slug}`}
 										class="flex justify-between items-center px-2 py-1.5 text-xs hover:bg-blue-50 hover:text-blue-700 rounded transition-all text-gray-600 group"
 									>
@@ -65,7 +65,7 @@ const groups = Object.entries(catalog.groups);
 			<div class="flex-1">
 				<slot />
 			</div>
-			
+
 			<footer class="bg-white border-t border-gray-100 py-12 px-6 mt-auto">
 				<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
 					<div class="max-w-xs">
@@ -127,11 +127,11 @@ const groups = Object.entries(catalog.groups);
 
 			search?.addEventListener('input', (e) => {
 				const query = (e.target as HTMLInputElement).value.toLowerCase();
-				
+
 				groups.forEach(group => {
 					let hasVisibleItems = false;
 					const groupItems = group.querySelectorAll('.resource-item');
-					
+
 					groupItems.forEach(item => {
 						const isVisible = item.textContent?.toLowerCase().includes(query);
 						(item as HTMLElement).style.display = isVisible ? 'block' : 'none';

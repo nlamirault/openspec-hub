@@ -10,14 +10,14 @@ export async function getStaticPaths() {
     const paths = [];
     for (const [group, resources] of Object.entries(catalog.groups)) {
         for (const res of resources) {
-            paths.push({ 
-                params: { slug: res.slug }, 
-                props: { 
+            paths.push({
+                params: { slug: res.slug },
+                props: {
                     file: res.file,
                     group,
                     version: res.version,
                     kind: res.kind
-                } 
+                }
             });
         }
     }
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { file, group, version, kind } = Astro.props;
 const { slug } = Astro.params;
 
-const fullPath = path.resolve('../schemas', file);
+const fullPath = path.resolve('schemas', file);
 const content = fs.readFileSync(fullPath, 'utf-8');
 let schema;
 try {
@@ -62,7 +62,7 @@ try {
 					Interactive Tree
 				</span>
 			</div>
-			
+
 			<SchemaTree client:load initialSchema={schema} titles={titles as any} />
 		</section>
 
