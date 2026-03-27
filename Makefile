@@ -48,8 +48,14 @@ check-%:
 
 .PHONY: init
 init: ## Initialize environment
-	uv venv && uv pip install
+	uv venv
 
 .PHONY: build
 build: guard-CRD ## Update CRD for an application
 	@scripts/schema-store.sh $$(basename "${CRD}" .sh)
+
+##@ Website
+
+.PHONY: catalog
+catalog: ## Build the catalog
+	uv run scripts/generate-catalog.py
