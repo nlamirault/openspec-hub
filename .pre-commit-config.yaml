@@ -16,6 +16,7 @@ repos:
   - id: check-added-large-files
     name: "📁 filesystem /📝 files - check large files"
     stages: [pre-commit]
+    args: [--maxkb=1024]
   - id: check-executables-have-shebangs
     name: "📁 filesystem /⚙️ exec · Verify shebang presence"
     stages: [pre-commit]

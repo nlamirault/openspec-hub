@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
 # SPDX-License-Identifier: Apache-2.0
 
-BANNER = K 8 S    S C H E M A    S T O R E
+BANNER = O P E N S P E C   H U B
 
 SHELL = /bin/bash -o pipefail
 
@@ -25,7 +25,7 @@ ERROR=[🔴]
 
 .PHONY: help
 help:
-	@echo -e "$(OK_COLOR)      $(BANNER)$(NO_COLOR)"
+	@echo -e "$(OK_COLOR)               $(BANNER)$(NO_COLOR)"
 	@echo "------------------------------------------------------------------"
 	@echo ""
 	@awk 'BEGIN {FS = ":.*##"; printf "Usage: make ${INFO_COLOR}<target>${NO_COLOR}\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  ${INFO_COLOR}%-25s${NO_COLOR} %s\n", $$1, $$2 } /^##@/ { printf "\n${WHITE_COLOR}%s${NO_COLOR}\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
