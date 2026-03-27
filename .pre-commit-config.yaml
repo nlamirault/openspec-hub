@@ -23,6 +23,7 @@ repos:
   - id: check-shebang-scripts-are-executable
     name: "📁 filesystem /⚙️ exec · Verify script permissions"
     stages: [pre-commit]
+# License
 - repo: local
   hooks:
   - id: hawkeye
@@ -32,6 +33,11 @@ repos:
     pass_filenames: true
     files: \.*$
     args: []
+# Documentation
+# - repo: https://github.com/lycheeverse/lychee.git
+#   rev: v0.15.1
+#   hooks:
+#   - id: lychee
 # Lint
 - repo: https://github.com/compilerla/conventional-pre-commit
   rev: v4.4.0
