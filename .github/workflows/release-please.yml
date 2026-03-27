@@ -11,9 +11,9 @@ on:
     - main
 
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: write         # to push tags and changelog
+  issues: write           # (optional) for any issue linkage
+  pull-requests: write    # to create/modify the release PR
 
 jobs:
   release-please:
