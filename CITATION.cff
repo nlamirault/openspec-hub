@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: CRD Schema Store
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Nicolas
+    family-names: Lamirault
+    email: nicolas.lamirault@gmail.com
+abstract: >-
+  A collection of JSON schemas extracted from Kubernetes Custom Resource
+  Definitions (CRDs) for popular cloud-native applications and operators.
+keywords:
+  - kubernetes
+  - crd
+  - json-schema
+  - cloud-native
+license: Apache-2.0
+repository-code: https://github.com/nlamirault/crd-schema-store
+url: https://github.com/nlamirault/crd-schema-store

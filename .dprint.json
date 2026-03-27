@@ -1,0 +1,48 @@
+// SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+// SPDX-License-Identifier: Apache-2.0
+
+{
+  "lineWidth": 100,
+  "json": {
+    "indentWidth": 2
+  },
+  "markdown": {
+    "lineWidth": 80
+  },
+  "toml": {},
+  "typescript": {
+    "indentWidth": 2,
+    "semiColons": "prefer",
+    "quoteStyle": "preferDouble"
+  },
+  "yaml": {
+    "indentWidth": 2,
+    "indentBlockSequenceInMap": false
+  },
+  "excludes": [
+    "**/*-lock.json",
+    "**/node_modules",
+    "**/dist",
+    "**/.astro",
+    "**/templates/*.yaml",
+    "schemas/**",
+    "web/public/data/**"
+  ],
+  "exec": {
+    "cwd": "${configDir}",
+    "commands": [
+      {
+        "command": "shfmt -i 2 -ci -bn",
+        "exts": ["sh", "bash"]
+      }
+    ]
+  },
+  "plugins": [
+    "https://plugins.dprint.dev/exec-0.5.0.json@8d9972eee71fa1590e04873540421f3eda7674d0f1aae3d7c788615e7b7413d0",
+    "https://plugins.dprint.dev/json-0.19.3.wasm",
+    "https://plugins.dprint.dev/markdown-0.17.2.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.0.wasm",
+    "https://plugins.dprint.dev/toml-0.6.3.wasm",
+    "https://plugins.dprint.dev/typescript-0.93.0.wasm"
+  ]
+}
