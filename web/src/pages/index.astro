@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import catalog from '../../public/data/catalog.json';
+
+const groups = Object.keys(catalog.groups);
+const totalResources = Object.values(catalog.groups).flat().length;
+---
+
+<Layout title="Home">
+	<div class="max-w-4xl mx-auto px-6 py-20">
+		<header class="mb-16">
+			<h1 class="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+				CRD Schema <span class="text-blue-600">Store</span>
+			</h1>
+			<p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
+				Browse and explore JSON schemas for <strong>{totalResources}</strong> Kubernetes resources from popular cloud-native projects.
+			</p>
+		</header>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div class="p-8 border border-gray-100 rounded-2xl bg-blue-50/50">
+				<h2 class="text-lg font-bold text-blue-900 mb-4 uppercase tracking-widest text-sm">Quick Stats</h2>
+				<ul class="space-y-4">
+					<li class="flex items-center gap-3">
+						<span class="text-3xl font-bold text-blue-600">{groups.length}</span>
+						<span class="text-blue-800 font-medium">API Groups Supported</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-3xl font-bold text-blue-600">{totalResources}</span>
+						<span class="text-blue-800 font-medium">Resource Definitions</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="p-8 border border-gray-100 rounded-2xl bg-white shadow-sm">
+				<h2 class="text-lg font-bold text-gray-900 mb-4 uppercase tracking-widest text-sm">Getting Started</h2>
+				<p class="text-gray-600 text-sm leading-relaxed">
+					Use the sidebar to search for specific resources like <code class="bg-gray-100 px-1 rounded">Deployment</code>, 
+					<code class="bg-gray-100 px-1 rounded">Prometheus</code>, or <code class="bg-gray-100 px-1 rounded">ArgoCD</code>.
+				</p>
+			</div>
+		</div>
+
+		<section class="mt-20">
+			<h2 class="text-2xl font-bold text-gray-900 mb-8">Popular Groups</h2>
+			<div class="flex flex-wrap gap-3">
+				{groups.slice(0, 20).map(group => (
+					<div class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 font-medium transition-colors cursor-default">
+						{group}
+					</div>
+				))}
+				<span class="text-gray-400 text-sm flex items-center">and {groups.length - 20} more...</span>
+			</div>
+		</section>
+	</div>
+</Layout>

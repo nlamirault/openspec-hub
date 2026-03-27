@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+:root { font-family: 'Inter', sans-serif; }
+code { font-family: 'Fira Code', monospace; }

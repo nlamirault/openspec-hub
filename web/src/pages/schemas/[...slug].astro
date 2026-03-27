@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import catalog from '../../../public/data/catalog.json';
+import titles from '../../../public/data/titles.json';
+import SchemaTree from '../../components/SchemaTree';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+
+export async function getStaticPaths() {
+    const paths = [];
+    for (const [group, resources] of Object.entries(catalog.groups)) {
+        for (const res of resources) {
+            paths.push({ 
+                params: { slug: res.slug }, 
+                props: { 
+                    file: res.file,
+                    group,
+                    version: res.version,
+                    kind: res.kind
+                } 
+            });
+        }
+    }
+    return paths;
+}
+
+const { file, group, version, kind } = Astro.props;
+const { slug } = Astro.params;
+
+const fullPath = path.resolve('../schemas', file);
+const content = fs.readFileSync(fullPath, 'utf-8');
+let schema;
+try {
+    schema = JSON.parse(content.split('}\n{')[0] + (content.includes('}\n{') ? '}' : ''));
+} catch (e) {
+    schema = { title: kind, description: "Could not parse JSON schema" };
+}
+---
+
+<Layout title={`${kind} (${version})`}>
+	<div class="max-w-4xl mx-auto px-6 py-12">
+		<header class="mb-12 border-b border-gray-100 pb-8">
+			<nav class="flex text-[11px] font-bold text-gray-400 mb-4 gap-2 uppercase tracking-widest">
+				<a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+				<span>/</span>
+				<span>{group}</span>
+                <span>/</span>
+				<span class="text-blue-500">{version}</span>
+			</nav>
+			<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
+				{kind}
+			</h1>
+			<p class="text-lg text-gray-600 leading-relaxed font-medium">
+				{schema.description || 'No description provided.'}
+			</p>
+		</header>
+
+		<section>
+			<div class="flex justify-between items-center mb-6">
+				<h2 class="text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Resource Structure</h2>
+				<span class="text-[10px] bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-bold border border-blue-100">
+					Interactive Tree
+				</span>
+			</div>
+			
+			<SchemaTree client:load initialSchema={schema} titles={titles as any} />
+		</section>
+
+		<footer class="mt-20 pt-8 border-t border-gray-100 flex justify-between items-center">
+			<div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+				CRD Schema Store Explorer
+			</div>
+            <div class="text-[10px] text-gray-300 font-mono">
+                Source: {file}
+            </div>
+		</footer>
+	</div>
+</Layout>
