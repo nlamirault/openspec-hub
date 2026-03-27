@@ -592,6 +592,50 @@
         "slug": "apiextensions.api.k8s.io/v1/WebhookConversion"
       }
     ],
+    "apiextensions.crossplane.io": [
+      {
+        "kind": "compositeresourcedefinition",
+        "version": "v1",
+        "file": "apiextensions.crossplane.io/compositeresourcedefinition_v1.json",
+        "slug": "apiextensions.crossplane.io/v1/compositeresourcedefinition"
+      },
+      {
+        "kind": "composition",
+        "version": "v1",
+        "file": "apiextensions.crossplane.io/composition_v1.json",
+        "slug": "apiextensions.crossplane.io/v1/composition"
+      },
+      {
+        "kind": "compositionrevision",
+        "version": "v1",
+        "file": "apiextensions.crossplane.io/compositionrevision_v1.json",
+        "slug": "apiextensions.crossplane.io/v1/compositionrevision"
+      },
+      {
+        "kind": "environmentconfig",
+        "version": "v1beta1",
+        "file": "apiextensions.crossplane.io/environmentconfig_v1beta1.json",
+        "slug": "apiextensions.crossplane.io/v1beta1/environmentconfig"
+      },
+      {
+        "kind": "managedresourceactivationpolicy",
+        "version": "v1alpha1",
+        "file": "apiextensions.crossplane.io/managedresourceactivationpolicy_v1alpha1.json",
+        "slug": "apiextensions.crossplane.io/v1alpha1/managedresourceactivationpolicy"
+      },
+      {
+        "kind": "managedresourcedefinition",
+        "version": "v1alpha1",
+        "file": "apiextensions.crossplane.io/managedresourcedefinition_v1alpha1.json",
+        "slug": "apiextensions.crossplane.io/v1alpha1/managedresourcedefinition"
+      },
+      {
+        "kind": "usage",
+        "version": "v1alpha1",
+        "file": "apiextensions.crossplane.io/usage_v1alpha1.json",
+        "slug": "apiextensions.crossplane.io/v1alpha1/usage"
+      }
+    ],
     "apigateway.cnrm.cloud.google.com": [
       {
         "kind": "apigatewayapi",
@@ -8236,6 +8280,26 @@
         "slug": "operationalinsights.azure.com/v1api20210601/workspace"
       }
     ],
+    "ops.crossplane.io": [
+      {
+        "kind": "cronoperation",
+        "version": "v1alpha1",
+        "file": "ops.crossplane.io/cronoperation_v1alpha1.json",
+        "slug": "ops.crossplane.io/v1alpha1/cronoperation"
+      },
+      {
+        "kind": "operation",
+        "version": "v1alpha1",
+        "file": "ops.crossplane.io/operation_v1alpha1.json",
+        "slug": "ops.crossplane.io/v1alpha1/operation"
+      },
+      {
+        "kind": "watchoperation",
+        "version": "v1alpha1",
+        "file": "ops.crossplane.io/watchoperation_v1alpha1.json",
+        "slug": "ops.crossplane.io/v1alpha1/watchoperation"
+      }
+    ],
     "orgpolicy.cnrm.cloud.google.com": [
       {
         "kind": "orgpolicycustomconstraint",
@@ -8284,6 +8348,62 @@
         "version": "version",
         "file": "pkg.api.k8s.io/Info_version.json",
         "slug": "pkg.api.k8s.io/version/Info"
+      }
+    ],
+    "pkg.crossplane.io": [
+      {
+        "kind": "configuration",
+        "version": "v1",
+        "file": "pkg.crossplane.io/configuration_v1.json",
+        "slug": "pkg.crossplane.io/v1/configuration"
+      },
+      {
+        "kind": "configurationrevision",
+        "version": "v1",
+        "file": "pkg.crossplane.io/configurationrevision_v1.json",
+        "slug": "pkg.crossplane.io/v1/configurationrevision"
+      },
+      {
+        "kind": "deploymentruntimeconfig",
+        "version": "v1beta1",
+        "file": "pkg.crossplane.io/deploymentruntimeconfig_v1beta1.json",
+        "slug": "pkg.crossplane.io/v1beta1/deploymentruntimeconfig"
+      },
+      {
+        "kind": "function",
+        "version": "v1",
+        "file": "pkg.crossplane.io/function_v1.json",
+        "slug": "pkg.crossplane.io/v1/function"
+      },
+      {
+        "kind": "functionrevision",
+        "version": "v1",
+        "file": "pkg.crossplane.io/functionrevision_v1.json",
+        "slug": "pkg.crossplane.io/v1/functionrevision"
+      },
+      {
+        "kind": "imageconfig",
+        "version": "v1beta1",
+        "file": "pkg.crossplane.io/imageconfig_v1beta1.json",
+        "slug": "pkg.crossplane.io/v1beta1/imageconfig"
+      },
+      {
+        "kind": "lock",
+        "version": "v1beta1",
+        "file": "pkg.crossplane.io/lock_v1beta1.json",
+        "slug": "pkg.crossplane.io/v1beta1/lock"
+      },
+      {
+        "kind": "provider",
+        "version": "v1",
+        "file": "pkg.crossplane.io/provider_v1.json",
+        "slug": "pkg.crossplane.io/v1/provider"
+      },
+      {
+        "kind": "providerrevision",
+        "version": "v1",
+        "file": "pkg.crossplane.io/providerrevision_v1.json",
+        "slug": "pkg.crossplane.io/v1/providerrevision"
       }
     ],
     "policy.api.k8s.io": [
@@ -8412,6 +8532,20 @@
         "version": "v1alpha1",
         "file": "privilegedaccessmanager.cnrm.cloud.google.com/privilegedaccessmanagerentitlement_v1alpha1.json",
         "slug": "privilegedaccessmanager.cnrm.cloud.google.com/v1alpha1/privilegedaccessmanagerentitlement"
+      }
+    ],
+    "protection.crossplane.io": [
+      {
+        "kind": "clusterusage",
+        "version": "v1beta1",
+        "file": "protection.crossplane.io/clusterusage_v1beta1.json",
+        "slug": "protection.crossplane.io/v1beta1/clusterusage"
+      },
+      {
+        "kind": "usage",
+        "version": "v1beta1",
+        "file": "protection.crossplane.io/usage_v1beta1.json",
+        "slug": "protection.crossplane.io/v1beta1/usage"
       }
     ],
     "pubsub.cnrm.cloud.google.com": [

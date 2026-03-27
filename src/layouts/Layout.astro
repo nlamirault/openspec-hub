@@ -129,11 +129,13 @@ const groups = Object.entries(catalog.groups);
 				const query = (e.target as HTMLInputElement).value.toLowerCase();
 
 				groups.forEach(group => {
+					const groupName = (group as HTMLElement).dataset.group?.toLowerCase() ?? '';
+					const groupMatches = groupName.includes(query);
 					let hasVisibleItems = false;
 					const groupItems = group.querySelectorAll('.resource-item');
 
 					groupItems.forEach(item => {
-						const isVisible = item.textContent?.toLowerCase().includes(query);
+						const isVisible = groupMatches || item.textContent?.toLowerCase().includes(query);
 						(item as HTMLElement).style.display = isVisible ? 'block' : 'none';
 						if (isVisible) hasVisibleItems = true;
 					});
