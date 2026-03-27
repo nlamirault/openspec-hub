@@ -1,0 +1,41 @@
+{
+  "description": "Metadata for a provider repository.",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "releaseSeries": {
+      "description": "releaseSeries maps a provider release series (major/minor) with a Cluster API contract version.",
+      "items": {
+        "description": "ReleaseSeries maps a provider release series (major/minor) with a Cluster API contract version.",
+        "properties": {
+          "contract": {
+            "description": "contract defines the Cluster API contract supported by this series.\n\nThe value is an API Version, e.g. `v1alpha3`.",
+            "type": "string"
+          },
+          "major": {
+            "description": "major version of the release series",
+            "format": "int32",
+            "type": "integer"
+          },
+          "minor": {
+            "description": "minor version of the release series",
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
