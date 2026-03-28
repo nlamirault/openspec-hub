@@ -10522,6 +10522,44 @@
         "slug": "secrets.doppler.com/v1alpha1/dopplersecret"
       }
     ],
+    "secrets.infisical.com": [
+      {
+        "kind": "clustergenerator",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/clustergenerator_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/clustergenerator"
+      },
+      {
+        "kind": "infisicaldynamicsecret",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/infisicaldynamicsecret_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/infisicaldynamicsecret"
+      },
+      {
+        "kind": "infisicalpushsecret",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/infisicalpushsecret_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/infisicalpushsecret"
+      },
+      {
+        "kind": "infisicalsecret",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/infisicalsecret_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/infisicalsecret"
+      },
+      {
+        "kind": "password",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/password_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/password"
+      },
+      {
+        "kind": "uuid",
+        "version": "v1alpha1",
+        "file": "secrets.infisical.com/uuid_v1alpha1.json",
+        "slug": "secrets.infisical.com/v1alpha1/uuid"
+      }
+    ],
     "secretsmanager.services.k8s.aws": [
       {
         "kind": "secret",
