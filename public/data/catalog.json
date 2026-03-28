@@ -9018,6 +9018,20 @@
         "slug": "policy.api.k8s.io/v1/PodDisruptionBudgetStatus"
       }
     ],
+    "policy.sigstore.dev": [
+      {
+        "kind": "clusterimagepolicy",
+        "version": "v1alpha1",
+        "file": "policy.sigstore.dev/clusterimagepolicy_v1alpha1.json",
+        "slug": "policy.sigstore.dev/v1alpha1/clusterimagepolicy"
+      },
+      {
+        "kind": "trustroot",
+        "version": "v1alpha1",
+        "file": "policy.sigstore.dev/trustroot_v1alpha1.json",
+        "slug": "policy.sigstore.dev/v1alpha1/trustroot"
+      }
+    ],
     "postgresql.cnpg.io": [
       {
         "kind": "backup",
