@@ -8730,6 +8730,14 @@
         "slug": "notificationhubs.azure.com/v1api20230901/notificationhubsauthorizationrule"
       }
     ],
+    "onepassword.com": [
+      {
+        "kind": "onepassworditem",
+        "version": "v1",
+        "file": "onepassword.com/onepassworditem_v1.json",
+        "slug": "onepassword.com/v1/onepassworditem"
+      }
+    ],
     "openreports.io": [
       {
         "kind": "clusterreport",
@@ -10504,6 +10512,14 @@
         "version": "v1beta1",
         "file": "secretmanager.cnrm.cloud.google.com/secretmanagersecretversion_v1beta1.json",
         "slug": "secretmanager.cnrm.cloud.google.com/v1beta1/secretmanagersecretversion"
+      }
+    ],
+    "secrets.doppler.com": [
+      {
+        "kind": "dopplersecret",
+        "version": "v1alpha1",
+        "file": "secrets.doppler.com/dopplersecret_v1alpha1.json",
+        "slug": "secrets.doppler.com/v1alpha1/dopplersecret"
       }
     ],
     "secretsmanager.services.k8s.aws": [
