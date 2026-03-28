@@ -10528,6 +10528,20 @@
         "slug": "secretmanager.cnrm.cloud.google.com/v1beta1/secretmanagersecretversion"
       }
     ],
+    "secrets-store.csi.x-k8s.io": [
+      {
+        "kind": "secretproviderclass",
+        "version": "v1",
+        "file": "secrets-store.csi.x-k8s.io/secretproviderclass_v1.json",
+        "slug": "secrets-store.csi.x-k8s.io/v1/secretproviderclass"
+      },
+      {
+        "kind": "secretproviderclasspodstatus",
+        "version": "v1",
+        "file": "secrets-store.csi.x-k8s.io/secretproviderclasspodstatus_v1.json",
+        "slug": "secrets-store.csi.x-k8s.io/v1/secretproviderclasspodstatus"
+      }
+    ],
     "secrets.doppler.com": [
       {
         "kind": "dopplersecret",
