@@ -3,19 +3,21 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'The central directory for Kubernetes Custom Resource Definitions across the cloud-native ecosystem.' } = Astro.props;
 import catalog from '../../public/data/catalog.json';
 
 const groups = Object.entries(catalog.groups);
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="CRD Schema Store Explorer" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +25,14 @@ const groups = Object.entries(catalog.groups);
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | OpenSpec HUB</title>
+		<!-- Open Graph -->
+		<meta property="og:title" content={`${title} | OpenSpec HUB`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="OpenSpec HUB" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={`${title} | OpenSpec HUB`} />
+		<meta name="twitter:description" content={description} />
 	</head>
 	<body class="bg-gray-50 flex h-screen overflow-hidden text-gray-900 font-sans">
 		<aside class="w-80 bg-white border-r border-gray-200 flex flex-col shrink-0">
@@ -35,30 +45,48 @@ const groups = Object.entries(catalog.groups);
 					<input
 						type="text"
 						id="search-sidebar"
-						placeholder="Search resources..."
+						placeholder="Search resources… (/)"
 						class="w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 					/>
 				</div>
 			</div>
-			<nav class="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin scrollbar-thumb-gray-200">
-				{groups.map(([group, resources]) => (
-					<div class="api-group" data-group={group}>
-						<h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 border-b border-gray-100 pb-1">{group}</h3>
-						<ul class="space-y-0.5">
-							{resources.map(res => (
-								<li class="resource-item" data-kind={res.kind}>
-									<a
-										href={`/schemas/${res.slug}`}
-										class="flex justify-between items-center px-2 py-1.5 text-xs hover:bg-blue-50 hover:text-blue-700 rounded transition-all text-gray-600 group"
-									>
-										<span class="truncate font-medium">{res.kind}</span>
-										<span class="text-[9px] px-1 bg-gray-100 text-gray-400 rounded group-hover:bg-blue-100 group-hover:text-blue-500">{res.version}</span>
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				))}
+			<nav class="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-thin scrollbar-thumb-gray-200">
+				{groups.map(([group, resources]) => {
+					const isActiveGroup = resources.some(r => currentPath === `/schemas/${r.slug}`);
+					return (
+						<details class="api-group" data-group={group} open={isActiveGroup || undefined}>
+							<summary class="text-[10px] font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-1 pt-3 cursor-pointer list-none flex justify-between items-center hover:text-blue-500 transition-colors select-none">
+								<span class="truncate">{group}</span>
+								<span class="shrink-0 ml-1 text-gray-300 text-[8px]">▾</span>
+							</summary>
+							<ul class="space-y-0.5 mt-1.5 mb-2">
+								{resources.map(res => {
+									const isActive = currentPath === `/schemas/${res.slug}`;
+									return (
+										<li class="resource-item" data-kind={res.kind}>
+											<a
+												href={`/schemas/${res.slug}`}
+												aria-current={isActive ? 'page' : undefined}
+												class={`flex justify-between items-center px-2 py-1.5 text-xs rounded transition-all group ${
+													isActive
+														? 'bg-blue-50 text-blue-700 font-semibold'
+														: 'hover:bg-blue-50 hover:text-blue-700 text-gray-600'
+												}`}
+											>
+												<span class="truncate font-medium">{res.kind}</span>
+												<span class={`text-[9px] px-1 rounded shrink-0 ml-1 ${
+													isActive
+														? 'bg-blue-100 text-blue-500'
+														: 'bg-gray-100 text-gray-400 group-hover:bg-blue-100 group-hover:text-blue-500'
+												}`}>{res.version}</span>
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</details>
+					);
+				})}
 			</nav>
 		</aside>
 		<main class="flex-1 overflow-y-auto bg-white flex flex-col">
@@ -120,27 +148,57 @@ const groups = Object.entries(catalog.groups);
 		</main>
 
 		<script>
-			// Basic sidebar search
-			const search = document.getElementById('search-sidebar') as HTMLInputElement;
-			const items = document.querySelectorAll('.resource-item');
-			const groups = document.querySelectorAll('.api-group');
+			// Keyboard shortcut: press / to focus sidebar search
+			document.addEventListener('keydown', (e) => {
+				if (e.key === '/' && (document.activeElement as HTMLElement)?.tagName !== 'INPUT') {
+					e.preventDefault();
+					(document.getElementById('search-sidebar') as HTMLInputElement)?.focus();
+				}
+				if (e.key === 'Escape') {
+					const input = document.getElementById('search-sidebar') as HTMLInputElement;
+					if (document.activeElement === input) {
+						input.blur();
+					}
+				}
+			});
 
-			search?.addEventListener('input', (e) => {
-				const query = (e.target as HTMLInputElement).value.toLowerCase();
+			// Sidebar search
+			const searchInput = document.getElementById('search-sidebar') as HTMLInputElement;
+			const allGroups = document.querySelectorAll<HTMLDetailsElement>('.api-group');
+			const activeLink = document.querySelector('[aria-current="page"]');
+			const activeGroup = activeLink?.closest<HTMLDetailsElement>('.api-group');
 
-				groups.forEach(group => {
+			// Scroll active item into view
+			activeLink?.scrollIntoView({ block: 'nearest' });
+
+			searchInput?.addEventListener('input', (e) => {
+				const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+				if (!query) {
+					allGroups.forEach(group => {
+						(group as HTMLElement).style.display = '';
+						group.open = group === activeGroup;
+						group.querySelectorAll<HTMLElement>('.resource-item').forEach(item => {
+							item.style.display = '';
+						});
+					});
+					if (activeGroup) activeGroup.open = true;
+					return;
+				}
+
+				allGroups.forEach(group => {
 					const groupName = (group as HTMLElement).dataset.group?.toLowerCase() ?? '';
 					const groupMatches = groupName.includes(query);
-					let hasVisibleItems = false;
-					const groupItems = group.querySelectorAll('.resource-item');
+					let hasVisible = false;
 
-					groupItems.forEach(item => {
-						const isVisible = groupMatches || item.textContent?.toLowerCase().includes(query);
-						(item as HTMLElement).style.display = isVisible ? 'block' : 'none';
-						if (isVisible) hasVisibleItems = true;
+					group.querySelectorAll<HTMLElement>('.resource-item').forEach(item => {
+						const visible = groupMatches || (item.textContent?.toLowerCase().includes(query) ?? false);
+						item.style.display = visible ? '' : 'none';
+						if (visible) hasVisible = true;
 					});
 
-					(group as HTMLElement).style.display = hasVisibleItems ? 'block' : 'none';
+					(group as HTMLElement).style.display = hasVisible ? '' : 'none';
+					if (hasVisible) group.open = true;
 				});
 			});
 		</script>
