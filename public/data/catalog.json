@@ -6432,6 +6432,12 @@
     ],
     "gateway.networking.k8s.io": [
       {
+        "kind": "backendtlspolicy",
+        "version": "v1",
+        "file": "gateway.networking.k8s.io/backendtlspolicy_v1.json",
+        "slug": "gateway.networking.k8s.io/v1/backendtlspolicy"
+      },
+      {
         "kind": "gateway",
         "version": "v1",
         "file": "gateway.networking.k8s.io/gateway_v1.json",
@@ -6460,6 +6466,44 @@
         "version": "v1beta1",
         "file": "gateway.networking.k8s.io/referencegrant_v1beta1.json",
         "slug": "gateway.networking.k8s.io/v1beta1/referencegrant"
+      },
+      {
+        "kind": "tcproute",
+        "version": "v1alpha2",
+        "file": "gateway.networking.k8s.io/tcproute_v1alpha2.json",
+        "slug": "gateway.networking.k8s.io/v1alpha2/tcproute"
+      },
+      {
+        "kind": "tlsroute",
+        "version": "v1alpha2",
+        "file": "gateway.networking.k8s.io/tlsroute_v1alpha2.json",
+        "slug": "gateway.networking.k8s.io/v1alpha2/tlsroute"
+      },
+      {
+        "kind": "udproute",
+        "version": "v1alpha2",
+        "file": "gateway.networking.k8s.io/udproute_v1alpha2.json",
+        "slug": "gateway.networking.k8s.io/v1alpha2/udproute"
+      }
+    ],
+    "gateway.networking.x-k8s.io": [
+      {
+        "kind": "xbackendtrafficpolicy",
+        "version": "v1alpha1",
+        "file": "gateway.networking.x-k8s.io/xbackendtrafficpolicy_v1alpha1.json",
+        "slug": "gateway.networking.x-k8s.io/v1alpha1/xbackendtrafficpolicy"
+      },
+      {
+        "kind": "xlistenerset",
+        "version": "v1alpha1",
+        "file": "gateway.networking.x-k8s.io/xlistenerset_v1alpha1.json",
+        "slug": "gateway.networking.x-k8s.io/v1alpha1/xlistenerset"
+      },
+      {
+        "kind": "xmesh",
+        "version": "v1alpha1",
+        "file": "gateway.networking.x-k8s.io/xmesh_v1alpha1.json",
+        "slug": "gateway.networking.x-k8s.io/v1alpha1/xmesh"
       }
     ],
     "generators.external-secrets.io": [
