@@ -40,38 +40,38 @@ const schemaDescription = schema.description || `Kubernetes CRD schema for ${kin
 
 <Layout title={`${kind} (${version})`} description={schemaDescription}>
 	<div class="max-w-4xl mx-auto px-6 py-12">
-		<header class="mb-12 border-b border-gray-100 pb-8">
-			<nav class="flex text-[11px] font-bold text-gray-400 mb-4 gap-2 uppercase tracking-widest flex-wrap">
-				<a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+		<header class="mb-12 border-b border-gray-100 dark:border-slate-800 pb-8">
+			<nav class="flex text-[11px] font-bold text-gray-400 dark:text-slate-500 mb-4 gap-2 uppercase tracking-widest flex-wrap">
+				<a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
 				<span>/</span>
-				<a href="/" class="hover:text-blue-600 transition-colors truncate max-w-[200px]">{group}</a>
+				<a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate max-w-[200px]">{group}</a>
 				<span>/</span>
-				<span class="text-blue-500">{version}</span>
+				<span class="text-blue-500 dark:text-blue-400">{version}</span>
 				<span>/</span>
-				<span class="text-gray-600">{kind}</span>
+				<span class="text-gray-600 dark:text-slate-300">{kind}</span>
 			</nav>
-			<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
+			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
 				{kind}
 			</h1>
-			<p class="text-lg text-gray-600 leading-relaxed font-medium">
+			<p class="text-lg text-gray-600 dark:text-slate-400 leading-relaxed font-medium">
 				{schema.description || 'No description provided.'}
 			</p>
 		</header>
 
 		<section>
 			<div class="flex justify-between items-center mb-6">
-				<h2 class="text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Resource Structure</h2>
+				<h2 class="text-xs font-black text-gray-400 dark:text-slate-500 uppercase tracking-[0.2em]">Resource Structure</h2>
 				<div class="flex items-center gap-2">
 					<button
 						id="copy-schema"
-						class="text-[10px] bg-white text-gray-500 px-3 py-1.5 rounded-full font-bold border border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-colors flex items-center gap-1.5"
+						class="text-[10px] bg-white dark:bg-slate-900 text-gray-500 dark:text-slate-400 px-3 py-1.5 rounded-full font-bold border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
 						</svg>
 						<span id="copy-label">Copy JSON</span>
 					</button>
-					<span class="text-[10px] bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-bold border border-blue-100">
+					<span class="text-[10px] bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-2 py-1 rounded-full font-bold border border-blue-100 dark:border-blue-800">
 						Interactive Tree
 					</span>
 				</div>
@@ -80,11 +80,11 @@ const schemaDescription = schema.description || `Kubernetes CRD schema for ${kin
 			<SchemaTree client:load initialSchema={schema} titles={titles as any} />
 		</section>
 
-		<footer class="mt-20 pt-8 border-t border-gray-100 flex justify-between items-center">
-			<div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+		<footer class="mt-20 pt-8 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center">
+			<div class="text-[10px] text-gray-400 dark:text-slate-500 font-bold uppercase tracking-widest">
 				OpenSpec HUB
 			</div>
-			<div class="text-[10px] text-gray-300 font-mono">
+			<div class="text-[10px] text-gray-300 dark:text-slate-600 font-mono">
 				Source: {file}
 			</div>
 		</footer>
