@@ -10522,6 +10522,68 @@
         "slug": "secrets.doppler.com/v1alpha1/dopplersecret"
       }
     ],
+    "secrets.hashicorp.com": [
+      {
+        "kind": "csisecrets",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/csisecrets_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/csisecrets"
+      },
+      {
+        "kind": "hcpauth",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/hcpauth_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/hcpauth"
+      },
+      {
+        "kind": "hcpvaultsecretsapp",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/hcpvaultsecretsapp_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/hcpvaultsecretsapp"
+      },
+      {
+        "kind": "secrettransformation",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/secrettransformation_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/secrettransformation"
+      },
+      {
+        "kind": "vaultauth",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultauth_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultauth"
+      },
+      {
+        "kind": "vaultauthglobal",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultauthglobal_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultauthglobal"
+      },
+      {
+        "kind": "vaultconnection",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultconnection_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultconnection"
+      },
+      {
+        "kind": "vaultdynamicsecret",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultdynamicsecret_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultdynamicsecret"
+      },
+      {
+        "kind": "vaultpkisecret",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultpkisecret_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultpkisecret"
+      },
+      {
+        "kind": "vaultstaticsecret",
+        "version": "v1beta1",
+        "file": "secrets.hashicorp.com/vaultstaticsecret_v1beta1.json",
+        "slug": "secrets.hashicorp.com/v1beta1/vaultstaticsecret"
+      }
+    ],
     "secrets.infisical.com": [
       {
         "kind": "clustergenerator",
