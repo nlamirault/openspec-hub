@@ -14,28 +14,6 @@ Schemas are served directly from GitHub:
 https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/{api-group}/{kind}_{version}.json
 ```
 
-## Quick start
-
-Add a comment to any YAML file to enable validation:
-
-```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-```
-
-Or configure VSCode globally in `settings.json`:
-
-```json
-{
-  "yaml.schemas": {
-    "https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/argoproj.io/application_v1alpha1.json": [
-      "*/applications/*.yaml"
-    ]
-  }
-}
-```
-
 ## Documentation
 
 Documentation follows the [Diátaxis](https://diataxis.fr/) framework — see [`docs/`](docs/) for the full index.
@@ -44,7 +22,7 @@ Documentation follows the [Diátaxis](https://diataxis.fr/) framework — see [`
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Tutorials**     | [Your first schema validation](docs/tutorials/getting-started.md)                                                                                                                                                        |
 | **How-to guides** | [Configure VSCode](docs/how-to/howto-vscode.md) · [yaml-language-server](docs/how-to/howto-yaml-language-server.md) · [Validate with CLI](docs/how-to/howto-validate.md) · [Add a new CRD](docs/how-to/howto-add-crd.md) |
-| **Reference**     | [Supported schemas](docs/reference/schemas.md) · [CRD script format](docs/reference/crd-scripts.md) ·                  |
+| **Reference**     | [Supported schemas](docs/reference/schemas.md) · [CRD script format](docs/reference/crd-scripts.md) ·                                                                                                                    |
 | **Explanation**   | [Architecture](docs/explanation/architecture.md) · [Schema extraction](docs/explanation/schema-extraction.md)                                                                                                            |
 
 ## Supported applications
