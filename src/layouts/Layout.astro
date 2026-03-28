@@ -8,6 +8,7 @@ interface Props {
 
 const { title, description = 'The central directory for Kubernetes Custom Resource Definitions across the cloud-native ecosystem.' } = Astro.props;
 import catalog from '../../public/data/catalog.json';
+import { version } from '../../package.json';
 
 const groups = Object.entries(catalog.groups);
 const currentPath = Astro.url.pathname;
@@ -50,7 +51,10 @@ const currentPath = Astro.url.pathname;
 				<div class="flex items-center justify-between mb-4">
 					<a href="/" class="flex items-center gap-2 group">
 						<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-lg group-hover:scale-110 transition-transform">OS</div>
-						<span class="text-xl font-black text-gray-900 dark:text-white tracking-tighter">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
+						<div class="flex flex-col">
+							<span class="text-xl font-black text-gray-900 dark:text-white tracking-tighter leading-tight">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
+							<span class="text-[9px] font-mono text-gray-400 dark:text-slate-500 leading-none">v{version}</span>
+						</div>
 					</a>
 					<button id="theme-toggle" title="Toggle dark mode" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 dark:text-slate-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
 						<svg id="icon-sun" class="w-4 h-4 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -179,6 +183,7 @@ const currentPath = Astro.url.pathname;
 					<p class="text-[10px] font-bold text-gray-300 dark:text-slate-600 uppercase tracking-widest">
 						© {new Date().getFullYear()} OpenSpec HUB. Built with Astro & React.
 					</p>
+					<span class="text-[10px] font-mono text-gray-300 dark:text-slate-600">v{version}</span>
 					<div class="flex items-center gap-2 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
 						<span class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Powered by</span>
 						<svg width="60" height="15" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-900 dark:text-white"><path d="M110.8 17.5H127.5L159.2 82.5H142.5L135.8 69.2H102.5L95.8 82.5H79.2L110.8 17.5ZM107.5 55.8H130.8L119.2 32.5L107.5 55.8Z" fill="currentColor"/><path d="M194.2 17.5V30.8C189.2 29.2 182.5 28.3 175.8 28.3C165.8 28.3 162.5 32.5 162.5 37.5V42.5C162.5 47.5 165.8 51.7 175.8 51.7C182.5 51.7 189.2 50.8 194.2 49.2V62.5C189.2 64.2 182.5 65 175.8 65C155.8 65 145.8 55.8 145.8 42.5V37.5C145.8 24.2 155.8 15 175.8 15C182.5 15 189.2 15.8 194.2 17.5Z" fill="currentColor"/><path d="M225.8 30V82.5H212.5V30H199.2V17.5H239.2V30H225.8Z" fill="currentColor"/><path d="M265.8 17.5V32.5C270.8 24.2 277.5 15.8 290.8 15.8C295.8 15.8 300.8 16.7 305.8 18.3V33.3C300.8 31.7 295.8 30.8 290.8 30.8C280.8 30.8 269.2 35.8 269.2 52.5V82.5H255.8V17.5H265.8Z" fill="currentColor"/><path d="M352.5 15C372.5 15 382.5 24.2 382.5 37.5V42.5C382.5 55.8 372.5 65 352.5 65C332.5 65 322.5 55.8 322.5 42.5V37.5C322.5 24.2 332.5 15 352.5 15ZM352.5 51.7C362.5 51.7 365.8 47.5 365.8 42.5V37.5C365.8 32.5 362.5 28.3 352.5 28.3C342.5 28.3 339.2 32.5 339.2 37.5V42.5C339.2 47.5 342.5 51.7 352.5 51.7Z" fill="currentColor"/></svg>
