@@ -3,19 +3,21 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'The central directory for Kubernetes Custom Resource Definitions across the cloud-native ecosystem.' } = Astro.props;
 import catalog from '../../public/data/catalog.json';
 
 const groups = Object.entries(catalog.groups);
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="CRD Schema Store Explorer" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,124 +25,295 @@ const groups = Object.entries(catalog.groups);
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | OpenSpec HUB</title>
+		<!-- Open Graph -->
+		<meta property="og:title" content={`${title} | OpenSpec HUB`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="OpenSpec HUB" />
+		<meta property="og:image" content="/og.svg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={`${title} | OpenSpec HUB`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/og.svg" />
+		<!-- Dark mode: apply before paint to avoid flash -->
+		<script is:inline>
+			const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			document.documentElement.classList.toggle('dark', t === 'dark');
+		</script>
 	</head>
-	<body class="bg-gray-50 flex h-screen overflow-hidden text-gray-900 font-sans">
-		<aside class="w-80 bg-white border-r border-gray-200 flex flex-col shrink-0">
-			<div class="p-4 border-b border-gray-200">
-				<a href="/" class="flex items-center gap-2 mb-4 group">
-					<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-lg group-hover:scale-110 transition-transform">OS</div>
-					<span class="text-xl font-black text-gray-900 tracking-tighter">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
-				</a>
+	<body class="bg-gray-50 dark:bg-slate-950 flex h-screen overflow-hidden text-gray-900 dark:text-slate-100 font-sans">
+		<!-- Mobile overlay -->
+		<div id="sidebar-overlay" class="fixed inset-0 z-20 bg-black/40 hidden sm:hidden" aria-hidden="true"></div>
+
+		<aside id="sidebar" style="width:320px" class="fixed inset-y-0 left-0 z-30 sm:relative sm:inset-auto sm:z-auto -translate-x-full sm:translate-x-0 transition-transform duration-200 sm:transition-none bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 flex flex-col shrink-0">
+			<div class="sticky top-0 z-10 bg-white dark:bg-slate-900 p-4 border-b border-gray-200 dark:border-slate-700">
+				<div class="flex items-center justify-between mb-4">
+					<a href="/" class="flex items-center gap-2 group">
+						<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-lg group-hover:scale-110 transition-transform">OS</div>
+						<span class="text-xl font-black text-gray-900 dark:text-white tracking-tighter">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
+					</a>
+					<button id="theme-toggle" title="Toggle dark mode" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 dark:text-slate-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+						<svg id="icon-sun" class="w-4 h-4 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+							<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+						</svg>
+						<svg id="icon-moon" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+						</svg>
+					</button>
+				</div>
 				<div class="relative">
 					<input
 						type="text"
 						id="search-sidebar"
-						placeholder="Search resources..."
-						class="w-full pl-3 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+						placeholder="Search resources… (/)"
+						class="w-full pl-3 pr-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500"
 					/>
 				</div>
 			</div>
-			<nav class="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin scrollbar-thumb-gray-200">
-				{groups.map(([group, resources]) => (
-					<div class="api-group" data-group={group}>
-						<h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 border-b border-gray-100 pb-1">{group}</h3>
-						<ul class="space-y-0.5">
-							{resources.map(res => (
-								<li class="resource-item" data-kind={res.kind}>
-									<a
-										href={`/schemas/${res.slug}`}
-										class="flex justify-between items-center px-2 py-1.5 text-xs hover:bg-blue-50 hover:text-blue-700 rounded transition-all text-gray-600 group"
-									>
-										<span class="truncate font-medium">{res.kind}</span>
-										<span class="text-[9px] px-1 bg-gray-100 text-gray-400 rounded group-hover:bg-blue-100 group-hover:text-blue-500">{res.version}</span>
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				))}
+			<nav class="flex-1 overflow-y-auto p-4 space-y-1 scrollbar-thin">
+				{groups.map(([group, resources]) => {
+					const isActiveGroup = resources.some(r => currentPath === `/schemas/${r.slug}`);
+					return (
+						<details class="api-group" data-group={group} open={isActiveGroup || undefined}>
+							<summary class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest border-b border-gray-100 dark:border-slate-800 pb-1 pt-3 cursor-pointer list-none flex justify-between items-center hover:text-blue-500 dark:hover:text-blue-400 transition-colors select-none">
+								<span class="truncate">{group}</span>
+								<span class="flex items-center gap-1 shrink-0 ml-1">
+									<span class="text-[9px] px-1.5 bg-gray-100 dark:bg-slate-800 text-gray-400 dark:text-slate-500 rounded font-normal normal-case tracking-normal">{resources.length}</span>
+									<span class="text-gray-300 dark:text-slate-600 text-[8px]">▾</span>
+								</span>
+							</summary>
+							<ul class="space-y-0.5 mt-1.5 mb-2">
+								{resources.map(res => {
+									const isActive = currentPath === `/schemas/${res.slug}`;
+									return (
+										<li class="resource-item" data-kind={res.kind}>
+											<a
+												href={`/schemas/${res.slug}`}
+												aria-current={isActive ? 'page' : undefined}
+												class={`flex justify-between items-center px-2 py-1.5 text-xs rounded transition-all group ${
+													isActive
+														? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-semibold'
+														: 'hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 text-gray-600 dark:text-slate-400'
+												}`}
+											>
+												<span class="truncate font-medium">{res.kind}</span>
+												<span class={`text-[9px] px-1 rounded shrink-0 ml-1 ${
+													isActive
+														? 'bg-blue-100 dark:bg-blue-800/50 text-blue-500 dark:text-blue-300'
+														: 'bg-gray-100 dark:bg-slate-800 text-gray-400 dark:text-slate-500 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 group-hover:text-blue-500 dark:group-hover:text-blue-300'
+												}`}>{res.version}</span>
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</details>
+					);
+				})}
 			</nav>
+			<!-- Resize handle (desktop only) -->
+			<div id="resize-handle" class="absolute top-0 right-0 w-1.5 h-full cursor-col-resize opacity-0 hover:opacity-100 bg-blue-500/40 transition-opacity hidden sm:block"></div>
 		</aside>
-		<main class="flex-1 overflow-y-auto bg-white flex flex-col">
+
+		<main class="flex-1 overflow-y-auto bg-white dark:bg-slate-950 flex flex-col min-w-0">
+			<!-- Mobile top bar -->
+			<div class="sm:hidden sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700 px-4 py-3 flex items-center gap-3">
+				<button id="sidebar-toggle" class="p-1.5 rounded-md text-gray-500 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+					</svg>
+				</button>
+				<a href="/" class="flex items-center gap-2">
+					<div class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white font-black text-[9px]">OS</div>
+					<span class="text-sm font-black text-gray-900 dark:text-white tracking-tighter">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
+				</a>
+			</div>
+
 			<div class="flex-1">
 				<slot />
 			</div>
 
-			<footer class="bg-white border-t border-gray-100 py-12 px-6 mt-auto">
+			<footer class="bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 py-12 px-6 mt-auto">
 				<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
 					<div class="max-w-xs">
 						<div class="flex items-center gap-2 mb-4">
 							<div class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white font-black text-[10px]">OS</div>
-							<span class="text-sm font-black text-gray-900 tracking-tight">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
+							<span class="text-sm font-black text-gray-900 dark:text-white tracking-tight">OpenSpec <span class="text-blue-600 italic font-medium tracking-normal">HUB</span></span>
 						</div>
-						<p class="text-xs text-gray-400 leading-relaxed mb-6">
+						<p class="text-xs text-gray-400 dark:text-slate-500 leading-relaxed mb-6">
 							Standardizing the world of Kubernetes resources. A community-driven initiative to provide accessible, searchable CRD documentation.
 						</p>
-						<div class="flex gap-4">
-							<a href="https://github.com/nlamirault/openspec-hub" class="text-gray-400 hover:text-gray-900 transition-colors">
+						<div class="flex gap-4 items-center">
+							<a href="https://github.com/nlamirault/openspec-hub" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
 								<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
 							</a>
+							<span id="gh-stars" class="text-[11px] font-bold text-gray-400 dark:text-slate-500 tabular-nums"></span>
 						</div>
 					</div>
 
 					<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
 						<div>
-							<h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Resources</h4>
+							<h4 class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-4">Resources</h4>
 							<ul class="space-y-2">
-								<li><a href="/" class="text-xs text-gray-500 hover:text-blue-600 transition-colors">Catalog</a></li>
-								<li><a href="https://github.com/nlamirault/openspec-hub/tree/main/schemas" class="text-xs text-gray-500 hover:text-blue-600 transition-colors">Raw Schemas</a></li>
+								<li><a href="/" class="text-xs text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Catalog</a></li>
+								<li><a href="https://github.com/nlamirault/openspec-hub/tree/main/schemas" class="text-xs text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Raw Schemas</a></li>
 							</ul>
 						</div>
 						<div>
-							<h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Community</h4>
+							<h4 class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-4">Community</h4>
 							<ul class="space-y-2">
-								<li><a href="https://github.com/nlamirault/openspec-hub/issues" class="text-xs text-gray-500 hover:text-blue-600 transition-colors">Issues</a></li>
-								<li><a href="https://github.com/nlamirault/openspec-hub/pulls" class="text-xs text-gray-500 hover:text-blue-600 transition-colors">Contribute</a></li>
+								<li><a href="https://github.com/nlamirault/openspec-hub/issues" class="text-xs text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Issues</a></li>
+								<li><a href="https://github.com/nlamirault/openspec-hub/pulls" class="text-xs text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contribute</a></li>
 							</ul>
 						</div>
 						<div>
-							<h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Legal</h4>
+							<h4 class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-4">Legal</h4>
 							<ul class="space-y-2">
-								<li><span class="text-xs text-gray-500">License: Apache 2.0</span></li>
+								<li><span class="text-xs text-gray-500 dark:text-slate-400">License: Apache 2.0</span></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 
-				<div class="max-w-6xl mx-auto border-t border-gray-50 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-					<p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
+				<div class="max-w-6xl mx-auto border-t border-gray-50 dark:border-slate-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+					<p class="text-[10px] font-bold text-gray-300 dark:text-slate-600 uppercase tracking-widest">
 						© {new Date().getFullYear()} OpenSpec HUB. Built with Astro & React.
 					</p>
 					<div class="flex items-center gap-2 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
-						<span class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Powered by</span>
-						<svg width="60" height="15" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-900"><path d="M110.8 17.5H127.5L159.2 82.5H142.5L135.8 69.2H102.5L95.8 82.5H79.2L110.8 17.5ZM107.5 55.8H130.8L119.2 32.5L107.5 55.8Z" fill="currentColor"/><path d="M194.2 17.5V30.8C189.2 29.2 182.5 28.3 175.8 28.3C165.8 28.3 162.5 32.5 162.5 37.5V42.5C162.5 47.5 165.8 51.7 175.8 51.7C182.5 51.7 189.2 50.8 194.2 49.2V62.5C189.2 64.2 182.5 65 175.8 65C155.8 65 145.8 55.8 145.8 42.5V37.5C145.8 24.2 155.8 15 175.8 15C182.5 15 189.2 15.8 194.2 17.5Z" fill="currentColor"/><path d="M225.8 30V82.5H212.5V30H199.2V17.5H239.2V30H225.8Z" fill="currentColor"/><path d="M265.8 17.5V32.5C270.8 24.2 277.5 15.8 290.8 15.8C295.8 15.8 300.8 16.7 305.8 18.3V33.3C300.8 31.7 295.8 30.8 290.8 30.8C280.8 30.8 269.2 35.8 269.2 52.5V82.5H255.8V17.5H265.8Z" fill="currentColor"/><path d="M352.5 15C372.5 15 382.5 24.2 382.5 37.5V42.5C382.5 55.8 372.5 65 352.5 65C332.5 65 322.5 55.8 322.5 42.5V37.5C322.5 24.2 332.5 15 352.5 15ZM352.5 51.7C362.5 51.7 365.8 47.5 365.8 42.5V37.5C365.8 32.5 362.5 28.3 352.5 28.3C342.5 28.3 339.2 32.5 339.2 37.5V42.5C339.2 47.5 342.5 51.7 352.5 51.7Z" fill="currentColor"/></svg>
+						<span class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Powered by</span>
+						<svg width="60" height="15" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-900 dark:text-white"><path d="M110.8 17.5H127.5L159.2 82.5H142.5L135.8 69.2H102.5L95.8 82.5H79.2L110.8 17.5ZM107.5 55.8H130.8L119.2 32.5L107.5 55.8Z" fill="currentColor"/><path d="M194.2 17.5V30.8C189.2 29.2 182.5 28.3 175.8 28.3C165.8 28.3 162.5 32.5 162.5 37.5V42.5C162.5 47.5 165.8 51.7 175.8 51.7C182.5 51.7 189.2 50.8 194.2 49.2V62.5C189.2 64.2 182.5 65 175.8 65C155.8 65 145.8 55.8 145.8 42.5V37.5C145.8 24.2 155.8 15 175.8 15C182.5 15 189.2 15.8 194.2 17.5Z" fill="currentColor"/><path d="M225.8 30V82.5H212.5V30H199.2V17.5H239.2V30H225.8Z" fill="currentColor"/><path d="M265.8 17.5V32.5C270.8 24.2 277.5 15.8 290.8 15.8C295.8 15.8 300.8 16.7 305.8 18.3V33.3C300.8 31.7 295.8 30.8 290.8 30.8C280.8 30.8 269.2 35.8 269.2 52.5V82.5H255.8V17.5H265.8Z" fill="currentColor"/><path d="M352.5 15C372.5 15 382.5 24.2 382.5 37.5V42.5C382.5 55.8 372.5 65 352.5 65C332.5 65 322.5 55.8 322.5 42.5V37.5C322.5 24.2 332.5 15 352.5 15ZM352.5 51.7C362.5 51.7 365.8 47.5 365.8 42.5V37.5C365.8 32.5 362.5 28.3 352.5 28.3C342.5 28.3 339.2 32.5 339.2 37.5V42.5C339.2 47.5 342.5 51.7 352.5 51.7Z" fill="currentColor"/></svg>
 					</div>
 				</div>
 			</footer>
 		</main>
 
 		<script>
-			// Basic sidebar search
-			const search = document.getElementById('search-sidebar') as HTMLInputElement;
-			const items = document.querySelectorAll('.resource-item');
-			const groups = document.querySelectorAll('.api-group');
+			// ── Dark mode ──
+			const toggle = document.getElementById('theme-toggle');
+			const iconSun = document.getElementById('icon-sun');
+			const iconMoon = document.getElementById('icon-moon');
 
-			search?.addEventListener('input', (e) => {
-				const query = (e.target as HTMLInputElement).value.toLowerCase();
+			function syncIcons() {
+				const dark = document.documentElement.classList.contains('dark');
+				iconSun?.classList.toggle('hidden', !dark);
+				iconMoon?.classList.toggle('hidden', dark);
+			}
+			syncIcons();
 
-				groups.forEach(group => {
+			toggle?.addEventListener('click', () => {
+				const isDark = document.documentElement.classList.toggle('dark');
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				syncIcons();
+			});
+
+			// ── Mobile sidebar ──
+			const sidebar = document.getElementById('sidebar') as HTMLElement;
+			const overlay = document.getElementById('sidebar-overlay');
+			const sidebarBtn = document.getElementById('sidebar-toggle');
+
+			function openSidebar() {
+				sidebar?.classList.remove('-translate-x-full');
+				overlay?.classList.remove('hidden');
+			}
+			function closeSidebar() {
+				sidebar?.classList.add('-translate-x-full');
+				overlay?.classList.add('hidden');
+			}
+
+			sidebarBtn?.addEventListener('click', openSidebar);
+			overlay?.addEventListener('click', closeSidebar);
+
+			// ── Resizable sidebar (desktop only) ──
+			const resizeHandle = document.getElementById('resize-handle');
+			let isResizing = false;
+
+			resizeHandle?.addEventListener('mousedown', () => {
+				isResizing = true;
+				document.body.style.cursor = 'col-resize';
+				document.body.style.userSelect = 'none';
+			});
+
+			document.addEventListener('mousemove', (e) => {
+				if (!isResizing || !sidebar) return;
+				const newWidth = Math.max(220, Math.min(520, e.clientX));
+				sidebar.style.width = `${newWidth}px`;
+			});
+
+			document.addEventListener('mouseup', () => {
+				if (isResizing && sidebar) {
+					localStorage.setItem('sidebar-width', sidebar.style.width);
+				}
+				isResizing = false;
+				document.body.style.cursor = '';
+				document.body.style.userSelect = '';
+			});
+
+			// Restore saved width on desktop
+			if (window.innerWidth >= 640) {
+				const savedWidth = localStorage.getItem('sidebar-width');
+				if (savedWidth && sidebar) sidebar.style.width = savedWidth;
+			}
+
+			// ── GitHub stars ──
+			fetch('https://api.github.com/repos/nlamirault/openspec-hub')
+				.then(r => r.json())
+				.then(d => {
+					const el = document.getElementById('gh-stars');
+					if (el && d.stargazers_count != null) {
+						el.textContent = `★ ${d.stargazers_count.toLocaleString()}`;
+					}
+				})
+				.catch(() => {});
+
+			// ── Keyboard shortcuts ──
+			document.addEventListener('keydown', (e) => {
+				if (e.key === '/' && (document.activeElement as HTMLElement)?.tagName !== 'INPUT') {
+					e.preventDefault();
+					(document.getElementById('search-sidebar') as HTMLInputElement)?.focus();
+				}
+				if (e.key === 'Escape') {
+					const input = document.getElementById('search-sidebar') as HTMLInputElement;
+					if (document.activeElement === input) input.blur();
+					closeSidebar();
+				}
+			});
+
+			// ── Sidebar search ──
+			const searchInput = document.getElementById('search-sidebar') as HTMLInputElement;
+			const allGroups = document.querySelectorAll<HTMLDetailsElement>('.api-group');
+			const activeLink = document.querySelector('[aria-current="page"]');
+			const activeGroup = activeLink?.closest<HTMLDetailsElement>('.api-group');
+
+			activeLink?.scrollIntoView({ block: 'nearest' });
+
+			searchInput?.addEventListener('input', (e) => {
+				const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+				if (!query) {
+					allGroups.forEach(group => {
+						(group as HTMLElement).style.display = '';
+						group.open = group === activeGroup;
+						group.querySelectorAll<HTMLElement>('.resource-item').forEach(item => {
+							item.style.display = '';
+						});
+					});
+					if (activeGroup) activeGroup.open = true;
+					return;
+				}
+
+				allGroups.forEach(group => {
 					const groupName = (group as HTMLElement).dataset.group?.toLowerCase() ?? '';
 					const groupMatches = groupName.includes(query);
-					let hasVisibleItems = false;
-					const groupItems = group.querySelectorAll('.resource-item');
+					let hasVisible = false;
 
-					groupItems.forEach(item => {
-						const isVisible = groupMatches || item.textContent?.toLowerCase().includes(query);
-						(item as HTMLElement).style.display = isVisible ? 'block' : 'none';
-						if (isVisible) hasVisibleItems = true;
+					group.querySelectorAll<HTMLElement>('.resource-item').forEach(item => {
+						const visible = groupMatches || (item.textContent?.toLowerCase().includes(query) ?? false);
+						item.style.display = visible ? '' : 'none';
+						if (visible) hasVisible = true;
 					});
 
-					(group as HTMLElement).style.display = hasVisibleItems ? 'block' : 'none';
+					(group as HTMLElement).style.display = hasVisible ? '' : 'none';
+					if (hasVisible) group.open = true;
 				});
 			});
 		</script>

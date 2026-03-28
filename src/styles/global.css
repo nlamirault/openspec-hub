@@ -1,4 +1,25 @@
 @import "tailwindcss";
 
+/* Class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 :root { font-family: 'Inter', sans-serif; }
 code { font-family: 'Fira Code', monospace; }
+
+/* Hero dot pattern */
+.hero-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgb(209 213 219 / 0.6) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.dark .hero-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgb(30 41 59 / 1) 1px, transparent 0);
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+.dark .scrollbar-thin {
+  scrollbar-color: #334155 transparent;
+}

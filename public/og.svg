@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="25%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#1e293b"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)" opacity="0.7"/>
+  <!-- Logo badge -->
+  <rect x="80" y="72" width="64" height="64" rx="14" fill="#2563eb"/>
+  <text x="112" y="116" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="900" fill="white">OS</text>
+  <!-- Title -->
+  <text x="80" y="290" font-family="Inter,system-ui,sans-serif" font-size="86" font-weight="900" fill="white" letter-spacing="-3">OpenSpec</text>
+  <text x="80" y="385" font-family="Inter,system-ui,sans-serif" font-size="86" font-weight="400" font-style="italic" fill="#3b82f6" letter-spacing="-2">HUB</text>
+  <!-- Subtitle -->
+  <text x="80" y="455" font-family="Inter,system-ui,sans-serif" font-size="28" fill="#94a3b8">The central directory for Kubernetes CRD schemas</text>
+  <!-- Tag line -->
+  <text x="80" y="510" font-family="Inter,system-ui,sans-serif" font-size="20" fill="#3b82f6" font-weight="600">cloud-native ecosystem · open source registry</text>
+  <!-- URL -->
+  <text x="1120" y="590" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="18" fill="#475569">github.com/nlamirault/openspec-hub</text>
+</svg>
