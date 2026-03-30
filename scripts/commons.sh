@@ -7,6 +7,7 @@ color_reset="\\e[0m"
 color_blue="\\e[36m"
 color_green="\\e[32m"
 color_yellow="\\e[33m"
+# shellcheck disable=SC2034
 color_gray="\\e[90m"
 color_red="\\e[31m"
 
@@ -30,10 +31,13 @@ function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${c
 function generate_output_filename {
   local crd_file=$1
 
-  local group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
+  local group
+  group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
   [[ -z "$group" || "${group}" == "null" ]] && return
-  local kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null)
-  local version=$(yq e '.spec.versions[0].name' "${crd_file}" 2>/dev/null)
+  local kind
+  kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null)
+  local version
+  version=$(yq e '.spec.versions[0].name' "${crd_file}" 2>/dev/null)
   [[ -n "$kind" && -n "${version}" ]] && echo "${group}/${kind}_${version}.json" | tr '[:upper:]' '[:lower:]'
 }
 
@@ -74,7 +78,7 @@ function download_crd_bundle {
   if ! curl --silent --retry-all-errors --fail --location "${url}" >"${crd_dir}/${bundle_file}"; then
     log_error "Failed to download ${url}"
   else
-    [ -f "${crd_dir}/${bundle_file}}" ] && log_error "Bundle file not exists" && exit 1
+    [ ! -f "${crd_dir}/${bundle_file}" ] && log_error "Bundle file not exists" && exit 1
     kubectl slice -q -f "${crd_dir}/${bundle_file}" -t "{{.metadata.name}}.yaml" -o "${crd_dir}"
     rm "${crd_dir}/${bundle_file}"
   fi
@@ -87,7 +91,7 @@ function download_crd_kustomize {
   local bundle_file="bundle.yaml"
   log_debug "[url] Kustomize: ${url}"
   kustomize build "${url}" >"${crd_dir}/${bundle_file}"
-  [ -f "${crd_dir}/${bundle_file}}" ] && log_error "Bundle file not exists" && exit 1
+  [ ! -f "${crd_dir}/${bundle_file}" ] && log_error "Bundle file not exists" && exit 1
   log_info "[kustomize] ${crd_dir}/${bundle_file}"
   kubectl slice -q -f "${crd_dir}/${bundle_file}" -t "{{.metadata.name}}.yaml" -o "${crd_dir}"
   rm "${crd_dir}/${bundle_file}"
@@ -106,7 +110,12 @@ function manage_crd {
   local jsonschema_dir=$2
 
   log_debug "[kubernetes] CRD file: ${crd_file}"
-  yq e '.kind == "CustomResourceDefinition"' "${crd_file}" &>/dev/null
+  local kind
+  kind=$(yq e '.kind' "${crd_file}" 2>/dev/null)
+  if [[ "${kind}" != "CustomResourceDefinition" ]]; then
+    log_error "[kubernetes] Not a CRD (kind=${kind}): ${crd_file}"
+    return 1
+  fi
   generate_json_schema "${crd_file}" "${jsonschema_dir}"
 }
 
