@@ -7,6 +7,7 @@ color_reset="\\e[0m"
 color_blue="\\e[36m"
 color_green="\\e[32m"
 color_yellow="\\e[33m"
+# shellcheck disable=SC2034
 color_gray="\\e[90m"
 color_red="\\e[31m"
 
@@ -30,10 +31,13 @@ function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${c
 function generate_output_filename {
   local crd_file=$1
 
-  local group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
+  local group
+  group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
   [[ -z "$group" || "${group}" == "null" ]] && return
-  local kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null)
-  local version=$(yq e '.spec.versions[0].name' "${crd_file}" 2>/dev/null)
+  local kind
+  kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null)
+  local version
+  version=$(yq e '.spec.versions[0].name' "${crd_file}" 2>/dev/null)
   [[ -n "$kind" && -n "${version}" ]] && echo "${group}/${kind}_${version}.json" | tr '[:upper:]' '[:lower:]'
 }
 
