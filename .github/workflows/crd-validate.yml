@@ -1,0 +1,102 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+---
+
+name: CRD / Validate
+
+on:
+  pull_request:
+    paths:
+    - 'crds/**'
+    - 'scripts/**'
+
+permissions:
+  contents: read
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+    - name: Monitor GitHub Actions permissions
+      uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      with:
+        config: ${{ vars.PERMISSIONS_CONFIG }}
+
+    - name: ShellCheck scripts
+      uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
+      with:
+        scandir: './scripts'
+
+    - name: ShellCheck CRD scripts
+      uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
+      with:
+        scandir: './crds'
+
+  validate:
+    name: Build and validate changed CRDs
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+    - name: Monitor GitHub Actions permissions
+      uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      with:
+        config: ${{ vars.PERMISSIONS_CONFIG }}
+
+    - name: Install yq
+      uses: mikefarah/yq@f584accd75ddc57e819f6c99c6c9b2a25d7d0f1d # v4.45.4
+
+    - name: Install kustomize
+      uses: imranismail/setup-kustomize@2ba527d4d055ab63514ba50a99456fc35351a881 # v2.1.0
+
+    - name: Install kubectl
+      uses: azure/setup-kubectl@3e0aec4d80787158d308d7b364cb1381784a5774 # v4.0.1
+
+    - name: Install kubectl-slice
+      run: |
+        go install github.com/patrickdappollonio/kubectl-slice@latest
+        echo "${HOME}/go/bin" >> "${GITHUB_PATH}"
+
+    - name: Detect changed CRD scripts
+      id: changed
+      uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46.0.5
+      with:
+        files: 'crds/*.sh'
+
+    - name: Build changed CRDs
+      if: steps.changed.outputs.any_changed == 'true'
+      env:
+        CHANGED_FILES: ${{ steps.changed.outputs.all_changed_files }}
+      run: |
+        for crd_script in ${CHANGED_FILES}; do
+          echo "::group::Building ${crd_script}"
+          make build CRD="${crd_script}"
+          echo "::endgroup::"
+        done
+
+    - name: Validate generated schemas are valid JSON
+      if: steps.changed.outputs.any_changed == 'true'
+      run: |
+        echo "Validating JSON schemas..."
+        failed=0
+        while IFS= read -r schema_file; do
+          if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "${schema_file}" 2>/dev/null; then
+            echo "::error file=${schema_file}::Invalid JSON in schema file"
+            failed=$((failed + 1))
+          fi
+        done < <(find schemas/ -name '*.json')
+        if [[ "${failed}" -gt 0 ]]; then
+          echo "::error::${failed} schema file(s) contain invalid JSON"
+          exit 1
+        fi
+        echo "All schemas are valid JSON."
+
+    - name: No CRD scripts changed
+      if: steps.changed.outputs.any_changed == 'false'
+      run: echo "No CRD scripts changed — skipping build."
