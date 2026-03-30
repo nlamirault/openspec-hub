@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.9.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v0.8.0...openspec-hub-v0.9.0) (2026-03-28)
+## [1.0.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v0.8.0...openspec-hub-v1.0.0) (2026-03-28)
 
 
 ### 🚀 Features
