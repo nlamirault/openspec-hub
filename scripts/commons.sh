@@ -74,7 +74,7 @@ function download_crd_bundle {
   if ! curl --silent --retry-all-errors --fail --location "${url}" >"${crd_dir}/${bundle_file}"; then
     log_error "Failed to download ${url}"
   else
-    [ -f "${crd_dir}/${bundle_file}}" ] && log_error "Bundle file not exists" && exit 1
+    [ ! -f "${crd_dir}/${bundle_file}" ] && log_error "Bundle file not exists" && exit 1
     kubectl slice -q -f "${crd_dir}/${bundle_file}" -t "{{.metadata.name}}.yaml" -o "${crd_dir}"
     rm "${crd_dir}/${bundle_file}"
   fi
@@ -87,7 +87,7 @@ function download_crd_kustomize {
   local bundle_file="bundle.yaml"
   log_debug "[url] Kustomize: ${url}"
   kustomize build "${url}" >"${crd_dir}/${bundle_file}"
-  [ -f "${crd_dir}/${bundle_file}}" ] && log_error "Bundle file not exists" && exit 1
+  [ ! -f "${crd_dir}/${bundle_file}" ] && log_error "Bundle file not exists" && exit 1
   log_info "[kustomize] ${crd_dir}/${bundle_file}"
   kubectl slice -q -f "${crd_dir}/${bundle_file}" -t "{{.metadata.name}}.yaml" -o "${crd_dir}"
   rm "${crd_dir}/${bundle_file}"
@@ -106,7 +106,12 @@ function manage_crd {
   local jsonschema_dir=$2
 
   log_debug "[kubernetes] CRD file: ${crd_file}"
-  yq e '.kind == "CustomResourceDefinition"' "${crd_file}" &>/dev/null
+  local kind
+  kind=$(yq e '.kind' "${crd_file}" 2>/dev/null)
+  if [[ "${kind}" != "CustomResourceDefinition" ]]; then
+    log_error "[kubernetes] Not a CRD (kind=${kind}): ${crd_file}"
+    return 1
+  fi
   generate_json_schema "${crd_file}" "${jsonschema_dir}"
 }
 
