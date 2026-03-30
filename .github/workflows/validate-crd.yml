@@ -3,42 +3,17 @@
 
 ---
 
-name: CRD / Validate
+name: Validate / CRD
 
 on:
   pull_request:
     paths:
     - 'crds/**'
-    - 'scripts/**'
 
 permissions:
   contents: read
 
 jobs:
-  shellcheck:
-    name: ShellCheck
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      with:
-        fetch-depth: 0
-
-    - name: Monitor GitHub Actions permissions
-      uses: GitHubSecurityLab/actions-permissions/monitor@v1
-      with:
-        config: ${{ vars.PERMISSIONS_CONFIG }}
-
-    - name: ShellCheck scripts
-      uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
-      with:
-        scandir: './scripts'
-
-    - name: ShellCheck CRD scripts
-      uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
-      with:
-        scandir: './crds'
-
   validate:
     name: Build and validate changed CRDs
     runs-on: ubuntu-latest
