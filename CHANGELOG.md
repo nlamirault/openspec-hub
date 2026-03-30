@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v0.8.0...openspec-hub-v1.0.0) (2026-03-28)
+
+
+### 🚀 Features
+
+* **crd:** add 1Password Operator CRDs support ([#207](https://github.com/nlamirault/openspec-hub/issues/207)) ([39dd2df](https://github.com/nlamirault/openspec-hub/commit/39dd2df901854cb1efa9f30ae229cb2ea6012c2a)), closes [#189](https://github.com/nlamirault/openspec-hub/issues/189)
+* **crd:** add Cluster API CRDs support ([#201](https://github.com/nlamirault/openspec-hub/issues/201)) ([a4a03cf](https://github.com/nlamirault/openspec-hub/commit/a4a03cf5b7ddd9c63130d2fb4438c0a53dafc510)), closes [#186](https://github.com/nlamirault/openspec-hub/issues/186)
+* **crd:** add Doppler Operator CRDs support ([#208](https://github.com/nlamirault/openspec-hub/issues/208)) ([fc03d29](https://github.com/nlamirault/openspec-hub/commit/fc03d2991e902d1e0699b7d183020227bc8a01da)), closes [#190](https://github.com/nlamirault/openspec-hub/issues/190)
+* **crd:** add Gateway API experimental channel CRDs support ([#213](https://github.com/nlamirault/openspec-hub/issues/213)) ([bdf8ae2](https://github.com/nlamirault/openspec-hub/commit/bdf8ae2773c06314b489e56e765744061c0c8613)), closes [#195](https://github.com/nlamirault/openspec-hub/issues/195)
+* **crd:** add Infisical Operator CRDs support ([#192](https://github.com/nlamirault/openspec-hub/issues/192)) ([#209](https://github.com/nlamirault/openspec-hub/issues/209)) ([df896c7](https://github.com/nlamirault/openspec-hub/commit/df896c79a207dcdf17f3733e3395b6b0be4289a5))
+* **crd:** add missing ACK CRDs support ([#203](https://github.com/nlamirault/openspec-hub/issues/203)) ([841d1ed](https://github.com/nlamirault/openspec-hub/commit/841d1ed42c7d267115b073547618f8f1d3220fa2)), closes [#187](https://github.com/nlamirault/openspec-hub/issues/187)
+* **crd:** add Secrets Store CSI Driver CRDs support ([#212](https://github.com/nlamirault/openspec-hub/issues/212)) ([04d7a9e](https://github.com/nlamirault/openspec-hub/commit/04d7a9e45c9c0e96f933cbc1f7751c698b248313)), closes [#194](https://github.com/nlamirault/openspec-hub/issues/194)
+* **crd:** add Sigstore Policy Controller CRDs support ([#211](https://github.com/nlamirault/openspec-hub/issues/211)) ([ef1d388](https://github.com/nlamirault/openspec-hub/commit/ef1d38871212e97606446121af6c824620a90f34)), closes [#193](https://github.com/nlamirault/openspec-hub/issues/193)
+* **crd:** add Vault Secrets Operator CRDs support ([#210](https://github.com/nlamirault/openspec-hub/issues/210)) ([d28b18a](https://github.com/nlamirault/openspec-hub/commit/d28b18a32b256c0306a93580e117b91064fe993f)), closes [#191](https://github.com/nlamirault/openspec-hub/issues/191)
+* **ui:** display project version in sidebar and footer ([#214](https://github.com/nlamirault/openspec-hub/issues/214)) ([28325cb](https://github.com/nlamirault/openspec-hub/commit/28325cb16c9c87c0f0d89ece44dfa733242a494e))
+* **ui:** improve website UI, dark mode, and mobile layout ([#206](https://github.com/nlamirault/openspec-hub/issues/206)) ([7f06ace](https://github.com/nlamirault/openspec-hub/commit/7f06aceef744f1795989933d2e785a4b71250c54))
+
+
+### 📚 Documentation
+
+* add Diátaxis documentation structure ([#205](https://github.com/nlamirault/openspec-hub/issues/205)) ([e57eaca](https://github.com/nlamirault/openspec-hub/commit/e57eaca606b81332b58eb90a42baef660c042cc8))
+
 ## [0.8.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v0.7.0...openspec-hub-v0.8.0) (2026-03-27)
 
 
