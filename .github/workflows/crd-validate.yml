@@ -20,7 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
-      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      with:
+        fetch-depth: 0
 
     - name: Monitor GitHub Actions permissions
       uses: GitHubSecurityLab/actions-permissions/monitor@v1
@@ -42,7 +44,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
-      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      with:
+        fetch-depth: 0
 
     - name: Monitor GitHub Actions permissions
       uses: GitHubSecurityLab/actions-permissions/monitor@v1
@@ -50,13 +54,13 @@ jobs:
         config: ${{ vars.PERMISSIONS_CONFIG }}
 
     - name: Install yq
-      uses: mikefarah/yq@f584accd75ddc57e819f6c99c6c9b2a25d7d0f1d # v4.45.4
+      uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
 
     - name: Install kustomize
-      uses: imranismail/setup-kustomize@2ba527d4d055ab63514ba50a99456fc35351a881 # v2.1.0
+      uses: imranismail/setup-kustomize@53f941b41dca13ed61874bbc6b4b6e1562877530 # v3.0.0
 
     - name: Install kubectl
-      uses: azure/setup-kubectl@3e0aec4d80787158d308d7b364cb1381784a5774 # v4.0.1
+      uses: azure/setup-kubectl@15650b3ad78fff148532a140b8a4c821796b2d7b # v5.0.0
 
     - name: Install kubectl-slice
       run: |
