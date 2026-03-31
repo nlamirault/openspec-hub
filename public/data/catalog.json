@@ -8774,6 +8774,14 @@
         "slug": "notificationhubs.azure.com/v1api20230901/notificationhubsauthorizationrule"
       }
     ],
+    "oci.oraclecloud.com": [
+      {
+        "kind": "ocinodeclass",
+        "version": "v1beta1",
+        "file": "oci.oraclecloud.com/ocinodeclass_v1beta1.json",
+        "slug": "oci.oraclecloud.com/v1beta1/ocinodeclass"
+      }
+    ],
     "onepassword.com": [
       {
         "kind": "onepassworditem",
