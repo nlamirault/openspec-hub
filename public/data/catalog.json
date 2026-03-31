@@ -7158,6 +7158,14 @@
         "slug": "karpenter.azure.com/v1alpha2/aksnodeclass"
       }
     ],
+    "karpenter.exoscale.com": [
+      {
+        "kind": "exoscalenodeclass",
+        "version": "v1",
+        "file": "karpenter.exoscale.com/exoscalenodeclass_v1.json",
+        "slug": "karpenter.exoscale.com/v1/exoscalenodeclass"
+      }
+    ],
     "karpenter.k8s.aws": [
       {
         "kind": "ec2nodeclass",
