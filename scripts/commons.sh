@@ -22,11 +22,11 @@ LOG_LEVEL_TRACE=4
 # Set default log level (can be overridden by env or arg)
 LOG_LEVEL="${LOG_LEVEL:=$LOG_LEVEL_INFO}"
 
-function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_reset}⚪ $*${color_reset}"; }
-function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${color_reset}"; }
-function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${color_reset}"; }
-function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟡 $*${color_reset}"; }
-function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${color_reset}"; }
+function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_reset}⚪ $*${color_reset}" || true; }
+function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${color_reset}" || true; }
+function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${color_reset}" || true; }
+function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟡 $*${color_reset}" || true; }
+function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${color_reset}" || true; }
 
 function generate_json_schema {
   local crd_file=$1
@@ -132,13 +132,13 @@ function manage_swagger_file {
         schema: {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "title": .key,
-          "description": .value.description,
+          "description": (if .value.description == null then empty else .value.description end),
           "type": "object",
-          "properties": .value.properties,
-          "required": .value.required
+          "properties": (if .value.properties == null then empty else .value.properties end),
+          "required": (if .value.required == null then empty else .value.required end)
         }
       }
-  ' swagger.json |
+  ' "${swagger_dir}/swagger.json" |
     while IFS= read -r line; do
 
       raw=$(echo "$line" | jq -r '.raw_name')

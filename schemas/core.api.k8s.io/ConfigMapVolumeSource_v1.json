@@ -25,6 +25,5 @@
       "description": "optional specify whether the ConfigMap or its keys must be defined",
       "type": "boolean"
     }
-  },
-  "required": null
+  }
 }

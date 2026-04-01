@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Information when was the last time the job successfully completed."
     }
-  },
-  "required": null
+  }
 }

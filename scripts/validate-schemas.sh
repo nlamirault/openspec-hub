@@ -33,11 +33,13 @@ failed_files=()
 
 while IFS= read -r schema_file; do
   total=$((total + 1))
-  log_debug "[schema] Validating: ${schema_file}"
+  filename=$(basename ${schema_file})
+  log_info "[schema] Validating: ${filename}"
   if ! jsonschema-cli validate --draft "${DRAFT}" "${schema_file}" 2>/dev/null; then
-    log_warn "[schema] Invalid: ${schema_file}"
+    log_warn "[schema] Invalid: ${filename} - File: ${schema_file}"
     failed_files+=("${schema_file}")
     failed=$((failed + 1))
+    # exit
   fi
 done < <(find "${SCHEMAS_DIR}" -name '*.json' -type f | sort)
 

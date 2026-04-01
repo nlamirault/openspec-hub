@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.batch.v1.JobStatus",
       "description": "Current status of a job. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

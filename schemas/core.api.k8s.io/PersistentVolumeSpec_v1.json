@@ -140,6 +140,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource",
       "description": "vsphereVolume represents a vSphere volume attached and mounted on kubelets host machine. Deprecated: VsphereVolume is deprecated. All operations for the in-tree vsphereVolume type are redirected to the csi.vsphere.vmware.com CSI driver."
     }
-  },
-  "required": null
+  }
 }

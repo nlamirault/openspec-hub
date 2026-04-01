@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.PersistentVolumeStatus",
       "description": "status represents the current information/status for the persistent volume. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistent-volumes"
     }
-  },
-  "required": null
+  }
 }

@@ -37,6 +37,5 @@
       "description": "Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

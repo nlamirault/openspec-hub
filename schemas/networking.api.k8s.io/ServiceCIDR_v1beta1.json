@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.networking.v1beta1.ServiceCIDRStatus",
       "description": "status represents the current state of the ServiceCIDR. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

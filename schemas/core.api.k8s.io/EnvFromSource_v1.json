@@ -16,6 +16,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.SecretEnvSource",
       "description": "The Secret to select from"
     }
-  },
-  "required": null
+  }
 }

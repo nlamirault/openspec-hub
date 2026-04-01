@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.NamespaceStatus",
       "description": "Status describes the current status of a Namespace. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

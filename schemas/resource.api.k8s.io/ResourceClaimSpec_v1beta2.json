@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.resource.v1beta2.DeviceClaim",
       "description": "Devices defines how to request devices."
     }
-  },
-  "required": null
+  }
 }

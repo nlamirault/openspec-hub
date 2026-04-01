@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.ClientIPConfig",
       "description": "clientIP contains the configurations of Client IP based session affinity."
     }
-  },
-  "required": null
+  }
 }

@@ -59,6 +59,5 @@
       "description": "phase represents the current phase of PersistentVolumeClaim.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.batch.v1.CronJobStatus",
       "description": "Current status of a cron job. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

@@ -199,6 +199,5 @@
       "x-kubernetes-patch-merge-key": "rule",
       "x-kubernetes-patch-strategy": "merge"
     }
-  },
-  "required": null
+  }
 }

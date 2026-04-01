@@ -24,6 +24,5 @@
       "type": "array",
       "x-kubernetes-list-type": "set"
     }
-  },
-  "required": null
+  }
 }

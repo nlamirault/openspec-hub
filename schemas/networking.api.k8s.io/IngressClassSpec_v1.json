@@ -12,6 +12,5 @@
       "$ref": "#/definitions/io.k8s.api.networking.v1.IngressClassParametersReference",
       "description": "parameters is a link to a custom resource containing additional configuration for the controller. This is optional if the controller does not require extra parameters."
     }
-  },
-  "required": null
+  }
 }

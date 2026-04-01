@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.NodeSelector",
       "description": "required specifies hard node constraints that must be met."
     }
-  },
-  "required": null
+  }
 }

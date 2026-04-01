@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.api.networking.v1.NetworkPolicySpec",
       "description": "spec represents the specification of the desired behavior for this NetworkPolicy."
     }
-  },
-  "required": null
+  }
 }

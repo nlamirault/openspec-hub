@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "Time at which the container was last (re-)started"
     }
-  },
-  "required": null
+  }
 }

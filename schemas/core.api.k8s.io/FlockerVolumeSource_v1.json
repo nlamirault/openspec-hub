@@ -12,6 +12,5 @@
       "description": "datasetUUID is the UUID of the dataset. This is unique identifier of a Flocker dataset",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

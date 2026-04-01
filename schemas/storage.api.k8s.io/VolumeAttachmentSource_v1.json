@@ -12,6 +12,5 @@
       "description": "persistentVolumeName represents the name of the persistent volume to attach.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

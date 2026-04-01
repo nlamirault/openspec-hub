@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.networking.v1.IngressLoadBalancerStatus",
       "description": "loadBalancer contains the current status of the load-balancer."
     }
-  },
-  "required": null
+  }
 }

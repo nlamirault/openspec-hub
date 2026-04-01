@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.TCPSocketAction",
       "description": "Deprecated. TCPSocket is NOT supported as a LifecycleHandler and kept for backward compatibility. There is no validation of this field and lifecycle hooks will fail at runtime when it is specified."
     }
-  },
-  "required": null
+  }
 }

@@ -20,6 +20,5 @@
       ],
       "x-kubernetes-list-type": "map"
     }
-  },
-  "required": null
+  }
 }

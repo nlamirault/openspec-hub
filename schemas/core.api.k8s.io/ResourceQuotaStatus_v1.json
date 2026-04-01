@@ -18,6 +18,5 @@
       "description": "Used is the current observed total usage of the resource in the namespace.",
       "type": "object"
     }
-  },
-  "required": null
+  }
 }

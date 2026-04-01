@@ -17,6 +17,5 @@
       "description": "protocol represents the protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

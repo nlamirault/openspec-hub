@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
       "description": "ObjectMeta describes the pod that is being evicted."
     }
-  },
-  "required": null
+  }
 }

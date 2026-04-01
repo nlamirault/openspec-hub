@@ -30,6 +30,5 @@
       "description": "The name that uniquely identifies this user among all active users.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

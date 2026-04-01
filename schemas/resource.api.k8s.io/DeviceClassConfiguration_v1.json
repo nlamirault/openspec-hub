@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.resource.v1.OpaqueDeviceConfiguration",
       "description": "Opaque provides driver-specific configuration parameters."
     }
-  },
-  "required": null
+  }
 }
