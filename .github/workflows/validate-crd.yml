@@ -70,6 +70,7 @@ jobs:
         echo "Validating JSON schemas..."
         failed=0
         while IFS= read -r schema_file; do
+          echo "Validating ${schema_file}"
           if ! jsonschema-cli validate --draft 2020 "${schema_file}" 2>/dev/null; then
             echo "::error file=${schema_file}::Invalid JSON schema"
             failed=$((failed + 1))
