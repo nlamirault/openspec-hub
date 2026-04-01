@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v1.0.0...openspec-hub-v1.1.0) (2026-04-01)
+
+
+### 🚀 Features
+
+* **cicd:** add CRD validation workflow and fix silent failures in scripts ([#216](https://github.com/nlamirault/openspec-hub/issues/216)) ([5bc73b3](https://github.com/nlamirault/openspec-hub/commit/5bc73b3c97808500d7d6c902f603dab8ff678c94))
+* **crd:** add Karpenter Exoscale provider CRDs support ([#221](https://github.com/nlamirault/openspec-hub/issues/221)) ([ceff18e](https://github.com/nlamirault/openspec-hub/commit/ceff18eab87accdbd4ee69ef2deaa13a85dc5d54)), closes [#218](https://github.com/nlamirault/openspec-hub/issues/218)
+* **crd:** add Karpenter OCI provider CRDs support ([#220](https://github.com/nlamirault/openspec-hub/issues/220)) ([e5a29c6](https://github.com/nlamirault/openspec-hub/commit/e5a29c65bf34a8fed689656bf40b0b5df60ceb81)), closes [#219](https://github.com/nlamirault/openspec-hub/issues/219)
+* **crd:** update CRD schemas with new API versions ([#222](https://github.com/nlamirault/openspec-hub/issues/222)) ([a9ed0fe](https://github.com/nlamirault/openspec-hub/commit/a9ed0fe1af780b3648ac531952ce210de778a3da))
+* Validation of scripts and CRD ([5bc73b3](https://github.com/nlamirault/openspec-hub/commit/5bc73b3c97808500d7d6c902f603dab8ff678c94))
+
+
+### 🐛 Bug Fixes
+
+* **crd:** fix concatenated JSON from multi-document YAML CRD files ([#223](https://github.com/nlamirault/openspec-hub/issues/223)) ([fa06939](https://github.com/nlamirault/openspec-hub/commit/fa06939f5c40e303637f9be836b5536540e35edb))
+
 ## [1.0.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v0.8.0...openspec-hub-v1.0.0) (2026-03-28)
 
 
