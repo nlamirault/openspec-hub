@@ -14,7 +14,7 @@
       "type": "string"
     },
     "time": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "time represents the time the error was encountered."
     }
   }

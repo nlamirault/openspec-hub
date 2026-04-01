@@ -5,15 +5,15 @@
   "type": "object",
   "properties": {
     "ipBlock": {
-      "$ref": "#/definitions/io.k8s.api.networking.v1.IPBlock",
+      "$ref": "IPBlock_v1.json",
       "description": "ipBlock defines policy on a particular IPBlock. If this field is set then neither of the other fields can be."
     },
     "namespaceSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "namespaceSelector selects namespaces using cluster-scoped labels. This field follows standard label selector semantics; if present but empty, it selects all namespaces.\n\nIf podSelector is also set, then the NetworkPolicyPeer as a whole selects the pods matching podSelector in the namespaces selected by namespaceSelector. Otherwise it selects all pods in the namespaces selected by namespaceSelector."
     },
     "podSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "podSelector is a label selector which selects pods. This field follows standard label selector semantics; if present but empty, it selects all pods.\n\nIf namespaceSelector is also set, then the NetworkPolicyPeer as a whole selects the pods matching podSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects the pods matching podSelector in the policy's own namespace."
     }
   }

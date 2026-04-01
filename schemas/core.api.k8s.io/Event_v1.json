@@ -18,15 +18,15 @@
       "type": "integer"
     },
     "eventTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime",
+      "$ref": "../meta.api.k8s.io/MicroTime_v1.json",
       "description": "Time when this Event was first observed."
     },
     "firstTimestamp": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)"
     },
     "involvedObject": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "ObjectReference_v1.json",
       "description": "The object that this event is about."
     },
     "kind": {
@@ -34,7 +34,7 @@
       "type": "string"
     },
     "lastTimestamp": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "The time at which the most recent occurrence of this event was recorded."
     },
     "message": {
@@ -42,7 +42,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "reason": {
@@ -50,7 +50,7 @@
       "type": "string"
     },
     "related": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "ObjectReference_v1.json",
       "description": "Optional secondary object for more complex actions."
     },
     "reportingComponent": {
@@ -62,11 +62,11 @@
       "type": "string"
     },
     "series": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.EventSeries",
+      "$ref": "EventSeries_v1.json",
       "description": "Data about the Event series this event represents or nil if it's a singleton Event."
     },
     "source": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.EventSource",
+      "$ref": "EventSource_v1.json",
       "description": "The component reporting this event. Should be a short machine understandable string."
     },
     "type": {

@@ -10,7 +10,7 @@
       "type": "string"
     },
     "service": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ServiceReference",
+      "$ref": "ServiceReference_v1.json",
       "description": "`service` is a reference to the service for this webhook. Either `service` or `url` must be specified.\n\nIf the webhook is running within the cluster, then you should use `service`."
     },
     "url": {

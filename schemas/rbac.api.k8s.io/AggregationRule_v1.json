@@ -7,7 +7,7 @@
     "clusterRoleSelectors": {
       "description": "ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector"
+        "$ref": "../meta.api.k8s.io/LabelSelector_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

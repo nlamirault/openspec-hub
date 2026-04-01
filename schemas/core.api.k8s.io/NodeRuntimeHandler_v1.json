@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "features": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeRuntimeHandlerFeatures",
+      "$ref": "NodeRuntimeHandlerFeatures_v1.json",
       "description": "Supported features."
     },
     "name": {

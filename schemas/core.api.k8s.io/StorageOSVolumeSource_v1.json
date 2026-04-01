@@ -13,7 +13,7 @@
       "type": "boolean"
     },
     "secretRef": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.LocalObjectReference",
+      "$ref": "LocalObjectReference_v1.json",
       "description": "secretRef specifies the secret to use for obtaining the StorageOS API credentials.  If not specified, default values will be attempted."
     },
     "volumeName": {

@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "configMap": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapNodeConfigSource",
+      "$ref": "ConfigMapNodeConfigSource_v1.json",
       "description": "ConfigMap is a reference to a Node's ConfigMap"
     }
   }

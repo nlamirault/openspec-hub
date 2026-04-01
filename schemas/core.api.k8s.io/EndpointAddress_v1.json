@@ -17,7 +17,7 @@
       "type": "string"
     },
     "targetRef": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "ObjectReference_v1.json",
       "description": "Reference to object providing the endpoint."
     }
   },

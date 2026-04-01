@@ -7,7 +7,7 @@
     "conditions": {
       "description": "The latest available observations of the migration's current state.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
+        "$ref": "../meta.api.k8s.io/Condition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [

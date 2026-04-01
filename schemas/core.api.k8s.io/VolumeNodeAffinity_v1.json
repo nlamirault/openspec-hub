@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "required": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeSelector",
+      "$ref": "NodeSelector_v1.json",
       "description": "required specifies hard node constraints that must be met."
     }
   }

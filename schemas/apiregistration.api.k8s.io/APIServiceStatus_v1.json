@@ -7,7 +7,7 @@
     "conditions": {
       "description": "Current service state of apiService.",
       "items": {
-        "$ref": "#/definitions/io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceCondition"
+        "$ref": "APIServiceCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [

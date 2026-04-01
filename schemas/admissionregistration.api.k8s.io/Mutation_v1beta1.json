@@ -5,11 +5,11 @@
   "type": "object",
   "properties": {
     "applyConfiguration": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1beta1.ApplyConfiguration",
+      "$ref": "ApplyConfiguration_v1beta1.json",
       "description": "applyConfiguration defines the desired configuration values of an object. The configuration is applied to the admission object using [structured merge diff](https://github.com/kubernetes-sigs/structured-merge-diff). A CEL expression is used to create apply configuration."
     },
     "jsonPatch": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1beta1.JSONPatch",
+      "$ref": "JSONPatch_v1beta1.json",
       "description": "jsonPatch defines a [JSON patch](https://jsonpatch.com/) operation to perform a mutation to the object. A CEL expression is used to create the JSON patch."
     },
     "patchType": {

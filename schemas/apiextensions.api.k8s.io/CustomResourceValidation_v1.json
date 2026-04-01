@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "openAPIV3Schema": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaProps",
+      "$ref": "JSONSchemaProps_v1.json",
       "description": "openAPIV3Schema is the OpenAPI v3 schema to use for validation and pruning."
     }
   }

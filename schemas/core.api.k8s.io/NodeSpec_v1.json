@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "configSource": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeConfigSource",
+      "$ref": "NodeConfigSource_v1.json",
       "description": "Deprecated: Previously used to specify the source of the node's configuration for the DynamicKubeletConfig feature. This feature is removed."
     },
     "externalID": {
@@ -32,7 +32,7 @@
     "taints": {
       "description": "If specified, the node's taints.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.Taint"
+        "$ref": "Taint_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

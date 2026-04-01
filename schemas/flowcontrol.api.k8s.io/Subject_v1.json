@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "group": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.GroupSubject",
+      "$ref": "GroupSubject_v1.json",
       "description": "`group` matches based on user group name."
     },
     "kind": {
@@ -13,11 +13,11 @@
       "type": "string"
     },
     "serviceAccount": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.ServiceAccountSubject",
+      "$ref": "ServiceAccountSubject_v1.json",
       "description": "`serviceAccount` matches ServiceAccounts."
     },
     "user": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.UserSubject",
+      "$ref": "UserSubject_v1.json",
       "description": "`user` matches based on username."
     }
   },

@@ -11,7 +11,7 @@
     "conditions": {
       "description": "List of component conditions observed",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ComponentCondition"
+        "$ref": "ComponentCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -26,7 +26,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     }
   }

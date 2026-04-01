@@ -15,7 +15,7 @@
       "type": "integer"
     },
     "limitResponse": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.LimitResponse",
+      "$ref": "LimitResponse_v1.json",
       "description": "`limitResponse` indicates what to do with requests that can not be executed right now"
     },
     "nominalConcurrencyShares": {

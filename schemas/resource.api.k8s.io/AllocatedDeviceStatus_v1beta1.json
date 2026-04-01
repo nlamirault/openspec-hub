@@ -7,7 +7,7 @@
     "conditions": {
       "description": "Conditions contains the latest observation of the device's state. If the device has been configured according to the class and claim config references, the `Ready` condition should be True.\n\nMust not contain more than 8 entries.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
+        "$ref": "../meta.api.k8s.io/Condition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -16,7 +16,7 @@
       "x-kubernetes-list-type": "map"
     },
     "data": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.runtime.RawExtension",
+      "$ref": "../pkg.api.k8s.io/RawExtension_runtime.json",
       "description": "Data contains arbitrary driver-specific data.\n\nThe length of the raw data must be smaller or equal to 10 Ki."
     },
     "device": {
@@ -28,7 +28,7 @@
       "type": "string"
     },
     "networkData": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta1.NetworkDeviceData",
+      "$ref": "NetworkDeviceData_v1beta1.json",
       "description": "NetworkData contains network-related information specific to the device."
     },
     "pool": {

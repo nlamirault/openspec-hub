@@ -11,7 +11,7 @@
     "groups": {
       "description": "groups is a list of APIGroup.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
+        "$ref": "APIGroup_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

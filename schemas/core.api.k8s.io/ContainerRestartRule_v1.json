@@ -9,7 +9,7 @@
       "type": "string"
     },
     "exitCodes": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerRestartRuleOnExitCodes",
+      "$ref": "ContainerRestartRuleOnExitCodes_v1.json",
       "description": "Represents the exit codes to check on container exits."
     }
   },

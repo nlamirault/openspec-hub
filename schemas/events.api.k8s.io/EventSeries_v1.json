@@ -10,7 +10,7 @@
       "type": "integer"
     },
     "lastObservedTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime",
+      "$ref": "../meta.api.k8s.io/MicroTime_v1.json",
       "description": "lastObservedTime is the time when last Event from the series was seen before last heartbeat."
     }
   },

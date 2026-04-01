@@ -13,14 +13,14 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.certificates.v1.CertificateSigningRequestSpec",
+      "$ref": "CertificateSigningRequestSpec_v1.json",
       "description": "spec contains the certificate request, and is immutable after creation. Only the request, signerName, expirationSeconds, and usages fields can be set on creation. Other fields are derived by Kubernetes and cannot be modified by users."
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.api.certificates.v1.CertificateSigningRequestStatus",
+      "$ref": "CertificateSigningRequestStatus_v1.json",
       "description": "status contains information about whether the request is approved or denied, and the certificate issued by the signer, or the failure condition indicating signer failure."
     }
   },

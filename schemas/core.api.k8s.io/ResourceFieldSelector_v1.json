@@ -9,7 +9,7 @@
       "type": "string"
     },
     "divisor": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity",
+      "$ref": "../api.api.k8s.io/Quantity_resource.json",
       "description": "Specifies the output format of the exposed resources, defaults to \"1\""
     },
     "resource": {

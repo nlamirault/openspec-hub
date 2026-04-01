@@ -18,19 +18,19 @@
       "type": "integer"
     },
     "deprecatedFirstTimestamp": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "deprecatedFirstTimestamp is the deprecated field assuring backward compatibility with core.v1 Event type."
     },
     "deprecatedLastTimestamp": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "deprecatedLastTimestamp is the deprecated field assuring backward compatibility with core.v1 Event type."
     },
     "deprecatedSource": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.EventSource",
+      "$ref": "../core.api.k8s.io/EventSource_v1.json",
       "description": "deprecatedSource is the deprecated field assuring backward compatibility with core.v1 Event type."
     },
     "eventTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime",
+      "$ref": "../meta.api.k8s.io/MicroTime_v1.json",
       "description": "eventTime is the time when this Event was first observed. It is required."
     },
     "kind": {
@@ -38,7 +38,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "note": {
@@ -50,11 +50,11 @@
       "type": "string"
     },
     "regarding": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "../core.api.k8s.io/ObjectReference_v1.json",
       "description": "regarding contains the object this Event is about. In most cases it's an Object reporting controller implements, e.g. ReplicaSetController implements ReplicaSets and this event is emitted because it acts on some changes in a ReplicaSet object."
     },
     "related": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "../core.api.k8s.io/ObjectReference_v1.json",
       "description": "related is the optional secondary object for more complex actions. E.g. when regarding object triggers a creation or deletion of related object."
     },
     "reportingController": {
@@ -66,7 +66,7 @@
       "type": "string"
     },
     "series": {
-      "$ref": "#/definitions/io.k8s.api.events.v1.EventSeries",
+      "$ref": "EventSeries_v1.json",
       "description": "series is data about the Event series this event represents or nil if it's a singleton Event."
     },
     "type": {

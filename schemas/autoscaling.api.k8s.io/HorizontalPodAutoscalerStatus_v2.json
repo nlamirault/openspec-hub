@@ -7,7 +7,7 @@
     "conditions": {
       "description": "conditions is the set of conditions required for this autoscaler to scale its target, and indicates whether or not those conditions are met.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerCondition"
+        "$ref": "HorizontalPodAutoscalerCondition_v2.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -20,7 +20,7 @@
     "currentMetrics": {
       "description": "currentMetrics is the last read state of the metrics used by this autoscaler.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricStatus"
+        "$ref": "MetricStatus_v2.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -36,7 +36,7 @@
       "type": "integer"
     },
     "lastScaleTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "lastScaleTime is the last time the HorizontalPodAutoscaler scaled the number of pods, used by the autoscaler to control how often the number of pods is changed."
     },
     "observedGeneration": {

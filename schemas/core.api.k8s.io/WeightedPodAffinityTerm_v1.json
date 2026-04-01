@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "podAffinityTerm": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodAffinityTerm",
+      "$ref": "PodAffinityTerm_v1.json",
       "description": "Required. A pod affinity term, associated with the corresponding weight."
     },
     "weight": {

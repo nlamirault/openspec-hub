@@ -5,15 +5,15 @@
   "type": "object",
   "properties": {
     "current": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricValueStatus",
+      "$ref": "MetricValueStatus_v2.json",
       "description": "current contains the current value for the given metric"
     },
     "describedObject": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.CrossVersionObjectReference",
+      "$ref": "CrossVersionObjectReference_v2.json",
       "description": "DescribedObject specifies the descriptions of a object,such as kind,name apiVersion"
     },
     "metric": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricIdentifier",
+      "$ref": "MetricIdentifier_v2.json",
       "description": "metric identifies the target metric by name and selector"
     }
   },

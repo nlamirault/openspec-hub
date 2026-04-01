@@ -32,27 +32,37 @@ function generate_json_schema {
   local crd_file=$1
   local json_dir=$2
 
-  local group
-  group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
-  [[ -z "$group" || "${group}" == "null" ]] && log_error "Invalid group in ${crd_file}" && return
-  local kind
-  kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null | tr '[:upper:]' '[:lower:]')
-  [[ -z "$kind" || "${kind}" == "null" ]] && log_error "Invalid kind in ${crd_file}" && return
+  # A file produced by kubectl slice may contain multiple YAML documents
+  # (when several CRD versions share the same metadata.name). yq outputs
+  # one result per document, so we must isolate each one with select(di==d).
+  local last_di
+  last_di=$(yq e 'di' "${crd_file}" 2>/dev/null | tail -1)
+  [[ -z "${last_di}" || "${last_di}" == "null" ]] && last_di=0
+  local doc_count=$(( last_di + 1 ))
 
-  local output_path="${json_dir}/${group}"
-  mkdir -p "${output_path}"
+  for ((d = 0; d < doc_count; d++)); do
+    local group
+    group=$(yq e "select(di == ${d}) | .spec.group" "${crd_file}" 2>/dev/null)
+    [[ -z "$group" || "${group}" == "null" ]] && continue
+    local kind
+    kind=$(yq e "select(di == ${d}) | .spec.names.kind" "${crd_file}" 2>/dev/null | tr '[:upper:]' '[:lower:]')
+    [[ -z "$kind" || "${kind}" == "null" ]] && continue
 
-  local version_count
-  version_count=$(yq e '.spec.versions | length' "${crd_file}" 2>/dev/null)
-  log_debug "[crd] Group: ${group} / Kind: ${kind} / Versions: ${version_count}"
+    local output_path="${json_dir}/${group}"
+    mkdir -p "${output_path}"
 
-  for ((i = 0; i < version_count; i++)); do
-    local version
-    version=$(yq e ".spec.versions[${i}].name" "${crd_file}" 2>/dev/null)
-    [[ -z "$version" || "${version}" == "null" ]] && continue
-    local schema="${kind}_${version}.json"
-    log_info "[openapi] Extract openAPIV3Schema: ${output_path}/${schema}"
-    yq e ".spec.versions[${i}].schema.openAPIV3Schema" "${crd_file}" -o=json >"${output_path}/${schema}"
+    local version_count
+    version_count=$(yq e "select(di == ${d}) | .spec.versions | length" "${crd_file}" 2>/dev/null)
+    log_debug "[crd] Doc: ${d}/${doc_count} Group: ${group} / Kind: ${kind} / Versions: ${version_count}"
+
+    for ((i = 0; i < version_count; i++)); do
+      local version
+      version=$(yq e "select(di == ${d}) | .spec.versions[${i}].name" "${crd_file}" 2>/dev/null)
+      [[ -z "$version" || "${version}" == "null" ]] && continue
+      local schema="${kind}_${version}.json"
+      log_info "[openapi] Extract openAPIV3Schema: ${output_path}/${schema}"
+      yq e "select(di == ${d}) | .spec.versions[${i}].schema.openAPIV3Schema" "${crd_file}" -o=json >"${output_path}/${schema}"
+    done
   done
 }
 

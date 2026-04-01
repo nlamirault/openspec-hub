@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "lastTransitionTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "`lastTransitionTime` is the last time the condition transitioned from one status to another."
     },
     "message": {

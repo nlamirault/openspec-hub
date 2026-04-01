@@ -13,11 +13,11 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta2.ResourceSliceSpec",
+      "$ref": "ResourceSliceSpec_v1beta2.json",
       "description": "Contains the information published by the driver.\n\nChanging the spec automatically increments the metadata.generation number."
     }
   },

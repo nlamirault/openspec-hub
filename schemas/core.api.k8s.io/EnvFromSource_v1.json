@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "configMapRef": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapEnvSource",
+      "$ref": "ConfigMapEnvSource_v1.json",
       "description": "The ConfigMap to select from"
     },
     "prefix": {
@@ -13,7 +13,7 @@
       "type": "string"
     },
     "secretRef": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.SecretEnvSource",
+      "$ref": "SecretEnvSource_v1.json",
       "description": "The Secret to select from"
     }
   }

@@ -9,7 +9,7 @@
       "type": "string"
     },
     "current": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricValueStatus",
+      "$ref": "MetricValueStatus_v2.json",
       "description": "current contains the current value for the given metric"
     },
     "name": {

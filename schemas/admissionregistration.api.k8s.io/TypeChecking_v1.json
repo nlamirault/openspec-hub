@@ -7,7 +7,7 @@
     "expressionWarnings": {
       "description": "The type checking warnings for each expression.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ExpressionWarning"
+        "$ref": "ExpressionWarning_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

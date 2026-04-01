@@ -9,7 +9,7 @@
       "type": "string"
     },
     "parameters": {
-      "$ref": "#/definitions/io.k8s.api.networking.v1.IngressClassParametersReference",
+      "$ref": "IngressClassParametersReference_v1.json",
       "description": "parameters is a link to a custom resource containing additional configuration for the controller. This is optional if the controller does not require extra parameters."
     }
   }

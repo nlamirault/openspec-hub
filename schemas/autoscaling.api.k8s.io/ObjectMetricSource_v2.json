@@ -5,15 +5,15 @@
   "type": "object",
   "properties": {
     "describedObject": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.CrossVersionObjectReference",
+      "$ref": "CrossVersionObjectReference_v2.json",
       "description": "describedObject specifies the descriptions of a object,such as kind,name apiVersion"
     },
     "metric": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricIdentifier",
+      "$ref": "MetricIdentifier_v2.json",
       "description": "metric identifies the target metric by name and selector"
     },
     "target": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v2.MetricTarget",
+      "$ref": "MetricTarget_v2.json",
       "description": "target specifies the target value for the given metric"
     }
   },

@@ -13,7 +13,7 @@
       "x-kubernetes-list-type": "set"
     },
     "conditions": {
-      "$ref": "#/definitions/io.k8s.api.discovery.v1.EndpointConditions",
+      "$ref": "EndpointConditions_v1.json",
       "description": "conditions contains information about the current status of the endpoint."
     },
     "deprecatedTopology": {
@@ -24,7 +24,7 @@
       "type": "object"
     },
     "hints": {
-      "$ref": "#/definitions/io.k8s.api.discovery.v1.EndpointHints",
+      "$ref": "EndpointHints_v1.json",
       "description": "hints contains information associated with how an endpoint should be consumed."
     },
     "hostname": {
@@ -36,7 +36,7 @@
       "type": "string"
     },
     "targetRef": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference",
+      "$ref": "../core.api.k8s.io/ObjectReference_v1.json",
       "description": "targetRef is a reference to a Kubernetes object that represents this endpoint."
     },
     "zone": {

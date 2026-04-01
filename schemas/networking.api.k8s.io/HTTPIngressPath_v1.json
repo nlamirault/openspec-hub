@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "backend": {
-      "$ref": "#/definitions/io.k8s.api.networking.v1.IngressBackend",
+      "$ref": "IngressBackend_v1.json",
       "description": "backend defines the referenced service endpoint to which the traffic will be forwarded to."
     },
     "path": {
