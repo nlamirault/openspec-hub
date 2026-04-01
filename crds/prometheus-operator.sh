@@ -17,8 +17,8 @@ export FILES=(
   "thanosrulers.monitoring.coreos.com.yaml"
 )
 
-# renovate: datasource=github-tags depName=external-secrets/external-secrets
-VERSION=v1.3.2
+# renovate: datasource=github-tags depName=prometheus-operator
+VERSION=0.90.0
 
 function generate_url {
   echo "https://github.com/prometheus-operator/prometheus-operator/releases/download/v${VERSION}/bundle.yaml"

@@ -33,6 +33,12 @@
       },
       {
         "kind": "accesscontextmanagerserviceperimeterresource",
+        "version": "v1alpha1",
+        "file": "accesscontextmanager.cnrm.cloud.google.com/accesscontextmanagerserviceperimeterresource_v1alpha1.json",
+        "slug": "accesscontextmanager.cnrm.cloud.google.com/v1alpha1/accesscontextmanagerserviceperimeterresource"
+      },
+      {
+        "kind": "accesscontextmanagerserviceperimeterresource",
         "version": "v1beta1",
         "file": "accesscontextmanager.cnrm.cloud.google.com/accesscontextmanagerserviceperimeterresource_v1beta1.json",
         "slug": "accesscontextmanager.cnrm.cloud.google.com/v1beta1/accesscontextmanagerserviceperimeterresource"
@@ -457,15 +463,33 @@
     "alloydb.cnrm.cloud.google.com": [
       {
         "kind": "alloydbbackup",
+        "version": "v1alpha1",
+        "file": "alloydb.cnrm.cloud.google.com/alloydbbackup_v1alpha1.json",
+        "slug": "alloydb.cnrm.cloud.google.com/v1alpha1/alloydbbackup"
+      },
+      {
+        "kind": "alloydbbackup",
         "version": "v1beta1",
         "file": "alloydb.cnrm.cloud.google.com/alloydbbackup_v1beta1.json",
         "slug": "alloydb.cnrm.cloud.google.com/v1beta1/alloydbbackup"
       },
       {
         "kind": "alloydbcluster",
+        "version": "v1alpha1",
+        "file": "alloydb.cnrm.cloud.google.com/alloydbcluster_v1alpha1.json",
+        "slug": "alloydb.cnrm.cloud.google.com/v1alpha1/alloydbcluster"
+      },
+      {
+        "kind": "alloydbcluster",
         "version": "v1beta1",
         "file": "alloydb.cnrm.cloud.google.com/alloydbcluster_v1beta1.json",
         "slug": "alloydb.cnrm.cloud.google.com/v1beta1/alloydbcluster"
+      },
+      {
+        "kind": "alloydbinstance",
+        "version": "v1alpha1",
+        "file": "alloydb.cnrm.cloud.google.com/alloydbinstance_v1alpha1.json",
+        "slug": "alloydb.cnrm.cloud.google.com/v1alpha1/alloydbinstance"
       },
       {
         "kind": "alloydbinstance",
@@ -686,6 +710,12 @@
         "slug": "apigateway.cnrm.cloud.google.com/v1alpha1/apigatewayapi"
       },
       {
+        "kind": "apigatewayapi",
+        "version": "v1beta1",
+        "file": "apigateway.cnrm.cloud.google.com/apigatewayapi_v1beta1.json",
+        "slug": "apigateway.cnrm.cloud.google.com/v1beta1/apigatewayapi"
+      },
+      {
         "kind": "apigatewayapiconfig",
         "version": "v1alpha1",
         "file": "apigateway.cnrm.cloud.google.com/apigatewayapiconfig_v1alpha1.json",
@@ -768,16 +798,34 @@
         "slug": "apigee.cnrm.cloud.google.com/v1alpha1/apigeeendpointattachment"
       },
       {
+        "kind": "apigeeendpointattachment",
+        "version": "v1beta1",
+        "file": "apigee.cnrm.cloud.google.com/apigeeendpointattachment_v1beta1.json",
+        "slug": "apigee.cnrm.cloud.google.com/v1beta1/apigeeendpointattachment"
+      },
+      {
         "kind": "apigeeenvgroup",
         "version": "v1alpha1",
         "file": "apigee.cnrm.cloud.google.com/apigeeenvgroup_v1alpha1.json",
         "slug": "apigee.cnrm.cloud.google.com/v1alpha1/apigeeenvgroup"
       },
       {
+        "kind": "apigeeenvgroup",
+        "version": "v1beta1",
+        "file": "apigee.cnrm.cloud.google.com/apigeeenvgroup_v1beta1.json",
+        "slug": "apigee.cnrm.cloud.google.com/v1beta1/apigeeenvgroup"
+      },
+      {
         "kind": "apigeeenvgroupattachment",
         "version": "v1alpha1",
         "file": "apigee.cnrm.cloud.google.com/apigeeenvgroupattachment_v1alpha1.json",
         "slug": "apigee.cnrm.cloud.google.com/v1alpha1/apigeeenvgroupattachment"
+      },
+      {
+        "kind": "apigeeenvgroupattachment",
+        "version": "v1beta1",
+        "file": "apigee.cnrm.cloud.google.com/apigeeenvgroupattachment_v1beta1.json",
+        "slug": "apigee.cnrm.cloud.google.com/v1beta1/apigeeenvgroupattachment"
       },
       {
         "kind": "apigeeenvironment",
@@ -792,10 +840,22 @@
         "slug": "apigee.cnrm.cloud.google.com/v1alpha1/apigeeinstance"
       },
       {
+        "kind": "apigeeinstance",
+        "version": "v1beta1",
+        "file": "apigee.cnrm.cloud.google.com/apigeeinstance_v1beta1.json",
+        "slug": "apigee.cnrm.cloud.google.com/v1beta1/apigeeinstance"
+      },
+      {
         "kind": "apigeeinstanceattachment",
         "version": "v1alpha1",
         "file": "apigee.cnrm.cloud.google.com/apigeeinstanceattachment_v1alpha1.json",
         "slug": "apigee.cnrm.cloud.google.com/v1alpha1/apigeeinstanceattachment"
+      },
+      {
+        "kind": "apigeeinstanceattachment",
+        "version": "v1beta1",
+        "file": "apigee.cnrm.cloud.google.com/apigeeinstanceattachment_v1beta1.json",
+        "slug": "apigee.cnrm.cloud.google.com/v1beta1/apigeeinstanceattachment"
       },
       {
         "kind": "apigeenataddress",
@@ -1058,6 +1118,12 @@
         "version": "v1alpha1",
         "file": "apphub.cnrm.cloud.google.com/apphubapplication_v1alpha1.json",
         "slug": "apphub.cnrm.cloud.google.com/v1alpha1/apphubapplication"
+      },
+      {
+        "kind": "apphubapplication",
+        "version": "v1beta1",
+        "file": "apphub.cnrm.cloud.google.com/apphubapplication_v1beta1.json",
+        "slug": "apphub.cnrm.cloud.google.com/v1beta1/apphubapplication"
       },
       {
         "kind": "apphubdiscoveredservice",
@@ -1395,9 +1461,21 @@
     "asset.cnrm.cloud.google.com": [
       {
         "kind": "assetfeed",
+        "version": "v1alpha1",
+        "file": "asset.cnrm.cloud.google.com/assetfeed_v1alpha1.json",
+        "slug": "asset.cnrm.cloud.google.com/v1alpha1/assetfeed"
+      },
+      {
+        "kind": "assetfeed",
         "version": "v1beta1",
         "file": "asset.cnrm.cloud.google.com/assetfeed_v1beta1.json",
         "slug": "asset.cnrm.cloud.google.com/v1beta1/assetfeed"
+      },
+      {
+        "kind": "assetsavedquery",
+        "version": "v1alpha1",
+        "file": "asset.cnrm.cloud.google.com/assetsavedquery_v1alpha1.json",
+        "slug": "asset.cnrm.cloud.google.com/v1alpha1/assetsavedquery"
       },
       {
         "kind": "assetsavedquery",
@@ -1793,15 +1871,33 @@
     "backupdr.cnrm.cloud.google.com": [
       {
         "kind": "backupdrbackupplan",
+        "version": "v1alpha1",
+        "file": "backupdr.cnrm.cloud.google.com/backupdrbackupplan_v1alpha1.json",
+        "slug": "backupdr.cnrm.cloud.google.com/v1alpha1/backupdrbackupplan"
+      },
+      {
+        "kind": "backupdrbackupplan",
         "version": "v1beta1",
         "file": "backupdr.cnrm.cloud.google.com/backupdrbackupplan_v1beta1.json",
         "slug": "backupdr.cnrm.cloud.google.com/v1beta1/backupdrbackupplan"
       },
       {
         "kind": "backupdrbackupplanassociation",
+        "version": "v1alpha1",
+        "file": "backupdr.cnrm.cloud.google.com/backupdrbackupplanassociation_v1alpha1.json",
+        "slug": "backupdr.cnrm.cloud.google.com/v1alpha1/backupdrbackupplanassociation"
+      },
+      {
+        "kind": "backupdrbackupplanassociation",
         "version": "v1beta1",
         "file": "backupdr.cnrm.cloud.google.com/backupdrbackupplanassociation_v1beta1.json",
         "slug": "backupdr.cnrm.cloud.google.com/v1beta1/backupdrbackupplanassociation"
+      },
+      {
+        "kind": "backupdrbackupvault",
+        "version": "v1alpha1",
+        "file": "backupdr.cnrm.cloud.google.com/backupdrbackupvault_v1alpha1.json",
+        "slug": "backupdr.cnrm.cloud.google.com/v1alpha1/backupdrbackupvault"
       },
       {
         "kind": "backupdrbackupvault",
@@ -2010,10 +2106,22 @@
         "slug": "bigqueryanalyticshub.cnrm.cloud.google.com/v1alpha1/bigqueryanalyticshubdataexchange"
       },
       {
+        "kind": "bigqueryanalyticshubdataexchange",
+        "version": "v1beta1",
+        "file": "bigqueryanalyticshub.cnrm.cloud.google.com/bigqueryanalyticshubdataexchange_v1beta1.json",
+        "slug": "bigqueryanalyticshub.cnrm.cloud.google.com/v1beta1/bigqueryanalyticshubdataexchange"
+      },
+      {
         "kind": "bigqueryanalyticshublisting",
         "version": "v1alpha1",
         "file": "bigqueryanalyticshub.cnrm.cloud.google.com/bigqueryanalyticshublisting_v1alpha1.json",
         "slug": "bigqueryanalyticshub.cnrm.cloud.google.com/v1alpha1/bigqueryanalyticshublisting"
+      },
+      {
+        "kind": "bigqueryanalyticshublisting",
+        "version": "v1beta1",
+        "file": "bigqueryanalyticshub.cnrm.cloud.google.com/bigqueryanalyticshublisting_v1beta1.json",
+        "slug": "bigqueryanalyticshub.cnrm.cloud.google.com/v1beta1/bigqueryanalyticshublisting"
       }
     ],
     "bigquerybiglake.cnrm.cloud.google.com": [
@@ -2031,6 +2139,12 @@
       },
       {
         "kind": "biglaketable",
+        "version": "v1alpha1",
+        "file": "bigquerybiglake.cnrm.cloud.google.com/biglaketable_v1alpha1.json",
+        "slug": "bigquerybiglake.cnrm.cloud.google.com/v1alpha1/biglaketable"
+      },
+      {
+        "kind": "biglaketable",
         "version": "v1beta1",
         "file": "bigquerybiglake.cnrm.cloud.google.com/biglaketable_v1beta1.json",
         "slug": "bigquerybiglake.cnrm.cloud.google.com/v1beta1/biglaketable"
@@ -2042,6 +2156,12 @@
         "version": "v1alpha1",
         "file": "bigqueryconnection.cnrm.cloud.google.com/bigqueryconnectionconnection_v1alpha1.json",
         "slug": "bigqueryconnection.cnrm.cloud.google.com/v1alpha1/bigqueryconnectionconnection"
+      },
+      {
+        "kind": "bigqueryconnectionconnection",
+        "version": "v1beta1",
+        "file": "bigqueryconnection.cnrm.cloud.google.com/bigqueryconnectionconnection_v1beta1.json",
+        "slug": "bigqueryconnection.cnrm.cloud.google.com/v1beta1/bigqueryconnectionconnection"
       }
     ],
     "bigquerydatapolicy.cnrm.cloud.google.com": [
@@ -2064,9 +2184,21 @@
         "version": "v1alpha1",
         "file": "bigquerydatatransfer.cnrm.cloud.google.com/bigquerydatatransferconfig_v1alpha1.json",
         "slug": "bigquerydatatransfer.cnrm.cloud.google.com/v1alpha1/bigquerydatatransferconfig"
+      },
+      {
+        "kind": "bigquerydatatransferconfig",
+        "version": "v1beta1",
+        "file": "bigquerydatatransfer.cnrm.cloud.google.com/bigquerydatatransferconfig_v1beta1.json",
+        "slug": "bigquerydatatransfer.cnrm.cloud.google.com/v1beta1/bigquerydatatransferconfig"
       }
     ],
     "bigqueryreservation.cnrm.cloud.google.com": [
+      {
+        "kind": "bigqueryreservationassignment",
+        "version": "v1alpha1",
+        "file": "bigqueryreservation.cnrm.cloud.google.com/bigqueryreservationassignment_v1alpha1.json",
+        "slug": "bigqueryreservation.cnrm.cloud.google.com/v1alpha1/bigqueryreservationassignment"
+      },
       {
         "kind": "bigqueryreservationassignment",
         "version": "v1beta1",
@@ -2078,6 +2210,12 @@
         "version": "v1alpha1",
         "file": "bigqueryreservation.cnrm.cloud.google.com/bigqueryreservationcapacitycommitment_v1alpha1.json",
         "slug": "bigqueryreservation.cnrm.cloud.google.com/v1alpha1/bigqueryreservationcapacitycommitment"
+      },
+      {
+        "kind": "bigqueryreservationreservation",
+        "version": "v1alpha1",
+        "file": "bigqueryreservation.cnrm.cloud.google.com/bigqueryreservationreservation_v1alpha1.json",
+        "slug": "bigqueryreservation.cnrm.cloud.google.com/v1alpha1/bigqueryreservationreservation"
       },
       {
         "kind": "bigqueryreservationreservation",
@@ -2333,6 +2471,12 @@
     "certificatemanager.cnrm.cloud.google.com": [
       {
         "kind": "certificatemanagercertificate",
+        "version": "v1alpha1",
+        "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificate_v1alpha1.json",
+        "slug": "certificatemanager.cnrm.cloud.google.com/v1alpha1/certificatemanagercertificate"
+      },
+      {
+        "kind": "certificatemanagercertificate",
         "version": "v1beta1",
         "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificate_v1beta1.json",
         "slug": "certificatemanager.cnrm.cloud.google.com/v1beta1/certificatemanagercertificate"
@@ -2345,15 +2489,33 @@
       },
       {
         "kind": "certificatemanagercertificatemap",
+        "version": "v1alpha1",
+        "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificatemap_v1alpha1.json",
+        "slug": "certificatemanager.cnrm.cloud.google.com/v1alpha1/certificatemanagercertificatemap"
+      },
+      {
+        "kind": "certificatemanagercertificatemap",
         "version": "v1beta1",
         "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificatemap_v1beta1.json",
         "slug": "certificatemanager.cnrm.cloud.google.com/v1beta1/certificatemanagercertificatemap"
       },
       {
         "kind": "certificatemanagercertificatemapentry",
+        "version": "v1alpha1",
+        "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificatemapentry_v1alpha1.json",
+        "slug": "certificatemanager.cnrm.cloud.google.com/v1alpha1/certificatemanagercertificatemapentry"
+      },
+      {
+        "kind": "certificatemanagercertificatemapentry",
         "version": "v1beta1",
         "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagercertificatemapentry_v1beta1.json",
         "slug": "certificatemanager.cnrm.cloud.google.com/v1beta1/certificatemanagercertificatemapentry"
+      },
+      {
+        "kind": "certificatemanagerdnsauthorization",
+        "version": "v1alpha1",
+        "file": "certificatemanager.cnrm.cloud.google.com/certificatemanagerdnsauthorization_v1alpha1.json",
+        "slug": "certificatemanager.cnrm.cloud.google.com/v1alpha1/certificatemanagerdnsauthorization"
       },
       {
         "kind": "certificatemanagerdnsauthorization",
@@ -2514,9 +2676,21 @@
         "version": "v1alpha1",
         "file": "cloudbuild.cnrm.cloud.google.com/cloudbuildworkerpool_v1alpha1.json",
         "slug": "cloudbuild.cnrm.cloud.google.com/v1alpha1/cloudbuildworkerpool"
+      },
+      {
+        "kind": "cloudbuildworkerpool",
+        "version": "v1beta1",
+        "file": "cloudbuild.cnrm.cloud.google.com/cloudbuildworkerpool_v1beta1.json",
+        "slug": "cloudbuild.cnrm.cloud.google.com/v1beta1/cloudbuildworkerpool"
       }
     ],
     "clouddeploy.cnrm.cloud.google.com": [
+      {
+        "kind": "clouddeploydeliverypipeline",
+        "version": "v1alpha1",
+        "file": "clouddeploy.cnrm.cloud.google.com/clouddeploydeliverypipeline_v1alpha1.json",
+        "slug": "clouddeploy.cnrm.cloud.google.com/v1alpha1/clouddeploydeliverypipeline"
+      },
       {
         "kind": "clouddeploydeliverypipeline",
         "version": "v1beta1",
@@ -2633,6 +2807,12 @@
     "cloudids.cnrm.cloud.google.com": [
       {
         "kind": "cloudidsendpoint",
+        "version": "v1alpha1",
+        "file": "cloudids.cnrm.cloud.google.com/cloudidsendpoint_v1alpha1.json",
+        "slug": "cloudids.cnrm.cloud.google.com/v1alpha1/cloudidsendpoint"
+      },
+      {
+        "kind": "cloudidsendpoint",
         "version": "v1beta1",
         "file": "cloudids.cnrm.cloud.google.com/cloudidsendpoint_v1beta1.json",
         "slug": "cloudids.cnrm.cloud.google.com/v1beta1/cloudidsendpoint"
@@ -2653,6 +2833,12 @@
       }
     ],
     "cloudquota.cnrm.cloud.google.com": [
+      {
+        "kind": "apiquotaadjustersettings",
+        "version": "v1alpha1",
+        "file": "cloudquota.cnrm.cloud.google.com/apiquotaadjustersettings_v1alpha1.json",
+        "slug": "cloudquota.cnrm.cloud.google.com/v1alpha1/apiquotaadjustersettings"
+      },
       {
         "kind": "apiquotaadjustersettings",
         "version": "v1beta1",
@@ -2817,6 +3003,12 @@
       }
     ],
     "composer.cnrm.cloud.google.com": [
+      {
+        "kind": "composerenvironment",
+        "version": "v1alpha1",
+        "file": "composer.cnrm.cloud.google.com/composerenvironment_v1alpha1.json",
+        "slug": "composer.cnrm.cloud.google.com/v1alpha1/composerenvironment"
+      },
       {
         "kind": "composerenvironment",
         "version": "v1beta1",
@@ -3066,6 +3258,12 @@
         "version": "v1alpha1",
         "file": "compute.cnrm.cloud.google.com/computemachineimage_v1alpha1.json",
         "slug": "compute.cnrm.cloud.google.com/v1alpha1/computemachineimage"
+      },
+      {
+        "kind": "computemanagedsslcertificate",
+        "version": "v1alpha1",
+        "file": "compute.cnrm.cloud.google.com/computemanagedsslcertificate_v1alpha1.json",
+        "slug": "compute.cnrm.cloud.google.com/v1alpha1/computemanagedsslcertificate"
       },
       {
         "kind": "computemanagedsslcertificate",
@@ -4976,6 +5174,12 @@
         "version": "v1alpha1",
         "file": "dataform.cnrm.cloud.google.com/dataformrepository_v1alpha1.json",
         "slug": "dataform.cnrm.cloud.google.com/v1alpha1/dataformrepository"
+      },
+      {
+        "kind": "dataformrepository",
+        "version": "v1beta1",
+        "file": "dataform.cnrm.cloud.google.com/dataformrepository_v1beta1.json",
+        "slug": "dataform.cnrm.cloud.google.com/v1beta1/dataformrepository"
       }
     ],
     "datafusion.cnrm.cloud.google.com": [
@@ -5441,6 +5645,12 @@
       },
       {
         "kind": "documentaiprocessorversion",
+        "version": "v1alpha1",
+        "file": "documentai.cnrm.cloud.google.com/documentaiprocessorversion_v1alpha1.json",
+        "slug": "documentai.cnrm.cloud.google.com/v1alpha1/documentaiprocessorversion"
+      },
+      {
+        "kind": "documentaiprocessorversion",
         "version": "v1beta1",
         "file": "documentai.cnrm.cloud.google.com/documentaiprocessorversion_v1beta1.json",
         "slug": "documentai.cnrm.cloud.google.com/v1beta1/documentaiprocessorversion"
@@ -5887,6 +6097,12 @@
     "essentialcontacts.cnrm.cloud.google.com": [
       {
         "kind": "essentialcontactscontact",
+        "version": "v1alpha1",
+        "file": "essentialcontacts.cnrm.cloud.google.com/essentialcontactscontact_v1alpha1.json",
+        "slug": "essentialcontacts.cnrm.cloud.google.com/v1alpha1/essentialcontactscontact"
+      },
+      {
+        "kind": "essentialcontactscontact",
         "version": "v1beta1",
         "file": "essentialcontacts.cnrm.cloud.google.com/essentialcontactscontact_v1beta1.json",
         "slug": "essentialcontacts.cnrm.cloud.google.com/v1beta1/essentialcontactscontact"
@@ -6170,6 +6386,12 @@
         "version": "v1alpha1",
         "file": "firestore.cnrm.cloud.google.com/firestorebackupschedule_v1alpha1.json",
         "slug": "firestore.cnrm.cloud.google.com/v1alpha1/firestorebackupschedule"
+      },
+      {
+        "kind": "firestoredatabase",
+        "version": "v1alpha1",
+        "file": "firestore.cnrm.cloud.google.com/firestoredatabase_v1alpha1.json",
+        "slug": "firestore.cnrm.cloud.google.com/v1alpha1/firestoredatabase"
       },
       {
         "kind": "firestoredatabase",
@@ -6834,6 +7056,12 @@
         "version": "v1alpha1",
         "file": "iap.cnrm.cloud.google.com/iapsettings_v1alpha1.json",
         "slug": "iap.cnrm.cloud.google.com/v1alpha1/iapsettings"
+      },
+      {
+        "kind": "iapsettings",
+        "version": "v1beta1",
+        "file": "iap.cnrm.cloud.google.com/iapsettings_v1beta1.json",
+        "slug": "iap.cnrm.cloud.google.com/v1beta1/iapsettings"
       }
     ],
     "identityplatform.cnrm.cloud.google.com": [
@@ -7244,6 +7472,12 @@
         "slug": "kms.cnrm.cloud.google.com/v1alpha1/kmsautokeyconfig"
       },
       {
+        "kind": "kmsautokeyconfig",
+        "version": "v1beta1",
+        "file": "kms.cnrm.cloud.google.com/kmsautokeyconfig_v1beta1.json",
+        "slug": "kms.cnrm.cloud.google.com/v1beta1/kmsautokeyconfig"
+      },
+      {
         "kind": "kmscryptokey",
         "version": "v1beta1",
         "file": "kms.cnrm.cloud.google.com/kmscryptokey_v1beta1.json",
@@ -7257,6 +7491,12 @@
       },
       {
         "kind": "kmsimportjob",
+        "version": "v1alpha1",
+        "file": "kms.cnrm.cloud.google.com/kmsimportjob_v1alpha1.json",
+        "slug": "kms.cnrm.cloud.google.com/v1alpha1/kmsimportjob"
+      },
+      {
+        "kind": "kmsimportjob",
         "version": "v1beta1",
         "file": "kms.cnrm.cloud.google.com/kmsimportjob_v1beta1.json",
         "slug": "kms.cnrm.cloud.google.com/v1beta1/kmsimportjob"
@@ -7266,6 +7506,12 @@
         "version": "v1alpha1",
         "file": "kms.cnrm.cloud.google.com/kmskeyhandle_v1alpha1.json",
         "slug": "kms.cnrm.cloud.google.com/v1alpha1/kmskeyhandle"
+      },
+      {
+        "kind": "kmskeyhandle",
+        "version": "v1beta1",
+        "file": "kms.cnrm.cloud.google.com/kmskeyhandle_v1beta1.json",
+        "slug": "kms.cnrm.cloud.google.com/v1beta1/kmskeyhandle"
       },
       {
         "kind": "kmskeyring",
@@ -7484,6 +7730,12 @@
         "slug": "managedkafka.cnrm.cloud.google.com/v1alpha1/managedkafkacluster"
       },
       {
+        "kind": "managedkafkacluster",
+        "version": "v1beta1",
+        "file": "managedkafka.cnrm.cloud.google.com/managedkafkacluster_v1beta1.json",
+        "slug": "managedkafka.cnrm.cloud.google.com/v1beta1/managedkafkacluster"
+      },
+      {
         "kind": "managedkafkaconsumergroup",
         "version": "v1alpha1",
         "file": "managedkafka.cnrm.cloud.google.com/managedkafkaconsumergroup_v1alpha1.json",
@@ -7494,6 +7746,12 @@
         "version": "v1alpha1",
         "file": "managedkafka.cnrm.cloud.google.com/managedkafkatopic_v1alpha1.json",
         "slug": "managedkafka.cnrm.cloud.google.com/v1alpha1/managedkafkatopic"
+      },
+      {
+        "kind": "managedkafkatopic",
+        "version": "v1beta1",
+        "file": "managedkafka.cnrm.cloud.google.com/managedkafkatopic_v1beta1.json",
+        "slug": "managedkafka.cnrm.cloud.google.com/v1beta1/managedkafkatopic"
       }
     ],
     "memcache.cnrm.cloud.google.com": [
@@ -7715,6 +7973,12 @@
       }
     ],
     "metastore.cnrm.cloud.google.com": [
+      {
+        "kind": "metastorebackup",
+        "version": "v1alpha1",
+        "file": "metastore.cnrm.cloud.google.com/metastorebackup_v1alpha1.json",
+        "slug": "metastore.cnrm.cloud.google.com/v1alpha1/metastorebackup"
+      },
       {
         "kind": "metastorebackup",
         "version": "v1beta1",
@@ -8730,6 +8994,12 @@
         "slug": "notebooks.cnrm.cloud.google.com/v1alpha1/notebookinstance"
       },
       {
+        "kind": "notebookinstance",
+        "version": "v1beta1",
+        "file": "notebooks.cnrm.cloud.google.com/notebookinstance_v1beta1.json",
+        "slug": "notebooks.cnrm.cloud.google.com/v1beta1/notebookinstance"
+      },
+      {
         "kind": "notebooksenvironment",
         "version": "v1alpha1",
         "file": "notebooks.cnrm.cloud.google.com/notebooksenvironment_v1alpha1.json",
@@ -8933,6 +9203,12 @@
       }
     ],
     "orgpolicy.cnrm.cloud.google.com": [
+      {
+        "kind": "orgpolicycustomconstraint",
+        "version": "v1alpha1",
+        "file": "orgpolicy.cnrm.cloud.google.com/orgpolicycustomconstraint_v1alpha1.json",
+        "slug": "orgpolicy.cnrm.cloud.google.com/v1alpha1/orgpolicycustomconstraint"
+      },
       {
         "kind": "orgpolicycustomconstraint",
         "version": "v1beta1",
@@ -9186,6 +9462,12 @@
         "version": "v1alpha1",
         "file": "privilegedaccessmanager.cnrm.cloud.google.com/privilegedaccessmanagerentitlement_v1alpha1.json",
         "slug": "privilegedaccessmanager.cnrm.cloud.google.com/v1alpha1/privilegedaccessmanagerentitlement"
+      },
+      {
+        "kind": "privilegedaccessmanagerentitlement",
+        "version": "v1beta1",
+        "file": "privilegedaccessmanager.cnrm.cloud.google.com/privilegedaccessmanagerentitlement_v1beta1.json",
+        "slug": "privilegedaccessmanager.cnrm.cloud.google.com/v1beta1/privilegedaccessmanagerentitlement"
       }
     ],
     "prometheusservice.services.k8s.aws": [
@@ -9234,6 +9516,12 @@
         "version": "v1beta1",
         "file": "pubsub.cnrm.cloud.google.com/pubsubschema_v1beta1.json",
         "slug": "pubsub.cnrm.cloud.google.com/v1beta1/pubsubschema"
+      },
+      {
+        "kind": "pubsubsnapshot",
+        "version": "v1alpha1",
+        "file": "pubsub.cnrm.cloud.google.com/pubsubsnapshot_v1alpha1.json",
+        "slug": "pubsub.cnrm.cloud.google.com/v1alpha1/pubsubsnapshot"
       },
       {
         "kind": "pubsubsnapshot",
@@ -9460,6 +9748,12 @@
         "version": "v1alpha1",
         "file": "redis.cnrm.cloud.google.com/rediscluster_v1alpha1.json",
         "slug": "redis.cnrm.cloud.google.com/v1alpha1/rediscluster"
+      },
+      {
+        "kind": "rediscluster",
+        "version": "v1beta1",
+        "file": "redis.cnrm.cloud.google.com/rediscluster_v1beta1.json",
+        "slug": "redis.cnrm.cloud.google.com/v1beta1/rediscluster"
       },
       {
         "kind": "redisinstance",
@@ -10726,10 +11020,22 @@
         "slug": "securesourcemanager.cnrm.cloud.google.com/v1alpha1/securesourcemanagerinstance"
       },
       {
+        "kind": "securesourcemanagerinstance",
+        "version": "v1beta1",
+        "file": "securesourcemanager.cnrm.cloud.google.com/securesourcemanagerinstance_v1beta1.json",
+        "slug": "securesourcemanager.cnrm.cloud.google.com/v1beta1/securesourcemanagerinstance"
+      },
+      {
         "kind": "securesourcemanagerrepository",
         "version": "v1alpha1",
         "file": "securesourcemanager.cnrm.cloud.google.com/securesourcemanagerrepository_v1alpha1.json",
         "slug": "securesourcemanager.cnrm.cloud.google.com/v1alpha1/securesourcemanagerrepository"
+      },
+      {
+        "kind": "securesourcemanagerrepository",
+        "version": "v1beta1",
+        "file": "securesourcemanager.cnrm.cloud.google.com/securesourcemanagerrepository_v1beta1.json",
+        "slug": "securesourcemanager.cnrm.cloud.google.com/v1beta1/securesourcemanagerrepository"
       }
     ],
     "security.istio.io": [
@@ -11012,6 +11318,12 @@
         "slug": "spanner.cnrm.cloud.google.com/v1alpha1/spannerbackupschedule"
       },
       {
+        "kind": "spannerbackupschedule",
+        "version": "v1beta1",
+        "file": "spanner.cnrm.cloud.google.com/spannerbackupschedule_v1beta1.json",
+        "slug": "spanner.cnrm.cloud.google.com/v1beta1/spannerbackupschedule"
+      },
+      {
         "kind": "spannerdatabase",
         "version": "v1beta1",
         "file": "spanner.cnrm.cloud.google.com/spannerdatabase_v1beta1.json",
@@ -11038,16 +11350,34 @@
         "slug": "speech.cnrm.cloud.google.com/v1alpha1/speechcustomclass"
       },
       {
+        "kind": "speechcustomclass",
+        "version": "v1beta1",
+        "file": "speech.cnrm.cloud.google.com/speechcustomclass_v1beta1.json",
+        "slug": "speech.cnrm.cloud.google.com/v1beta1/speechcustomclass"
+      },
+      {
         "kind": "speechphraseset",
         "version": "v1alpha1",
         "file": "speech.cnrm.cloud.google.com/speechphraseset_v1alpha1.json",
         "slug": "speech.cnrm.cloud.google.com/v1alpha1/speechphraseset"
       },
       {
+        "kind": "speechphraseset",
+        "version": "v1beta1",
+        "file": "speech.cnrm.cloud.google.com/speechphraseset_v1beta1.json",
+        "slug": "speech.cnrm.cloud.google.com/v1beta1/speechphraseset"
+      },
+      {
         "kind": "speechrecognizer",
         "version": "v1alpha1",
         "file": "speech.cnrm.cloud.google.com/speechrecognizer_v1alpha1.json",
         "slug": "speech.cnrm.cloud.google.com/v1alpha1/speechrecognizer"
+      },
+      {
+        "kind": "speechrecognizer",
+        "version": "v1beta1",
+        "file": "speech.cnrm.cloud.google.com/speechrecognizer_v1beta1.json",
+        "slug": "speech.cnrm.cloud.google.com/v1beta1/speechrecognizer"
       }
     ],
     "sql.azure.com": [
@@ -11429,6 +11759,12 @@
     "storage.cnrm.cloud.google.com": [
       {
         "kind": "storageanywherecache",
+        "version": "v1alpha1",
+        "file": "storage.cnrm.cloud.google.com/storageanywherecache_v1alpha1.json",
+        "slug": "storage.cnrm.cloud.google.com/v1alpha1/storageanywherecache"
+      },
+      {
+        "kind": "storageanywherecache",
         "version": "v1beta1",
         "file": "storage.cnrm.cloud.google.com/storageanywherecache_v1beta1.json",
         "slug": "storage.cnrm.cloud.google.com/v1beta1/storageanywherecache"
@@ -11589,9 +11925,21 @@
     "vertexai.cnrm.cloud.google.com": [
       {
         "kind": "vertexaidataset",
+        "version": "v1alpha1",
+        "file": "vertexai.cnrm.cloud.google.com/vertexaidataset_v1alpha1.json",
+        "slug": "vertexai.cnrm.cloud.google.com/v1alpha1/vertexaidataset"
+      },
+      {
+        "kind": "vertexaidataset",
         "version": "v1beta1",
         "file": "vertexai.cnrm.cloud.google.com/vertexaidataset_v1beta1.json",
         "slug": "vertexai.cnrm.cloud.google.com/v1beta1/vertexaidataset"
+      },
+      {
+        "kind": "vertexaiendpoint",
+        "version": "v1alpha1",
+        "file": "vertexai.cnrm.cloud.google.com/vertexaiendpoint_v1alpha1.json",
+        "slug": "vertexai.cnrm.cloud.google.com/v1alpha1/vertexaiendpoint"
       },
       {
         "kind": "vertexaiendpoint",
@@ -11619,6 +11967,12 @@
       },
       {
         "kind": "vertexaiindex",
+        "version": "v1alpha1",
+        "file": "vertexai.cnrm.cloud.google.com/vertexaiindex_v1alpha1.json",
+        "slug": "vertexai.cnrm.cloud.google.com/v1alpha1/vertexaiindex"
+      },
+      {
+        "kind": "vertexaiindex",
         "version": "v1beta1",
         "file": "vertexai.cnrm.cloud.google.com/vertexaiindex_v1beta1.json",
         "slug": "vertexai.cnrm.cloud.google.com/v1beta1/vertexaiindex"
@@ -11636,6 +11990,12 @@
         "slug": "vertexai.cnrm.cloud.google.com/v1alpha1/vertexaimetadatastore"
       },
       {
+        "kind": "vertexaimetadatastore",
+        "version": "v1beta1",
+        "file": "vertexai.cnrm.cloud.google.com/vertexaimetadatastore_v1beta1.json",
+        "slug": "vertexai.cnrm.cloud.google.com/v1beta1/vertexaimetadatastore"
+      },
+      {
         "kind": "vertexaitensorboard",
         "version": "v1alpha1",
         "file": "vertexai.cnrm.cloud.google.com/vertexaitensorboard_v1alpha1.json",
@@ -11648,6 +12008,12 @@
         "version": "v1alpha1",
         "file": "vmwareengine.cnrm.cloud.google.com/vmwareengineexternalaccessrule_v1alpha1.json",
         "slug": "vmwareengine.cnrm.cloud.google.com/v1alpha1/vmwareengineexternalaccessrule"
+      },
+      {
+        "kind": "vmwareengineexternaladdress",
+        "version": "v1alpha1",
+        "file": "vmwareengine.cnrm.cloud.google.com/vmwareengineexternaladdress_v1alpha1.json",
+        "slug": "vmwareengine.cnrm.cloud.google.com/v1alpha1/vmwareengineexternaladdress"
       },
       {
         "kind": "vmwareengineexternaladdress",
@@ -11732,16 +12098,34 @@
         "slug": "workstations.cnrm.cloud.google.com/v1alpha1/workstation"
       },
       {
+        "kind": "workstation",
+        "version": "v1beta1",
+        "file": "workstations.cnrm.cloud.google.com/workstation_v1beta1.json",
+        "slug": "workstations.cnrm.cloud.google.com/v1beta1/workstation"
+      },
+      {
         "kind": "workstationcluster",
         "version": "v1alpha1",
         "file": "workstations.cnrm.cloud.google.com/workstationcluster_v1alpha1.json",
         "slug": "workstations.cnrm.cloud.google.com/v1alpha1/workstationcluster"
       },
       {
+        "kind": "workstationcluster",
+        "version": "v1beta1",
+        "file": "workstations.cnrm.cloud.google.com/workstationcluster_v1beta1.json",
+        "slug": "workstations.cnrm.cloud.google.com/v1beta1/workstationcluster"
+      },
+      {
         "kind": "workstationconfig",
         "version": "v1alpha1",
         "file": "workstations.cnrm.cloud.google.com/workstationconfig_v1alpha1.json",
         "slug": "workstations.cnrm.cloud.google.com/v1alpha1/workstationconfig"
+      },
+      {
+        "kind": "workstationconfig",
+        "version": "v1beta1",
+        "file": "workstations.cnrm.cloud.google.com/workstationconfig_v1beta1.json",
+        "slug": "workstations.cnrm.cloud.google.com/v1beta1/workstationconfig"
       }
     ]
   }
