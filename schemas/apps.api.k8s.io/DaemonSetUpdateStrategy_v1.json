@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "rollingUpdate": {
-      "$ref": "#/definitions/io.k8s.api.apps.v1.RollingUpdateDaemonSet",
+      "$ref": "RollingUpdateDaemonSet_v1.json",
       "description": "Rolling update config params. Present only if type = \"RollingUpdate\"."
     },
     "type": {

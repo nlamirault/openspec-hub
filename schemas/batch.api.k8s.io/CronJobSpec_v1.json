@@ -14,7 +14,7 @@
       "type": "integer"
     },
     "jobTemplate": {
-      "$ref": "#/definitions/io.k8s.api.batch.v1.JobTemplateSpec",
+      "$ref": "JobTemplateSpec_v1.json",
       "description": "Specifies the job that will be created when executing a CronJob."
     },
     "schedule": {

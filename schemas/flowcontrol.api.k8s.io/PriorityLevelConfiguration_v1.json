@@ -13,15 +13,15 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "`metadata` is the standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.PriorityLevelConfigurationSpec",
+      "$ref": "PriorityLevelConfigurationSpec_v1.json",
       "description": "`spec` is the specification of the desired behavior of a \"request-priority\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.PriorityLevelConfigurationStatus",
+      "$ref": "PriorityLevelConfigurationStatus_v1.json",
       "description": "`status` is the current status of a \"request-priority\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
   }

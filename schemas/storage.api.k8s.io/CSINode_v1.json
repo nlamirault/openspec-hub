@@ -13,11 +13,11 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. metadata.name must be the Kubernetes node name."
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.storage.v1.CSINodeSpec",
+      "$ref": "CSINodeSpec_v1.json",
       "description": "spec is the specification of CSINode"
     }
   },

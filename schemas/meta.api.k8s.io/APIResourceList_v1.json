@@ -19,7 +19,7 @@
     "resources": {
       "description": "resources contains the name of the resources and if they are namespaced.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResource"
+        "$ref": "APIResource_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

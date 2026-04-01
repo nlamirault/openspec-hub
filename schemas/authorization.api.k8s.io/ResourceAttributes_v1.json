@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "fieldSelector": {
-      "$ref": "#/definitions/io.k8s.api.authorization.v1.FieldSelectorAttributes",
+      "$ref": "FieldSelectorAttributes_v1.json",
       "description": "fieldSelector describes the limitation on access based on field.  It can only limit access, not broaden it."
     },
     "group": {
@@ -13,7 +13,7 @@
       "type": "string"
     },
     "labelSelector": {
-      "$ref": "#/definitions/io.k8s.api.authorization.v1.LabelSelectorAttributes",
+      "$ref": "LabelSelectorAttributes_v1.json",
       "description": "labelSelector describes the limitation on access based on labels.  It can only limit access, not broaden it."
     },
     "name": {

@@ -5,11 +5,11 @@
   "type": "object",
   "properties": {
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "ObjectMeta may contain labels and annotations that will be copied into the ResourceClaim when creating it. No other fields are allowed and will be rejected during validation."
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1.ResourceClaimSpec",
+      "$ref": "ResourceClaimSpec_v1.json",
       "description": "Spec for the ResourceClaim. The entire content is copied unchanged into the ResourceClaim that gets created from this template. The same fields as in a ResourceClaim are also valid here."
     }
   },

@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "object": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.runtime.RawExtension",
+      "$ref": "../pkg.api.k8s.io/RawExtension_runtime.json",
       "description": "Object is:\n * If Type is Added or Modified: the new state of the object.\n * If Type is Deleted: the state of the object immediately before deletion.\n * If Type is Error: *Status is recommended; other types may make sense\n   depending on context."
     },
     "type": {

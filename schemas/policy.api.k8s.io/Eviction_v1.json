@@ -9,7 +9,7 @@
       "type": "string"
     },
     "deleteOptions": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions",
+      "$ref": "../meta.api.k8s.io/DeleteOptions_v1.json",
       "description": "DeleteOptions may be provided"
     },
     "kind": {
@@ -17,7 +17,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "ObjectMeta describes the pod that is being evicted."
     }
   }

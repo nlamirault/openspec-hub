@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "labelSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "A label query over a set of resources, in this case pods. If it's null, this PodAffinityTerm matches with no Pods."
     },
     "matchLabelKeys": {
@@ -25,7 +25,7 @@
       "x-kubernetes-list-type": "atomic"
     },
     "namespaceSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "A label query over the set of namespaces that the term applies to. The term is applied to the union of the namespaces selected by this field and the ones listed in the namespaces field. null selector and null or empty namespaces list means \"this pod's namespace\". An empty selector ({}) matches all namespaces."
     },
     "namespaces": {

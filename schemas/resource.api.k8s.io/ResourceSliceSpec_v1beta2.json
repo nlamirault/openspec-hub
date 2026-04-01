@@ -11,7 +11,7 @@
     "devices": {
       "description": "Devices lists some or all of the devices in this pool.\n\nMust not have more than 128 entries. If any device uses taints or consumes counters the limit is 64.\n\nOnly one of Devices and SharedCounters can be set in a ResourceSlice.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.resource.v1beta2.Device"
+        "$ref": "Device_v1beta2.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -25,7 +25,7 @@
       "type": "string"
     },
     "nodeSelector": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeSelector",
+      "$ref": "../core.api.k8s.io/NodeSelector_v1.json",
       "description": "NodeSelector defines which nodes have access to the resources in the pool, when that pool is not limited to a single node.\n\nMust use exactly one term.\n\nExactly one of NodeName, NodeSelector, AllNodes, and PerDeviceNodeSelection must be set."
     },
     "perDeviceNodeSelection": {
@@ -33,13 +33,13 @@
       "type": "boolean"
     },
     "pool": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta2.ResourcePool",
+      "$ref": "ResourcePool_v1beta2.json",
       "description": "Pool describes the pool that this ResourceSlice belongs to."
     },
     "sharedCounters": {
       "description": "SharedCounters defines a list of counter sets, each of which has a name and a list of counters available.\n\nThe names of the counter sets must be unique in the ResourcePool.\n\nOnly one of Devices and SharedCounters can be set in a ResourceSlice.\n\nThe maximum number of counter sets is 8.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.resource.v1beta2.CounterSet"
+        "$ref": "CounterSet_v1beta2.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

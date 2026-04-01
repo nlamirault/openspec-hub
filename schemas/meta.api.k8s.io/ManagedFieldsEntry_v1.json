@@ -13,7 +13,7 @@
       "type": "string"
     },
     "fieldsV1": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.FieldsV1",
+      "$ref": "FieldsV1_v1.json",
       "description": "FieldsV1 holds the first JSON version format as described in the \"FieldsV1\" type."
     },
     "manager": {
@@ -29,7 +29,7 @@
       "type": "string"
     },
     "time": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "Time_v1.json",
       "description": "Time is the timestamp of when the ManagedFields entry was added. The timestamp will also be updated if a field is added, the manager changes any of the owned fields value or removes a field. The timestamp does not update when a field is removed from the entry because another manager took it over."
     }
   }

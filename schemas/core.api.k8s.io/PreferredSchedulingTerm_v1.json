@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "preference": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeSelectorTerm",
+      "$ref": "NodeSelectorTerm_v1.json",
       "description": "A node selector term, associated with the corresponding weight."
     },
     "weight": {

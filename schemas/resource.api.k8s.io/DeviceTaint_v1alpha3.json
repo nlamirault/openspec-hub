@@ -13,7 +13,7 @@
       "type": "string"
     },
     "timeAdded": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "TimeAdded represents the time at which the taint was added. Added automatically during create or update if not set."
     },
     "value": {

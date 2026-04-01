@@ -7,7 +7,7 @@
     "matchExpressions": {
       "description": "A list of scope selector requirements by scope of the resources.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ScopedResourceSelectorRequirement"
+        "$ref": "ScopedResourceSelectorRequirement_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

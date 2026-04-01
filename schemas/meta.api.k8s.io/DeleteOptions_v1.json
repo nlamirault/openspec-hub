@@ -34,7 +34,7 @@
       "type": "boolean"
     },
     "preconditions": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Preconditions",
+      "$ref": "Preconditions_v1.json",
       "description": "Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned."
     },
     "propagationPolicy": {

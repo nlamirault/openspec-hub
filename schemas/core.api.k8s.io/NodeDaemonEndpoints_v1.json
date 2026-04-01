@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "kubeletEndpoint": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.DaemonEndpoint",
+      "$ref": "DaemonEndpoint_v1.json",
       "description": "Endpoint on which Kubelet is listening."
     }
   }

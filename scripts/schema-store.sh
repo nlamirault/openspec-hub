@@ -53,6 +53,8 @@ if [ "${choice}" != "swagger" ]; then
   done
 else
   manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}"
+  log_info "[swagger] Rewriting internal \$ref pointers to relative paths"
+  python3 "${SCRIPT_DIR}/fix-schema-refs.py" "${JSON_SCHEMA_DIR}"
 fi
 
 rm -fr "${SCRIPT_DIR}/crds"

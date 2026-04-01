@@ -11,7 +11,7 @@
     "allowedTopologies": {
       "description": "allowedTopologies restrict the node topologies where volumes can be dynamically provisioned. Each volume plugin defines its own supported topology specifications. An empty TopologySelectorTerm list means there is no topology restriction. This field is only honored by servers that enable the VolumeScheduling feature.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.TopologySelectorTerm"
+        "$ref": "../core.api.k8s.io/TopologySelectorTerm_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -25,7 +25,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "mountOptions": {

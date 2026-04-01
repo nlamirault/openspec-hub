@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "lastTransitionTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "Time_v1.json",
       "description": "lastTransitionTime is the last time the condition transitioned from one status to another. This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable."
     },
     "message": {

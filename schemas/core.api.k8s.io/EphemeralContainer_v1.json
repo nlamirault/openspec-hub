@@ -23,7 +23,7 @@
     "env": {
       "description": "List of environment variables to set in the container. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.EnvVar"
+        "$ref": "EnvVar_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -36,7 +36,7 @@
     "envFrom": {
       "description": "List of sources to populate environment variables in the container. The keys defined within a source may consist of any printable ASCII characters except '='. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.EnvFromSource"
+        "$ref": "EnvFromSource_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -50,11 +50,11 @@
       "type": "string"
     },
     "lifecycle": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Lifecycle",
+      "$ref": "Lifecycle_v1.json",
       "description": "Lifecycle is not allowed for ephemeral containers."
     },
     "livenessProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "Probes are not allowed for ephemeral containers."
     },
     "name": {
@@ -64,7 +64,7 @@
     "ports": {
       "description": "Ports are not allowed for ephemeral containers.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerPort"
+        "$ref": "ContainerPort_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -76,19 +76,19 @@
       "x-kubernetes-patch-strategy": "merge"
     },
     "readinessProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "Probes are not allowed for ephemeral containers."
     },
     "resizePolicy": {
       "description": "Resources resize policy for the container.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerResizePolicy"
+        "$ref": "ContainerResizePolicy_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     },
     "resources": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements",
+      "$ref": "ResourceRequirements_v1.json",
       "description": "Resources are not allowed for ephemeral containers. Ephemeral containers use spare resources already allocated to the pod."
     },
     "restartPolicy": {
@@ -98,17 +98,17 @@
     "restartPolicyRules": {
       "description": "Represents a list of rules to be checked to determine if the container should be restarted on exit. You cannot set this field on ephemeral containers.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerRestartRule"
+        "$ref": "ContainerRestartRule_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     },
     "securityContext": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.SecurityContext",
+      "$ref": "SecurityContext_v1.json",
       "description": "Optional: SecurityContext defines the security options the ephemeral container should be run with. If set, the fields of SecurityContext override the equivalent fields of PodSecurityContext."
     },
     "startupProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "Probes are not allowed for ephemeral containers."
     },
     "stdin": {
@@ -138,7 +138,7 @@
     "volumeDevices": {
       "description": "volumeDevices is the list of block devices to be used by the container.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeDevice"
+        "$ref": "VolumeDevice_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -151,7 +151,7 @@
     "volumeMounts": {
       "description": "Pod volumes to mount into the container's filesystem. Subpath mounts are not allowed for ephemeral containers. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeMount"
+        "$ref": "VolumeMount_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [

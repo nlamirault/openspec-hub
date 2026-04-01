@@ -12,7 +12,7 @@
     "sources": {
       "description": "sources is the list of volume projections. Each entry in this list handles one source.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeProjection"
+        "$ref": "VolumeProjection_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

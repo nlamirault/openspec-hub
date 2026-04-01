@@ -15,7 +15,7 @@
     "options": {
       "description": "A list of DNS resolver options. This will be merged with the base options generated from DNSPolicy. Duplicated entries will be removed. Resolution options given in Options will override those that appear in the base DNSPolicy.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.PodDNSConfigOption"
+        "$ref": "PodDNSConfigOption_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

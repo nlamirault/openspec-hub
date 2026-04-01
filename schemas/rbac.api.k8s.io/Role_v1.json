@@ -13,13 +13,13 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata."
     },
     "rules": {
       "description": "Rules holds all the PolicyRules for this Role",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.rbac.v1.PolicyRule"
+        "$ref": "PolicyRule_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

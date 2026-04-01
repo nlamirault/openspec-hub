@@ -15,7 +15,7 @@
       "type": "integer"
     },
     "scaleTargetRef": {
-      "$ref": "#/definitions/io.k8s.api.autoscaling.v1.CrossVersionObjectReference",
+      "$ref": "CrossVersionObjectReference_v1.json",
       "description": "reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource."
     },
     "targetCPUUtilizationPercentage": {

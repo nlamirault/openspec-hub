@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "exec": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ExecAction",
+      "$ref": "ExecAction_v1.json",
       "description": "Exec specifies a command to execute in the container."
     },
     "failureThreshold": {
@@ -14,11 +14,11 @@
       "type": "integer"
     },
     "grpc": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.GRPCAction",
+      "$ref": "GRPCAction_v1.json",
       "description": "GRPC specifies a GRPC HealthCheckRequest."
     },
     "httpGet": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.HTTPGetAction",
+      "$ref": "HTTPGetAction_v1.json",
       "description": "HTTPGet specifies an HTTP GET request to perform."
     },
     "initialDelaySeconds": {
@@ -37,7 +37,7 @@
       "type": "integer"
     },
     "tcpSocket": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.TCPSocketAction",
+      "$ref": "TCPSocketAction_v1.json",
       "description": "TCPSocket specifies a connection to a TCP port."
     },
     "terminationGracePeriodSeconds": {

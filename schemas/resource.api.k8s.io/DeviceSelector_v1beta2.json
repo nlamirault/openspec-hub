@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "cel": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta2.CELDeviceSelector",
+      "$ref": "CELDeviceSelector_v1beta2.json",
       "description": "CEL contains a CEL expression for selecting a device."
     }
   }
