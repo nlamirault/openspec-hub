@@ -11,6 +11,5 @@
     "http": {
       "$ref": "#/definitions/io.k8s.api.networking.v1.HTTPIngressRuleValue"
     }
-  },
-  "required": null
+  }
 }

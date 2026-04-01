@@ -12,6 +12,5 @@
       "$ref": "#/definitions/io.k8s.api.networking.v1.IngressServiceBackend",
       "description": "service references a service as a backend. This is a mutually exclusive setting with \"Resource\"."
     }
-  },
-  "required": null
+  }
 }

@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.resource.v1.CELDeviceSelector",
       "description": "CEL contains a CEL expression for selecting a device."
     }
-  },
-  "required": null
+  }
 }

@@ -154,7 +154,7 @@
               "type": "array"
             },
             "enclaveOptions": {
-              "description": "Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.\nFor more information, see What is Amazon Web Services Nitro Enclaves? (https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html)\nin the Amazon Web Services Nitro Enclaves User Guide.",
+              "description": "Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.\nFor more information, see What is Nitro Enclaves? (https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html)\nin the Amazon Web Services Nitro Enclaves User Guide.",
               "properties": {
                 "enabled": {
                   "type": "boolean"
@@ -474,7 +474,7 @@
               "type": "object"
             },
             "metadataOptions": {
-              "description": "The metadata options for the instance. For more information, see Instance\nmetadata and user data (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)\nin the Amazon EC2 User Guide.",
+              "description": "The metadata options for the instance. For more information, see Use instance\nmetadata to manage your EC2 instance (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)\nin the Amazon EC2 User Guide.",
               "properties": {
                 "httpEndpoint": {
                   "type": "string"
@@ -571,7 +571,7 @@
                   },
                   "ipv6Prefixes": {
                     "items": {
-                      "description": "Describes the IPv4 prefix option for a network interface.",
+                      "description": "Describes the IPv6 prefix option for a network interface.",
                       "properties": {
                         "ipv6Prefix": {
                           "type": "string"

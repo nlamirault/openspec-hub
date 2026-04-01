@@ -24,6 +24,5 @@
       "description": "`type` is the type of the condition. Required.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.policy.v1.PodDisruptionBudgetStatus",
       "description": "Most recently observed status of the PodDisruptionBudget."
     }
-  },
-  "required": null
+  }
 }

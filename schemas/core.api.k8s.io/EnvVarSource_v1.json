@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.SecretKeySelector",
       "description": "Selects a key of a secret in the pod's namespace"
     }
-  },
-  "required": null
+  }
 }

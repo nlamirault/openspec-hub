@@ -31,6 +31,7 @@
           "additionalProperties": {
             "type": "string"
           },
+          "description": "Map keys are the parameter name and the values are the parameter value.\n\nThese are ONLY user-defined parameter overrides for the DB parameter group.\n\nThis does not contain default or system parameters.",
           "type": "object"
         },
         "tags": {

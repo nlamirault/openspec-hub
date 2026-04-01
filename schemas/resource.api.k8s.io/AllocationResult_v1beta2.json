@@ -16,6 +16,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.NodeSelector",
       "description": "NodeSelector defines where the allocated resources are available. If unset, they are available everywhere."
     }
-  },
-  "required": null
+  }
 }

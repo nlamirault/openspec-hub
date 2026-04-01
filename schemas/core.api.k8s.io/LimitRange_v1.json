@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.LimitRangeSpec",
       "description": "Spec defines the limits enforced. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

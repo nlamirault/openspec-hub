@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.JSONSchemaProps",
       "description": "openAPIV3Schema is the OpenAPI v3 schema to use for validation and pruning."
     }
-  },
-  "required": null
+  }
 }

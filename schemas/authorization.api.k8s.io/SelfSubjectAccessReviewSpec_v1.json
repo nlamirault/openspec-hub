@@ -12,6 +12,5 @@
       "$ref": "#/definitions/io.k8s.api.authorization.v1.ResourceAttributes",
       "description": "ResourceAuthorizationAttributes describes information for a resource access request"
     }
-  },
-  "required": null
+  }
 }

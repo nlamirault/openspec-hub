@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyBindingSpec",
       "description": "Specification of the desired behavior of the ValidatingAdmissionPolicyBinding."
     }
-  },
-  "required": null
+  }
 }

@@ -35,6 +35,5 @@
       "x-kubernetes-patch-merge-key": "uid",
       "x-kubernetes-patch-strategy": "merge"
     }
-  },
-  "required": null
+  }
 }

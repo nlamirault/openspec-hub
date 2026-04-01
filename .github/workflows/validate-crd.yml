@@ -42,6 +42,11 @@ jobs:
         go install github.com/patrickdappollonio/kubectl-slice@latest
         echo "${HOME}/go/bin" >> "${GITHUB_PATH}"
 
+    - name: Install jsonschema-cli
+      run: |
+        cargo install jsonschema-cli
+        echo "${HOME}/.cargo/bin" >> "${GITHUB_PATH}"
+
     - name: Detect changed CRD scripts
       id: changed
       uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46.0.5
@@ -59,22 +64,23 @@ jobs:
           echo "::endgroup::"
         done
 
-    - name: Validate generated schemas are valid JSON
+    - name: Validate generated schemas
       if: steps.changed.outputs.any_changed == 'true'
       run: |
         echo "Validating JSON schemas..."
         failed=0
         while IFS= read -r schema_file; do
-          if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "${schema_file}" 2>/dev/null; then
-            echo "::error file=${schema_file}::Invalid JSON in schema file"
+          echo "Validating ${schema_file}"
+          if ! jsonschema-cli validate --draft 2020 "${schema_file}" 2>/dev/null; then
+            echo "::error file=${schema_file}::Invalid JSON schema"
             failed=$((failed + 1))
           fi
         done < <(find schemas/ -name '*.json')
         if [[ "${failed}" -gt 0 ]]; then
-          echo "::error::${failed} schema file(s) contain invalid JSON"
+          echo "::error::${failed} schema file(s) are invalid"
           exit 1
         fi
-        echo "All schemas are valid JSON."
+        echo "All schemas are valid."
 
     - name: No CRD scripts changed
       if: steps.changed.outputs.any_changed == 'false'

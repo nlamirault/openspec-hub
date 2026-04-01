@@ -21,6 +21,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.LoadBalancerStatus",
       "description": "LoadBalancer contains the current status of the load-balancer, if one is present."
     }
-  },
-  "required": null
+  }
 }

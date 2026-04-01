@@ -59,3 +59,19 @@ build: guard-CRD ## Update CRD for an application
 .PHONY: catalog
 catalog: ## Build the catalog
 	uv run scripts/generate-catalog.py
+
+.PHONY: website-install
+website-install: ## Install website dependencies
+	bun install
+
+.PHONY: website-dev
+website-dev: ## Start the website development server
+	bun run dev
+
+.PHONY: website-build
+website-build: ## Build the website for production
+	bun run build
+
+.PHONY: website-preview
+website-preview: ## Preview the production website build
+	bun run preview

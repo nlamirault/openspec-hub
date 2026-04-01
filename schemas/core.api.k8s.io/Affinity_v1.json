@@ -16,6 +16,5 @@
       "$ref": "#/definitions/io.k8s.api.core.v1.PodAntiAffinity",
       "description": "Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the same node, zone, etc. as some other pod(s))."
     }
-  },
-  "required": null
+  }
 }

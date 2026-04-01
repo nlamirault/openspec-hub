@@ -16,6 +16,5 @@
       "description": "If pool is set, only devices in that pool are selected.\n\nAlso setting the driver name may be useful to avoid ambiguity when different drivers use the same pool name, but this is not required because selecting pools from different drivers may also be useful, for example when drivers with node-local devices use the node name as their pool name.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

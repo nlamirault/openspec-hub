@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.autoscaling.v2.HorizontalPodAutoscalerStatus",
       "description": "status is the current information about the autoscaler."
     }
-  },
-  "required": null
+  }
 }

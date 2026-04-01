@@ -13,6 +13,5 @@
       "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime",
       "description": "Time of the last occurrence observed"
     }
-  },
-  "required": null
+  }
 }

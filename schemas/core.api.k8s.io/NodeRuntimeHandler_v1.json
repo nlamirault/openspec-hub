@@ -12,6 +12,5 @@
       "description": "Runtime handler name. Empty for the default runtime handler.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

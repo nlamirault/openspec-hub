@@ -33,6 +33,5 @@
       "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
       "description": "notBefore is the time at which the certificate becomes valid.  The value must be the same as the notBefore value in the leaf certificate in certificateChain.  This field is set via the /status subresource.  Once populated, it is immutable. The signer must set this field at the same time it sets certificateChain."
     }
-  },
-  "required": null
+  }
 }

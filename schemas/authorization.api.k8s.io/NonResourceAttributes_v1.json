@@ -12,6 +12,5 @@
       "description": "Verb is the standard HTTP verb",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

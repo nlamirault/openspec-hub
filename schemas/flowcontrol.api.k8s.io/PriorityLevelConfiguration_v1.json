@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.PriorityLevelConfigurationStatus",
       "description": "`status` is the current status of a \"request-priority\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

@@ -12,6 +12,5 @@
       "description": "Value is this DNS resolver option's value.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

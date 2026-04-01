@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "io.k8s.api.admissionregistration.v1alpha1.MatchCondition",
-  "description": null,
   "type": "object",
   "properties": {
     "expression": {

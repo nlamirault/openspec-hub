@@ -12,6 +12,5 @@
       "$ref": "#/definitions/io.k8s.api.scheduling.v1alpha1.GangSchedulingPolicy",
       "description": "Gang specifies that the pods in this group should be scheduled using all-or-nothing semantics."
     }
-  },
-  "required": null
+  }
 }

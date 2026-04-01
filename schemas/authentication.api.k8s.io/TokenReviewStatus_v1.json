@@ -24,6 +24,5 @@
       "$ref": "#/definitions/io.k8s.api.authentication.v1.UserInfo",
       "description": "User is the UserInfo associated with the provided token."
     }
-  },
-  "required": null
+  }
 }

@@ -8,6 +8,5 @@
       "description": "SupplementalGroupsPolicy is set to true if the runtime supports SupplementalGroupsPolicy and ContainerUser.",
       "type": "boolean"
     }
-  },
-  "required": null
+  }
 }

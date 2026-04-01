@@ -23,6 +23,5 @@
       "format": "int32",
       "type": "integer"
     }
-  },
-  "required": null
+  }
 }

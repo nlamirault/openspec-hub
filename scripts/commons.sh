@@ -22,40 +22,38 @@ LOG_LEVEL_TRACE=4
 # Set default log level (can be overridden by env or arg)
 LOG_LEVEL="${LOG_LEVEL:=$LOG_LEVEL_INFO}"
 
-function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_reset}⚪ $*${color_reset}"; }
-function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${color_reset}"; }
-function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${color_reset}"; }
-function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟡 $*${color_reset}"; }
-function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${color_reset}"; }
-
-function generate_output_filename {
-  local crd_file=$1
-
-  local group
-  group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
-  [[ -z "$group" || "${group}" == "null" ]] && return
-  local kind
-  kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null)
-  local version
-  version=$(yq e '.spec.versions[0].name' "${crd_file}" 2>/dev/null)
-  [[ -n "$kind" && -n "${version}" ]] && echo "${group}/${kind}_${version}.json" | tr '[:upper:]' '[:lower:]'
-}
+function log_trace { [ "${LOG_LEVEL_TRACE}" -le "${LOG_LEVEL}" ] && echo -e "${color_reset}⚪ $*${color_reset}" || true; }
+function log_debug { [ "${LOG_LEVEL_DEBUG}" -le "${LOG_LEVEL}" ] && echo -e "${color_blue}🔵 $*${color_reset}" || true; }
+function log_info { [ "${LOG_LEVEL_INFO}" -le "${LOG_LEVEL}" ] && echo -e "${color_green}🟢 $*${color_reset}" || true; }
+function log_warn { [ "${LOG_LEVEL_WARN}" -le "${LOG_LEVEL}" ] && echo -e "${color_yellow}🟡 $*${color_reset}" || true; }
+function log_error { [ "${LOG_LEVEL_ERROR}" -le "${LOG_LEVEL}" ] && echo -e "${color_red}🔴 $*${color_reset}" || true; }
 
 function generate_json_schema {
   local crd_file=$1
   local json_dir=$2
 
-  log_debug "[io] Generate output filename from ${crd_file}"
-  output_file=$(generate_output_filename "${crd_file}")
-  group=$(dirname "${output_file}")
-  [ "${group}" == "." ] && log_error "Invalid group" && return
-  schema=$(basename "${output_file}")
-  [ "${schema}" == "." ] && log_error "Invalid schema" && return
-  log_info "[crd] Group: ${group} / Schema: ${schema}"
-  output_path="${json_dir}/${group}"
+  local group
+  group=$(yq e '.spec.group' "${crd_file}" 2>/dev/null)
+  [[ -z "$group" || "${group}" == "null" ]] && log_error "Invalid group in ${crd_file}" && return
+  local kind
+  kind=$(yq e '.spec.names.kind' "${crd_file}" 2>/dev/null | tr '[:upper:]' '[:lower:]')
+  [[ -z "$kind" || "${kind}" == "null" ]] && log_error "Invalid kind in ${crd_file}" && return
+
+  local output_path="${json_dir}/${group}"
   mkdir -p "${output_path}"
-  log_info "[openapi] Extract openAPIV3Schema and convert to JSON: ${output_path}"
-  yq e '.spec.versions[].schema.openAPIV3Schema' "${crd_file}" -o=json >"${output_path}/${schema}"
+
+  local version_count
+  version_count=$(yq e '.spec.versions | length' "${crd_file}" 2>/dev/null)
+  log_debug "[crd] Group: ${group} / Kind: ${kind} / Versions: ${version_count}"
+
+  for ((i = 0; i < version_count; i++)); do
+    local version
+    version=$(yq e ".spec.versions[${i}].name" "${crd_file}" 2>/dev/null)
+    [[ -z "$version" || "${version}" == "null" ]] && continue
+    local schema="${kind}_${version}.json"
+    log_info "[openapi] Extract openAPIV3Schema: ${output_path}/${schema}"
+    yq e ".spec.versions[${i}].schema.openAPIV3Schema" "${crd_file}" -o=json >"${output_path}/${schema}"
+  done
 }
 
 function download_crd {
@@ -125,27 +123,6 @@ function manage_swagger_file {
 
   log_info "[Swagger] OpenAPI spec file: ${swagger_dir}/swagger.json"
   mkdir -p "${output_path}"
-  # jq -c '
-  #   .definitions
-  #   | to_entries[]
-  #   | {
-  #       name: .key,
-  #       schema: {
-  #         "$schema": "http://json-schema.org/draft-07/schema#",
-  #         "title": .key,
-  #         "description": .value.description,
-  #         "type": "object",
-  #         "properties": .value.properties,
-  #         "required": .value.required
-  #       }
-  #     }
-  # ' swagger.json |
-  #   while IFS= read -r line; do
-  #     name=$(echo "$line" | jq -r '.name')
-  #     schema=$(echo "$line" | jq -r '.schema')
-  #     log_debug "[Swagger] ${name}.json"
-  #     echo "$schema" | jq '.' >"${output_path}/$name.json"
-  #   done
 
   jq -c '
     .definitions
@@ -155,13 +132,13 @@ function manage_swagger_file {
         schema: {
           "$schema": "http://json-schema.org/draft-07/schema#",
           "title": .key,
-          "description": .value.description,
+          "description": (if .value.description == null then empty else .value.description end),
           "type": "object",
-          "properties": .value.properties,
-          "required": .value.required
+          "properties": (if .value.properties == null then empty else .value.properties end),
+          "required": (if .value.required == null then empty else .value.required end)
         }
       }
-  ' swagger.json |
+  ' "${swagger_dir}/swagger.json" |
     while IFS= read -r line; do
 
       raw=$(echo "$line" | jq -r '.raw_name')

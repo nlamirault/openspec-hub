@@ -790,6 +790,11 @@
           },
           "type": "object"
         },
+        "bodySizeLimit": {
+          "description": "bodySizeLimit defines a per-scrape limit on the size of the uncompressed\nresponse body that will be accepted by Prometheus. Targets responding with\na body larger than this many bytes will cause the scrape to fail.\n\nIt requires Prometheus >= v2.28.0.",
+          "pattern": "(^0|([0-9]*[.])?[0-9]+((K|M|G|T|E|P)i?)?B)$",
+          "type": "string"
+        },
         "consulSDConfigs": {
           "description": "consulSDConfigs defines a list of Consul service discovery configurations.",
           "items": {
@@ -1285,8 +1290,10 @@
                 "type": "string"
               },
               "scheme": {
-                "description": "scheme defines the HTTP Scheme default \"http\"",
+                "description": "scheme defines the HTTP Scheme.",
                 "enum": [
+                  "http",
+                  "https",
                   "HTTP",
                   "HTTPS"
                 ],
@@ -1520,7 +1527,7 @@
             "description": "DigitalOceanSDConfig allow retrieving scrape targets from DigitalOcean's Droplets API.\nThis service discovery uses the public IPv4 address by default, by that can be changed with relabeling\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#digitalocean_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -1927,7 +1934,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the DigitalOcean API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -2143,7 +2150,7 @@
             "description": "Docker SD configurations allow retrieving scrape targets from Docker Engine hosts.\nThis SD discovers \"containers\" and will create a target for each network IP and\nport the container is configured to expose.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#docker_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Docker daemon.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -2238,6 +2245,7 @@
                   "properties": {
                     "name": {
                       "description": "name of the Filter.",
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -2268,8 +2276,9 @@
                 "type": "boolean"
               },
               "host": {
-                "description": "host defines the address of the docker daemon",
+                "description": "host defines the address of the docker daemon.",
                 "minLength": 1,
+                "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*://.+$",
                 "type": "string"
               },
               "hostNetworkingHost": {
@@ -2648,7 +2657,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Docker daemon.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -2822,7 +2831,7 @@
             "description": "DockerSwarmSDConfig configurations allow retrieving scrape targets from Docker Swarm engine.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#dockerswarm_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Docker Swarm API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -2917,6 +2926,7 @@
                   "properties": {
                     "name": {
                       "description": "name of the Filter.",
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -3327,7 +3337,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Docker Swarm daemon.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -3535,6 +3545,7 @@
                   "properties": {
                     "name": {
                       "description": "name of the Filter.",
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -3654,7 +3665,7 @@
                 "x-kubernetes-map-type": "atomic"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.\nIt requires Prometheus >= v2.41.0",
+                "description": "tlsConfig defines the TLS configuration to connect to the EC2 API.\nIt requires Prometheus >= v2.41.0",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -3833,7 +3844,7 @@
             "description": "Eureka SD configurations allow retrieving scrape targets using the Eureka REST API.\nPrometheus will periodically check the REST endpoint and create a target for every app instance.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#eureka_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Eureka server.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -4286,12 +4297,11 @@
               },
               "server": {
                 "description": "server defines the URL to connect to the Eureka server.",
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Eureka server.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -4551,7 +4561,7 @@
             "description": "HetznerSDConfig allow retrieving scrape targets from Hetzner Cloud API and Robot API.\nThis service discovery uses the public IPv4 address by default, but that can be changed with relabeling\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#hetzner_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Hetzner API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -5025,7 +5035,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Hetzner API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -5821,8 +5831,7 @@
               },
               "url": {
                 "description": "url defines the URL from which the targets are fetched.",
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               }
             },
@@ -5839,7 +5848,7 @@
             "description": "IonosSDConfig configurations allow retrieving scrape targets from IONOS resources.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#ionos_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the IONOS.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the IONOS API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -6251,7 +6260,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the IONOS API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -7141,7 +7150,7 @@
             "description": "KumaSDConfig allow retrieving scrape targets from Kuma's control plane.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kuma_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Kuma control plane.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -7608,7 +7617,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Kuma control plane.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -7820,7 +7829,7 @@
                 "x-kubernetes-map-type": "atomic"
               },
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Lightsail API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -8316,7 +8325,7 @@
                 "x-kubernetes-map-type": "atomic"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Lightsail API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -8487,7 +8496,7 @@
             "description": "LinodeSDConfig configurations allow retrieving scrape targets from Linode's Linode APIv4.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#linode_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Linode API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -8904,7 +8913,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Linode API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -9193,7 +9202,7 @@
                 "type": "boolean"
               },
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the Nomad API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -9654,7 +9663,7 @@
               },
               "server": {
                 "description": "server defines the Nomad server address to connect to for service discovery.\nThis should be the full URL including protocol (e.g., \"https://nomad.example.com:4646\").",
-                "minLength": 1,
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "tagSeparator": {
@@ -9662,7 +9671,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Nomad API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -10205,7 +10214,7 @@
               },
               "identityEndpoint": {
                 "description": "identityEndpoint defines the HTTP endpoint that is required to work with\nthe Identity API of the appropriate version.",
-                "pattern": "^http(s)?:\\/\\/.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "password": {
@@ -10589,7 +10598,7 @@
             "description": "PuppetDBSDConfig configurations allow retrieving scrape targets from PuppetDB resources.\nSee https://prometheus.io/docs/prometheus/latest/configuration/configuration/#puppetdb_sd_config",
             "properties": {
               "authorization": {
-                "description": "authorization defines the  header configuration to authenticate against the DigitalOcean API.\nCannot be set at the same time as `oauth2`.",
+                "description": "authorization defines the header configuration to authenticate against the PuppetDB API.\nCannot be set at the same time as `oauth2`.",
                 "properties": {
                   "credentials": {
                     "description": "credentials defines a key of a Secret in the namespace that contains the credentials for authentication.",
@@ -11057,7 +11066,7 @@
                 "type": "string"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the PuppetDB server.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -11219,8 +11228,7 @@
               },
               "url": {
                 "description": "url defines the URL of the PuppetDB root query endpoint.",
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               }
             },
@@ -11318,7 +11326,7 @@
               },
               "apiURL": {
                 "description": "apiURL defines the API URL to use when doing the server listing requests.",
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "enableHTTP2": {
@@ -11437,7 +11445,7 @@
                 "x-kubernetes-list-type": "set"
               },
               "tlsConfig": {
-                "description": "tlsConfig defines the TLS configuration to connect to the Consul API.",
+                "description": "tlsConfig defines the TLS configuration to connect to the Scaleway API.",
                 "properties": {
                   "ca": {
                     "description": "ca defines the Certificate authority used when verifying server certificates.",
@@ -11614,8 +11622,10 @@
           "type": "array"
         },
         "scheme": {
-          "description": "scheme defines the protocol scheme used for requests.\nIf empty, Prometheus uses HTTP by default.",
+          "description": "scheme defines the protocol scheme used for requests.",
           "enum": [
+            "http",
+            "https",
             "HTTP",
             "HTTPS"
           ],
@@ -11634,6 +11644,10 @@
           "description": "scrapeInterval defines the interval between consecutive scrapes.",
           "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
           "type": "string"
+        },
+        "scrapeNativeHistograms": {
+          "description": "scrapeNativeHistograms defines whether to enable scraping of native histograms.\nIt requires Prometheus >= v3.8.0.",
+          "type": "boolean"
         },
         "scrapeProtocols": {
           "description": "scrapeProtocols defines the protocols to negotiate during a scrape. It tells clients the\nprotocols supported by Prometheus in order of preference (from most to least preferred).\n\nIf unset, Prometheus uses its default value.\n\nIt requires Prometheus >= v2.49.0.",
@@ -11673,7 +11687,8 @@
               "targets": {
                 "description": "targets defines the list of targets for this static configuration.",
                 "items": {
-                  "description": "Target represents a target for Prometheus to scrape\nkubebuilder:validation:MinLength:=1",
+                  "description": "Target represents a target for Prometheus to scrape",
+                  "minLength": 1,
                   "type": "string"
                 },
                 "minItems": 1,

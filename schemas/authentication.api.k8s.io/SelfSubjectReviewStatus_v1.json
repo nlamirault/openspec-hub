@@ -8,6 +8,5 @@
       "$ref": "#/definitions/io.k8s.api.authentication.v1.UserInfo",
       "description": "User attributes of the user making this request."
     }
-  },
-  "required": null
+  }
 }

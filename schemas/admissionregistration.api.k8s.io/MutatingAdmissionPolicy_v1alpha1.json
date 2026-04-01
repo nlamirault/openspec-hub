@@ -20,6 +20,5 @@
       "$ref": "#/definitions/io.k8s.api.admissionregistration.v1alpha1.MutatingAdmissionPolicySpec",
       "description": "Specification of the desired behavior of the MutatingAdmissionPolicy."
     }
-  },
-  "required": null
+  }
 }
