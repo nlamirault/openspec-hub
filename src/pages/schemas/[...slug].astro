@@ -63,6 +63,15 @@ const schemaDescription = schema.description || `Kubernetes CRD schema for ${kin
 				<h2 class="text-xs font-black text-gray-400 dark:text-slate-500 uppercase tracking-[0.2em]">Resource Structure</h2>
 				<div class="flex items-center gap-2">
 					<button
+						id="copy-yaml-directive"
+						class="text-[10px] bg-white dark:bg-slate-900 text-gray-500 dark:text-slate-400 px-3 py-1.5 rounded-full font-bold border border-gray-200 dark:border-slate-700 hover:border-purple-300 dark:hover:border-purple-600 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1.5"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+						</svg>
+						<span id="yaml-directive-label">Copy YAML directive</span>
+					</button>
+					<button
 						id="copy-schema"
 						class="text-[10px] bg-white dark:bg-slate-900 text-gray-500 dark:text-slate-400 px-3 py-1.5 rounded-full font-bold border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5"
 					>
@@ -91,7 +100,28 @@ const schemaDescription = schema.description || `Kubernetes CRD schema for ${kin
 	</div>
 </Layout>
 
-<script define:vars={{ schemaJson: JSON.stringify(schema, null, 2) }}>
+<script define:vars={{ schemaJson: JSON.stringify(schema, null, 2), schemaFile: file }}>
+	const yamlBtn = document.getElementById('copy-yaml-directive');
+	const yamlLabel = document.getElementById('yaml-directive-label');
+	const yamlDirective = `# yaml-language-server: $schema=https://raw.githubusercontent.com/nlamirault/openspec-hub/main/schemas/${schemaFile}`;
+
+	yamlBtn?.addEventListener('click', async () => {
+		try {
+			await navigator.clipboard.writeText(yamlDirective);
+			if (yamlLabel) yamlLabel.textContent = 'Copied!';
+			yamlBtn.classList.add('border-purple-300', 'text-purple-600');
+			yamlBtn.classList.remove('border-gray-200', 'text-gray-500');
+			setTimeout(() => {
+				if (yamlLabel) yamlLabel.textContent = 'Copy YAML directive';
+				yamlBtn.classList.remove('border-purple-300', 'text-purple-600');
+				yamlBtn.classList.add('border-gray-200', 'text-gray-500');
+			}, 2000);
+		} catch {
+			if (yamlLabel) yamlLabel.textContent = 'Failed';
+			setTimeout(() => { if (yamlLabel) yamlLabel.textContent = 'Copy YAML directive'; }, 2000);
+		}
+	});
+
 	const btn = document.getElementById('copy-schema');
 	const label = document.getElementById('copy-label');
 
