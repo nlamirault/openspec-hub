@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import catalog from '../../../public/data/catalog.json';
 import titles from '../../../public/data/titles.json';
 import SchemaTree from '../../components/SchemaTree';
+import SchemaDiffViewer from '../../components/SchemaDiffViewer';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
@@ -10,13 +11,19 @@ export async function getStaticPaths() {
     const paths = [];
     for (const [group, resources] of Object.entries(catalog.groups)) {
         for (const res of resources) {
+            // Find all versions of the same kind within this group
+            const siblingVersions = resources
+                .filter(r => r.kind === res.kind)
+                .map(r => ({ version: r.version, file: r.file, slug: r.slug }));
+
             paths.push({
                 params: { slug: res.slug },
                 props: {
                     file: res.file,
                     group,
                     version: res.version,
-                    kind: res.kind
+                    kind: res.kind,
+                    siblingVersions,
                 }
             });
         }
@@ -24,7 +31,7 @@ export async function getStaticPaths() {
     return paths;
 }
 
-const { file, group, version, kind } = Astro.props;
+const { file, group, version, kind, siblingVersions } = Astro.props;
 
 const fullPath = path.resolve('schemas', file);
 const content = fs.readFileSync(fullPath, 'utf-8');
@@ -88,6 +95,14 @@ const schemaDescription = schema.description || `Kubernetes CRD schema for ${kin
 
 			<SchemaTree client:load initialSchema={schema} titles={titles as any} />
 		</section>
+
+		{siblingVersions.length > 1 && (
+			<SchemaDiffViewer
+				client:load
+				currentVersion={version}
+				versions={siblingVersions}
+			/>
+		)}
 
 		<footer class="mt-20 pt-8 border-t border-gray-100 dark:border-slate-800 flex justify-between items-center">
 			<div class="text-[10px] text-gray-400 dark:text-slate-500 font-bold uppercase tracking-widest">
