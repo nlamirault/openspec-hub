@@ -3582,6 +3582,182 @@
         "slug": "certificates.api.k8s.io/v1beta1/PodCertificateRequestStatus"
       }
     ],
+    "cilium.io": [
+      {
+        "kind": "ciliumbgpadvertisement",
+        "version": "v2",
+        "file": "cilium.io/ciliumbgpadvertisement_v2.json",
+        "slug": "cilium.io/v2/ciliumbgpadvertisement"
+      },
+      {
+        "kind": "ciliumbgpadvertisement",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumbgpadvertisement_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumbgpadvertisement"
+      },
+      {
+        "kind": "ciliumbgpclusterconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumbgpclusterconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumbgpclusterconfig"
+      },
+      {
+        "kind": "ciliumbgpclusterconfig",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumbgpclusterconfig_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumbgpclusterconfig"
+      },
+      {
+        "kind": "ciliumbgpnodeconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumbgpnodeconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumbgpnodeconfig"
+      },
+      {
+        "kind": "ciliumbgpnodeconfig",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumbgpnodeconfig_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumbgpnodeconfig"
+      },
+      {
+        "kind": "ciliumbgpnodeconfigoverride",
+        "version": "v2",
+        "file": "cilium.io/ciliumbgpnodeconfigoverride_v2.json",
+        "slug": "cilium.io/v2/ciliumbgpnodeconfigoverride"
+      },
+      {
+        "kind": "ciliumbgpnodeconfigoverride",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumbgpnodeconfigoverride_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumbgpnodeconfigoverride"
+      },
+      {
+        "kind": "ciliumbgppeerconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumbgppeerconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumbgppeerconfig"
+      },
+      {
+        "kind": "ciliumbgppeerconfig",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumbgppeerconfig_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumbgppeerconfig"
+      },
+      {
+        "kind": "ciliumcidrgroup",
+        "version": "v2",
+        "file": "cilium.io/ciliumcidrgroup_v2.json",
+        "slug": "cilium.io/v2/ciliumcidrgroup"
+      },
+      {
+        "kind": "ciliumcidrgroup",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumcidrgroup_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumcidrgroup"
+      },
+      {
+        "kind": "ciliumclusterwideenvoyconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumclusterwideenvoyconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumclusterwideenvoyconfig"
+      },
+      {
+        "kind": "ciliumclusterwidenetworkpolicy",
+        "version": "v2",
+        "file": "cilium.io/ciliumclusterwidenetworkpolicy_v2.json",
+        "slug": "cilium.io/v2/ciliumclusterwidenetworkpolicy"
+      },
+      {
+        "kind": "ciliumegressgatewaypolicy",
+        "version": "v2",
+        "file": "cilium.io/ciliumegressgatewaypolicy_v2.json",
+        "slug": "cilium.io/v2/ciliumegressgatewaypolicy"
+      },
+      {
+        "kind": "ciliumendpoint",
+        "version": "v2",
+        "file": "cilium.io/ciliumendpoint_v2.json",
+        "slug": "cilium.io/v2/ciliumendpoint"
+      },
+      {
+        "kind": "ciliumendpointslice",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumendpointslice_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumendpointslice"
+      },
+      {
+        "kind": "ciliumenvoyconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumenvoyconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumenvoyconfig"
+      },
+      {
+        "kind": "ciliumgatewayclassconfig",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumgatewayclassconfig_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumgatewayclassconfig"
+      },
+      {
+        "kind": "ciliumidentity",
+        "version": "v2",
+        "file": "cilium.io/ciliumidentity_v2.json",
+        "slug": "cilium.io/v2/ciliumidentity"
+      },
+      {
+        "kind": "ciliuml2announcementpolicy",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliuml2announcementpolicy_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliuml2announcementpolicy"
+      },
+      {
+        "kind": "ciliumloadbalancerippool",
+        "version": "v2",
+        "file": "cilium.io/ciliumloadbalancerippool_v2.json",
+        "slug": "cilium.io/v2/ciliumloadbalancerippool"
+      },
+      {
+        "kind": "ciliumloadbalancerippool",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumloadbalancerippool_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumloadbalancerippool"
+      },
+      {
+        "kind": "ciliumlocalredirectpolicy",
+        "version": "v2",
+        "file": "cilium.io/ciliumlocalredirectpolicy_v2.json",
+        "slug": "cilium.io/v2/ciliumlocalredirectpolicy"
+      },
+      {
+        "kind": "ciliumnetworkpolicy",
+        "version": "v2",
+        "file": "cilium.io/ciliumnetworkpolicy_v2.json",
+        "slug": "cilium.io/v2/ciliumnetworkpolicy"
+      },
+      {
+        "kind": "ciliumnode",
+        "version": "v2",
+        "file": "cilium.io/ciliumnode_v2.json",
+        "slug": "cilium.io/v2/ciliumnode"
+      },
+      {
+        "kind": "ciliumnodeconfig",
+        "version": "v2",
+        "file": "cilium.io/ciliumnodeconfig_v2.json",
+        "slug": "cilium.io/v2/ciliumnodeconfig"
+      },
+      {
+        "kind": "ciliumnodeconfig",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumnodeconfig_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumnodeconfig"
+      },
+      {
+        "kind": "ciliumpodippool",
+        "version": "v2alpha1",
+        "file": "cilium.io/ciliumpodippool_v2alpha1.json",
+        "slug": "cilium.io/v2alpha1/ciliumpodippool"
+      }
+    ],
     "clickhouse-keeper.altinity.com": [
       {
         "kind": "clickhousekeeperinstallation",
