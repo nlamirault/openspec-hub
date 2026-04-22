@@ -29,7 +29,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=cilium/cilium
-export VERSION=1.19.2
+export VERSION=v1.19.3
 
 function generate_url {
   local crd_file=$1
