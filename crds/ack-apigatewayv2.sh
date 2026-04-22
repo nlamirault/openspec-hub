@@ -19,7 +19,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=aws-controllers-k8s/apigatewayv2-controller
-export VERSION=1.2.2
+export VERSION=1.2.3
 
 function generate_url {
   local crd_file=$1
