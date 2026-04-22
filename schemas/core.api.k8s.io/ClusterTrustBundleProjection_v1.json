@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "labelSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "Select all ClusterTrustBundles that match this label selector.  Only has effect if signerName is set.  Mutually-exclusive with name.  If unset, interpreted as \"match nothing\".  If set but empty, interpreted as \"match everything\"."
     },
     "name": {

@@ -5,17 +5,16 @@
   "type": "object",
   "properties": {
     "nodeAffinity": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeAffinity",
+      "$ref": "NodeAffinity_v1.json",
       "description": "Describes node affinity scheduling rules for the pod."
     },
     "podAffinity": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodAffinity",
+      "$ref": "PodAffinity_v1.json",
       "description": "Describes pod affinity scheduling rules (e.g. co-locate this pod in the same node, zone, etc. as some other pod(s))."
     },
     "podAntiAffinity": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodAntiAffinity",
+      "$ref": "PodAntiAffinity_v1.json",
       "description": "Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the same node, zone, etc. as some other pod(s))."
     }
-  },
-  "required": null
+  }
 }

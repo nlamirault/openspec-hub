@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "beginRefreshAt": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "beginRefreshAt is the time at which the kubelet should begin trying to refresh the certificate.  This field is set via the /status subresource, and must be set at the same time as certificateChain.  Once populated, this field is immutable.\n\nThis field is only a hint.  Kubelet may start refreshing before or after this time if necessary."
     },
     "certificateChain": {
@@ -15,7 +15,7 @@
     "conditions": {
       "description": "conditions applied to the request.\n\nThe types \"Issued\", \"Denied\", and \"Failed\" have special handling.  At most one of these conditions may be present, and they must have status \"True\".\n\nIf the request is denied with `Reason=UnsupportedKeyType`, the signer may suggest a key type that will work in the message field.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
+        "$ref": "../meta.api.k8s.io/Condition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -26,13 +26,12 @@
       "x-kubernetes-patch-strategy": "merge"
     },
     "notAfter": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "notAfter is the time at which the certificate expires.  The value must be the same as the notAfter value in the leaf certificate in certificateChain.  This field is set via the /status subresource.  Once populated, it is immutable.  The signer must set this field at the same time it sets certificateChain."
     },
     "notBefore": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "notBefore is the time at which the certificate becomes valid.  The value must be the same as the notBefore value in the leaf certificate in certificateChain.  This field is set via the /status subresource.  Once populated, it is immutable. The signer must set this field at the same time it sets certificateChain."
     }
-  },
-  "required": null
+  }
 }

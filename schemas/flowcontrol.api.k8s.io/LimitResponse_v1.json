@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "queuing": {
-      "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.QueuingConfiguration",
+      "$ref": "QueuingConfiguration_v1.json",
       "description": "`queuing` holds the configuration parameters for queuing. This field may be non-empty only if `type` is `\"Queue\"`."
     },
     "type": {

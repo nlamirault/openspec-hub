@@ -5,17 +5,16 @@
   "type": "object",
   "properties": {
     "running": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStateRunning",
+      "$ref": "ContainerStateRunning_v1.json",
       "description": "Details about a running container"
     },
     "terminated": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStateTerminated",
+      "$ref": "ContainerStateTerminated_v1.json",
       "description": "Details about a terminated container"
     },
     "waiting": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStateWaiting",
+      "$ref": "ContainerStateWaiting_v1.json",
       "description": "Details about a waiting container"
     }
-  },
-  "required": null
+  }
 }

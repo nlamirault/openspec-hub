@@ -5,9 +5,8 @@
   "type": "object",
   "properties": {
     "clientIP": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ClientIPConfig",
+      "$ref": "ClientIPConfig_v1.json",
       "description": "clientIP contains the configurations of Client IP based session affinity."
     }
-  },
-  "required": null
+  }
 }

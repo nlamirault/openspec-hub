@@ -11,7 +11,7 @@
     "items": {
       "description": "items is the list of horizontal pod autoscaler objects.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.autoscaling.v2.HorizontalPodAutoscaler"
+        "$ref": "HorizontalPodAutoscaler_v2.json"
       },
       "type": "array"
     },
@@ -20,7 +20,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "../meta.api.k8s.io/ListMeta_v1.json",
       "description": "metadata is the standard list metadata."
     }
   },

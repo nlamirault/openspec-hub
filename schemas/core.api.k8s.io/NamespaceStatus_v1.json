@@ -7,7 +7,7 @@
     "conditions": {
       "description": "Represents the latest available observations of a namespace's current state.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.NamespaceCondition"
+        "$ref": "NamespaceCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -21,6 +21,5 @@
       "description": "Phase is the current lifecycle phase of the namespace. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

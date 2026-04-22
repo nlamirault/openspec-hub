@@ -7,11 +7,10 @@
     "matchLabelExpressions": {
       "description": "A list of topology selector requirements by labels.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.TopologySelectorLabelRequirement"
+        "$ref": "TopologySelectorLabelRequirement_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

@@ -13,11 +13,11 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "metadata contains the object metadata."
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.certificates.v1alpha1.ClusterTrustBundleSpec",
+      "$ref": "ClusterTrustBundleSpec_v1alpha1.json",
       "description": "spec contains the signer (if any) and trust anchors."
     }
   },

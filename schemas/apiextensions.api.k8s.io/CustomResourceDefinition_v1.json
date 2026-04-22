@@ -13,15 +13,15 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionSpec",
+      "$ref": "CustomResourceDefinitionSpec_v1.json",
       "description": "spec describes how the user wants the resources to appear"
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionStatus",
+      "$ref": "CustomResourceDefinitionStatus_v1.json",
       "description": "status indicates the actual state of the CustomResourceDefinition"
     }
   },

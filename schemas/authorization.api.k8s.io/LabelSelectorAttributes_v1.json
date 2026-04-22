@@ -11,11 +11,10 @@
     "requirements": {
       "description": "requirements is the parsed interpretation of a label selector. All requirements must be met for a resource instance to match the selector. Webhook implementations should handle requirements, but how to handle them is up to the webhook. Since requirements can only limit the request, it is safe to authorize as unlimited request if the requirements are not understood.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement"
+        "$ref": "../meta.api.k8s.io/LabelSelectorRequirement_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

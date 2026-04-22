@@ -14,7 +14,7 @@
       "type": "integer"
     },
     "finishedAt": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "Time at which the container last terminated"
     },
     "message": {
@@ -31,7 +31,7 @@
       "type": "integer"
     },
     "startedAt": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "Time at which previous execution of the container started"
     }
   },

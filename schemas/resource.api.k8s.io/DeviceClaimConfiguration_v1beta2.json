@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "opaque": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta2.OpaqueDeviceConfiguration",
+      "$ref": "OpaqueDeviceConfiguration_v1beta2.json",
       "description": "Opaque provides driver-specific configuration parameters."
     },
     "requests": {
@@ -16,6 +16,5 @@
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

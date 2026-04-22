@@ -5,13 +5,13 @@
   "type": "object",
   "properties": {
     "acceptedNames": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionNames",
+      "$ref": "CustomResourceDefinitionNames_v1.json",
       "description": "acceptedNames are the names that are actually being used to serve discovery. They may be different than the names in spec."
     },
     "conditions": {
       "description": "conditions indicate state for particular aspects of a CustomResourceDefinition",
       "items": {
-        "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinitionCondition"
+        "$ref": "CustomResourceDefinitionCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -32,6 +32,5 @@
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

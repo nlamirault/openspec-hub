@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "value": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity",
+      "$ref": "../api.api.k8s.io/Quantity_resource.json",
       "description": "Value defines how much of a certain device counter is available."
     }
   },

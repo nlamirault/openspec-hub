@@ -29,16 +29,16 @@
       "type": "integer"
     },
     "selector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment. It must match the pod template's labels."
     },
     "strategy": {
-      "$ref": "#/definitions/io.k8s.api.apps.v1.DeploymentStrategy",
+      "$ref": "DeploymentStrategy_v1.json",
       "description": "The deployment strategy to use to replace existing pods with new ones.",
       "x-kubernetes-patch-strategy": "retainKeys"
     },
     "template": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodTemplateSpec",
+      "$ref": "../core.api.k8s.io/PodTemplateSpec_v1.json",
       "description": "Template describes the pods that will be created. The only allowed template.spec.restartPolicy value is \"Always\"."
     }
   },

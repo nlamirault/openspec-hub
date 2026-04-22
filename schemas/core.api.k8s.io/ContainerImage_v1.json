@@ -17,6 +17,5 @@
       "format": "int64",
       "type": "integer"
     }
-  },
-  "required": null
+  }
 }

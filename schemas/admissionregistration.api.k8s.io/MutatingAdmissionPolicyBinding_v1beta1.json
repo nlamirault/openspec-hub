@@ -13,13 +13,12 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata."
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1beta1.MutatingAdmissionPolicyBindingSpec",
+      "$ref": "MutatingAdmissionPolicyBindingSpec_v1beta1.json",
       "description": "Specification of the desired behavior of the MutatingAdmissionPolicyBinding."
     }
-  },
-  "required": null
+  }
 }

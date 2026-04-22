@@ -13,13 +13,12 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.networking.v1.IngressClassSpec",
+      "$ref": "IngressClassSpec_v1.json",
       "description": "spec is the desired state of the IngressClass. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"
     }
-  },
-  "required": null
+  }
 }

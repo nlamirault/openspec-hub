@@ -7,7 +7,7 @@
     "causes": {
       "description": "The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusCause"
+        "$ref": "StatusCause_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -33,6 +33,5 @@
       "description": "UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

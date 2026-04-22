@@ -6,7 +6,7 @@
 repository:
   name: openspec-hub
   description: JSON Schema for Kubernetes CRDs
-  homepage: https://github.com/nlamirault/openspec-hub
+  homepage: https://openspec-hub.portefaix.xyz
   topics: kubernetes, json-schema, crds
   private: false
   has_issues: true

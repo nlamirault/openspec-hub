@@ -5,9 +5,8 @@
   "type": "object",
   "properties": {
     "loadBalancer": {
-      "$ref": "#/definitions/io.k8s.api.networking.v1.IngressLoadBalancerStatus",
+      "$ref": "IngressLoadBalancerStatus_v1.json",
       "description": "loadBalancer contains the current status of the load-balancer."
     }
-  },
-  "required": null
+  }
 }

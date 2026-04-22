@@ -7,7 +7,7 @@
     "additionalPrinterColumns": {
       "description": "additionalPrinterColumns specifies additional columns returned in Table output. See https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables for details. If no columns are specified, a single column displaying the age of the custom resource is used.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceColumnDefinition"
+        "$ref": "CustomResourceColumnDefinition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -21,17 +21,17 @@
       "type": "string"
     },
     "name": {
-      "description": "name is the version name, e.g. “v1”, “v2beta1”, etc. The custom resources are served under this version at `/apis/<group>/<version>/...` if `served` is true.",
+      "description": "name is the version name, e.g. \u201cv1\u201d, \u201cv2beta1\u201d, etc. The custom resources are served under this version at `/apis/<group>/<version>/...` if `served` is true.",
       "type": "string"
     },
     "schema": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceValidation",
+      "$ref": "CustomResourceValidation_v1.json",
       "description": "schema describes the schema used for validation, pruning, and defaulting of this version of the custom resource."
     },
     "selectableFields": {
       "description": "selectableFields specifies paths to fields that may be used as field selectors. A maximum of 8 selectable fields are allowed. See https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors",
       "items": {
-        "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.SelectableField"
+        "$ref": "SelectableField_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -45,7 +45,7 @@
       "type": "boolean"
     },
     "subresources": {
-      "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceSubresources",
+      "$ref": "CustomResourceSubresources_v1.json",
       "description": "subresources specify what subresources this version of the defined custom resource have."
     }
   },

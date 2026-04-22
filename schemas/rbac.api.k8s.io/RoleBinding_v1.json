@@ -13,17 +13,17 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata."
     },
     "roleRef": {
-      "$ref": "#/definitions/io.k8s.api.rbac.v1.RoleRef",
+      "$ref": "RoleRef_v1.json",
       "description": "RoleRef can reference a Role in the current namespace or a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error. This field is immutable."
     },
     "subjects": {
       "description": "Subjects holds references to the objects the role applies to.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.rbac.v1.Subject"
+        "$ref": "Subject_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

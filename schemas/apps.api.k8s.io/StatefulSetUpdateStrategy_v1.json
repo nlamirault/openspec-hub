@@ -5,13 +5,12 @@
   "type": "object",
   "properties": {
     "rollingUpdate": {
-      "$ref": "#/definitions/io.k8s.api.apps.v1.RollingUpdateStatefulSetStrategy",
+      "$ref": "RollingUpdateStatefulSetStrategy_v1.json",
       "description": "RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType."
     },
     "type": {
       "description": "Type indicates the type of the StatefulSetUpdateStrategy. Default is RollingUpdate.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

@@ -7,7 +7,7 @@
     "conditions": {
       "description": "conditions holds an array of metav1.Condition that describe the state of the ServiceCIDR. Current service state",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
+        "$ref": "../meta.api.k8s.io/Condition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -17,6 +17,5 @@
       "x-kubernetes-patch-merge-key": "type",
       "x-kubernetes-patch-strategy": "merge"
     }
-  },
-  "required": null
+  }
 }

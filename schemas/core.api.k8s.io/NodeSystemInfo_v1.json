@@ -41,7 +41,7 @@
       "type": "string"
     },
     "swap": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeSwapStatus",
+      "$ref": "NodeSwapStatus_v1.json",
       "description": "Swap Info reported by the node."
     },
     "systemUUID": {

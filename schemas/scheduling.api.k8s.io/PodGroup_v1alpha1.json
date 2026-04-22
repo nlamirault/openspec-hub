@@ -9,7 +9,7 @@
       "type": "string"
     },
     "policy": {
-      "$ref": "#/definitions/io.k8s.api.scheduling.v1alpha1.PodGroupPolicy",
+      "$ref": "PodGroupPolicy_v1alpha1.json",
       "description": "Policy defines the scheduling policy for this PodGroup."
     }
   },

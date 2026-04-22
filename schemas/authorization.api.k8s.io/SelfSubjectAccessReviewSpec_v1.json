@@ -5,13 +5,12 @@
   "type": "object",
   "properties": {
     "nonResourceAttributes": {
-      "$ref": "#/definitions/io.k8s.api.authorization.v1.NonResourceAttributes",
+      "$ref": "NonResourceAttributes_v1.json",
       "description": "NonResourceAttributes describes information for a non-resource access request"
     },
     "resourceAttributes": {
-      "$ref": "#/definitions/io.k8s.api.authorization.v1.ResourceAttributes",
+      "$ref": "ResourceAttributes_v1.json",
       "description": "ResourceAuthorizationAttributes describes information for a resource access request"
     }
-  },
-  "required": null
+  }
 }

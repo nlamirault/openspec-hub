@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "attachError": {
-      "$ref": "#/definitions/io.k8s.api.storage.v1.VolumeError",
+      "$ref": "VolumeError_v1.json",
       "description": "attachError represents the last error encountered during attach operation, if any. This field must only be set by the entity completing the attach operation, i.e. the external-attacher."
     },
     "attached": {
@@ -20,7 +20,7 @@
       "type": "object"
     },
     "detachError": {
-      "$ref": "#/definitions/io.k8s.api.storage.v1.VolumeError",
+      "$ref": "VolumeError_v1.json",
       "description": "detachError represents the last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher."
     }
   },

@@ -11,7 +11,7 @@
     "httpHeaders": {
       "description": "Custom headers to set in the request. HTTP allows repeated headers.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.HTTPHeader"
+        "$ref": "HTTPHeader_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -21,7 +21,7 @@
       "type": "string"
     },
     "port": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString",
+      "$ref": "../util.api.k8s.io/IntOrString_intstr.json",
       "description": "Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME."
     },
     "scheme": {

@@ -6,7 +6,7 @@
   "properties": {
     "allocatedResources": {
       "additionalProperties": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
+        "$ref": "../api.api.k8s.io/Quantity_resource.json"
       },
       "description": "AllocatedResources represents the compute resources allocated for this container by the node. Kubelet sets this value to Container.Resources.Requests upon successful pod admission and after successfully admitting desired pod resize.",
       "type": "object"
@@ -14,7 +14,7 @@
     "allocatedResourcesStatus": {
       "description": "AllocatedResourcesStatus represents the status of various resources allocated for this Pod.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ResourceStatus"
+        "$ref": "ResourceStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -37,7 +37,7 @@
       "type": "string"
     },
     "lastState": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerState",
+      "$ref": "ContainerState_v1.json",
       "description": "LastTerminationState holds the last termination state of the container to help debug container crashes and restarts. This field is not populated if the container is still running and RestartCount is 0."
     },
     "name": {
@@ -49,7 +49,7 @@
       "type": "boolean"
     },
     "resources": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements",
+      "$ref": "ResourceRequirements_v1.json",
       "description": "Resources represents the compute resource requests and limits that have been successfully enacted on the running container after it has been started or has been successfully resized."
     },
     "restartCount": {
@@ -62,7 +62,7 @@
       "type": "boolean"
     },
     "state": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerState",
+      "$ref": "ContainerState_v1.json",
       "description": "State holds details about the container's current condition."
     },
     "stopSignal": {
@@ -70,13 +70,13 @@
       "type": "string"
     },
     "user": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ContainerUser",
+      "$ref": "ContainerUser_v1.json",
       "description": "User represents user identity information initially attached to the first process of the container"
     },
     "volumeMounts": {
       "description": "Status of volume mounts.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeMountStatus"
+        "$ref": "VolumeMountStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [

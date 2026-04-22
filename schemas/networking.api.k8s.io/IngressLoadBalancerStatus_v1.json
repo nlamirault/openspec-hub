@@ -7,11 +7,10 @@
     "ingress": {
       "description": "ingress is a list containing ingress points for the load-balancer.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.networking.v1.IngressLoadBalancerIngress"
+        "$ref": "IngressLoadBalancerIngress_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

@@ -12,7 +12,7 @@
     "conditions": {
       "description": "conditions applied to the request. Known conditions are \"Approved\", \"Denied\", and \"Failed\".",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.certificates.v1.CertificateSigningRequestCondition"
+        "$ref": "CertificateSigningRequestCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -20,6 +20,5 @@
       ],
       "x-kubernetes-list-type": "map"
     }
-  },
-  "required": null
+  }
 }

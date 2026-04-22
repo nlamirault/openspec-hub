@@ -6,16 +6,21 @@
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 [ -z "${SCRIPT_DIR}" ] && log_error "Invalid directory" && exit 1
 
+# shellcheck disable=SC1091
 source "${SCRIPT_DIR}/commons.sh"
 
 APP=$1
+
+# shellcheck disable=SC1090,SC1091
 source "${SCRIPT_DIR}/../crds/${APP}.sh"
+# shellcheck disable=SC2153
 log_info "[application] ${APP}: ${VERSION}"
 
 JSON_SCHEMA_DIR="${SCRIPT_DIR}/../schemas"
 CRD_DIR="${SCRIPT_DIR}/crds/${APP}"
 mkdir -p "${CRD_DIR}"
 
+# shellcheck disable=SC2154
 case "${choice}" in
 individual)
   for crd_file in "${FILES[@]}"; do
@@ -48,6 +53,8 @@ if [ "${choice}" != "swagger" ]; then
   done
 else
   manage_swagger_file "${CRD_DIR}" "${JSON_SCHEMA_DIR}"
+  log_info "[swagger] Rewriting internal \$ref pointers to relative paths"
+  python3 "${SCRIPT_DIR}/fix-schema-refs.py" "${JSON_SCHEMA_DIR}"
 fi
 
 rm -fr "${SCRIPT_DIR}/crds"

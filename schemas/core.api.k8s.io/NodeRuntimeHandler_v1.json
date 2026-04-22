@@ -5,13 +5,12 @@
   "type": "object",
   "properties": {
     "features": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.NodeRuntimeHandlerFeatures",
+      "$ref": "NodeRuntimeHandlerFeatures_v1.json",
       "description": "Supported features."
     },
     "name": {
       "description": "Runtime handler name. Empty for the default runtime handler.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

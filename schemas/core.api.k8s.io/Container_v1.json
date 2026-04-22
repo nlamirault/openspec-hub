@@ -23,7 +23,7 @@
     "env": {
       "description": "List of environment variables to set in the container. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.EnvVar"
+        "$ref": "EnvVar_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -36,7 +36,7 @@
     "envFrom": {
       "description": "List of sources to populate environment variables in the container. The keys defined within a source may consist of any printable ASCII characters except '='. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.EnvFromSource"
+        "$ref": "EnvFromSource_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -50,11 +50,11 @@
       "type": "string"
     },
     "lifecycle": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Lifecycle",
+      "$ref": "Lifecycle_v1.json",
       "description": "Actions that the management system should take in response to container lifecycle events. Cannot be updated."
     },
     "livenessProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
     },
     "name": {
@@ -64,7 +64,7 @@
     "ports": {
       "description": "List of ports to expose from the container. Not specifying a port here DOES NOT prevent that port from being exposed. Any port which is listening on the default \"0.0.0.0\" address inside a container will be accessible from the network. Modifying this array with strategic merge patch may corrupt the data. For more information See https://github.com/kubernetes/kubernetes/issues/108255. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerPort"
+        "$ref": "ContainerPort_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -76,19 +76,19 @@
       "x-kubernetes-patch-strategy": "merge"
     },
     "readinessProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
     },
     "resizePolicy": {
       "description": "Resources resize policy for the container. This field cannot be set on ephemeral containers.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerResizePolicy"
+        "$ref": "ContainerResizePolicy_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     },
     "resources": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements",
+      "$ref": "ResourceRequirements_v1.json",
       "description": "Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
     },
     "restartPolicy": {
@@ -98,17 +98,17 @@
     "restartPolicyRules": {
       "description": "Represents a list of rules to be checked to determine if the container should be restarted on exit. The rules are evaluated in order. Once a rule matches a container exit condition, the remaining rules are ignored. If no rule matches the container exit condition, the Container-level restart policy determines the whether the container is restarted or not. Constraints on the rules: - At most 20 rules are allowed. - Rules can have the same action. - Identical rules are not forbidden in validations. When rules are specified, container MUST set RestartPolicy explicitly even it if matches the Pod's RestartPolicy.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerRestartRule"
+        "$ref": "ContainerRestartRule_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     },
     "securityContext": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.SecurityContext",
+      "$ref": "SecurityContext_v1.json",
       "description": "SecurityContext defines the security options the container should be run with. If set, the fields of SecurityContext override the equivalent fields of PodSecurityContext. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
     },
     "startupProbe": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.Probe",
+      "$ref": "Probe_v1.json",
       "description": "StartupProbe indicates that the Pod has successfully initialized. If specified, no other probes are executed until this completes successfully. If this probe fails, the Pod will be restarted, just as if the livenessProbe failed. This can be used to provide different probe parameters at the beginning of a Pod's lifecycle, when it might take a long time to load data or warm a cache, than during steady-state operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"
     },
     "stdin": {
@@ -134,7 +134,7 @@
     "volumeDevices": {
       "description": "volumeDevices is the list of block devices to be used by the container.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeDevice"
+        "$ref": "VolumeDevice_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -147,7 +147,7 @@
     "volumeMounts": {
       "description": "Pod volumes to mount into the container's filesystem. Cannot be updated.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.VolumeMount"
+        "$ref": "VolumeMount_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [

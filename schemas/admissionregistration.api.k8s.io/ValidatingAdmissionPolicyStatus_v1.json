@@ -7,7 +7,7 @@
     "conditions": {
       "description": "The conditions represent the latest available observations of a policy's current state.",
       "items": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Condition"
+        "$ref": "../meta.api.k8s.io/Condition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -21,9 +21,8 @@
       "type": "integer"
     },
     "typeChecking": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.TypeChecking",
+      "$ref": "TypeChecking_v1.json",
       "description": "The results of type checking for each expression. Presence of this field indicates the completion of the type checking."
     }
-  },
-  "required": null
+  }
 }

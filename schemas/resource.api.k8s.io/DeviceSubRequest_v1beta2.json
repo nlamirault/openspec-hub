@@ -9,7 +9,7 @@
       "type": "string"
     },
     "capacity": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta2.CapacityRequirements",
+      "$ref": "CapacityRequirements_v1beta2.json",
       "description": "Capacity define resource requirements against each capacity.\n\nIf this field is unset and the device supports multiple allocations, the default value will be applied to each capacity according to requestPolicy. For the capacity that has no requestPolicy, default is the full capacity value.\n\nApplies to each device allocation. If Count > 1, the request fails if there aren't enough devices that meet the requirements. If AllocationMode is set to All, the request fails if there are devices that otherwise match the request, and have this capacity, with a value >= the requested amount, but which cannot be allocated to this request."
     },
     "count": {
@@ -28,7 +28,7 @@
     "selectors": {
       "description": "Selectors define criteria which must be satisfied by a specific device in order for that device to be considered for this subrequest. All selectors must be satisfied for a device to be considered.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.resource.v1beta2.DeviceSelector"
+        "$ref": "DeviceSelector_v1beta2.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -36,7 +36,7 @@
     "tolerations": {
       "description": "If specified, the request's tolerations.\n\nTolerations for NoSchedule are required to allocate a device which has a taint with that effect. The same applies to NoExecute.\n\nIn addition, should any of the allocated devices get tainted with NoExecute after allocation and that effect is not tolerated, then all pods consuming the ResourceClaim get deleted to evict them. The scheduler will not let new pods reserve the claim while it has these tainted devices. Once all pods are evicted, the claim will get deallocated.\n\nThe maximum number of tolerations is 16.\n\nThis is an alpha field and requires enabling the DRADeviceTaints feature gate.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.resource.v1beta2.DeviceToleration"
+        "$ref": "DeviceToleration_v1beta2.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"

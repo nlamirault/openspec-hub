@@ -5,9 +5,8 @@
   "type": "object",
   "properties": {
     "devices": {
-      "$ref": "#/definitions/io.k8s.api.resource.v1beta1.DeviceClaim",
+      "$ref": "DeviceClaim_v1beta1.json",
       "description": "Devices defines how to request devices."
     }
-  },
-  "required": null
+  }
 }

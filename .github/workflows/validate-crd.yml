@@ -1,0 +1,87 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+---
+
+name: Validate / CRD
+
+on:
+  pull_request:
+    paths:
+    - 'crds/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Build and validate changed CRDs
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        fetch-depth: 0
+
+    - name: Monitor GitHub Actions permissions
+      uses: GitHubSecurityLab/actions-permissions/monitor@v1
+      with:
+        config: ${{ vars.PERMISSIONS_CONFIG }}
+
+    - name: Install yq
+      uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
+
+    - name: Install kustomize
+      uses: imranismail/setup-kustomize@53f941b41dca13ed61874bbc6b4b6e1562877530 # v3.0.0
+
+    - name: Install kubectl
+      uses: azure/setup-kubectl@829323503d1be3d00ca8346e5391ca0b07a9ab0d # v5.1.0
+
+    - name: Install kubectl-slice
+      run: |
+        go install github.com/patrickdappollonio/kubectl-slice@latest
+        echo "${HOME}/go/bin" >> "${GITHUB_PATH}"
+
+    - name: Install jsonschema-cli
+      run: |
+        cargo install jsonschema-cli
+        echo "${HOME}/.cargo/bin" >> "${GITHUB_PATH}"
+
+    - name: Detect changed CRD scripts
+      id: changed
+      uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46.0.5
+      with:
+        files: 'crds/*.sh'
+
+    - name: Build changed CRDs
+      if: steps.changed.outputs.any_changed == 'true'
+      env:
+        CHANGED_FILES: ${{ steps.changed.outputs.all_changed_files }}
+      run: |
+        for crd_script in ${CHANGED_FILES}; do
+          echo "::group::Building ${crd_script}"
+          make build CRD="${crd_script}"
+          echo "::endgroup::"
+        done
+
+    - name: Validate generated schemas
+      if: steps.changed.outputs.any_changed == 'true'
+      run: |
+        echo "Validating JSON schemas..."
+        failed=0
+        while IFS= read -r schema_file; do
+          echo "Validating ${schema_file}"
+          if ! jsonschema-cli validate --draft 2020 "${schema_file}" 2>/dev/null; then
+            echo "::error file=${schema_file}::Invalid JSON schema"
+            failed=$((failed + 1))
+          fi
+        done < <(find schemas/ -name '*.json')
+        if [[ "${failed}" -gt 0 ]]; then
+          echo "::error::${failed} schema file(s) are invalid"
+          exit 1
+        fi
+        echo "All schemas are valid."
+
+    - name: No CRD scripts changed
+      if: steps.changed.outputs.any_changed == 'false'
+      run: echo "No CRD scripts changed — skipping build."

@@ -13,7 +13,7 @@
       "type": "string"
     },
     "valueFrom": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.EnvVarSource",
+      "$ref": "EnvVarSource_v1.json",
       "description": "Source for the environment variable's value. Cannot be used if value is not empty."
     }
   },

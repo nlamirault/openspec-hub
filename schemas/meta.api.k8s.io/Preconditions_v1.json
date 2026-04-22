@@ -12,6 +12,5 @@
       "description": "Specifies the target UID.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

@@ -13,17 +13,16 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.apps.v1.StatefulSetSpec",
+      "$ref": "StatefulSetSpec_v1.json",
       "description": "Spec defines the desired identities of pods in this set."
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.api.apps.v1.StatefulSetStatus",
+      "$ref": "StatefulSetStatus_v1.json",
       "description": "Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time."
     }
-  },
-  "required": null
+  }
 }

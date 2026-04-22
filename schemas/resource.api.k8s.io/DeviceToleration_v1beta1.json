@@ -25,6 +25,5 @@
       "description": "Value is the taint value the toleration matches to. If the operator is Exists, the value must be empty, otherwise just a regular string. Must be a label value.",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

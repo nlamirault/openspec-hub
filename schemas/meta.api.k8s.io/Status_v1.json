@@ -14,7 +14,7 @@
       "type": "integer"
     },
     "details": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.StatusDetails",
+      "$ref": "StatusDetails_v1.json",
       "description": "Extended data associated with the reason.  Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type."
     },
     "kind": {
@@ -26,7 +26,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "ListMeta_v1.json",
       "description": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
     },
     "reason": {
@@ -37,6 +37,5 @@
       "description": "Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status",
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

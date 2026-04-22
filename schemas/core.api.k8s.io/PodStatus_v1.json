@@ -6,7 +6,7 @@
   "properties": {
     "allocatedResources": {
       "additionalProperties": {
-        "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
+        "$ref": "../api.api.k8s.io/Quantity_resource.json"
       },
       "description": "AllocatedResources is the total requests allocated for this pod by the node. If pod-level requests are not set, this will be the total requests aggregated across containers in the pod.",
       "type": "object"
@@ -14,7 +14,7 @@
     "conditions": {
       "description": "Current service state of pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.PodCondition"
+        "$ref": "PodCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -27,7 +27,7 @@
     "containerStatuses": {
       "description": "Statuses of containers in this pod. Each container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStatus"
+        "$ref": "ContainerStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -35,13 +35,13 @@
     "ephemeralContainerStatuses": {
       "description": "Statuses for any ephemeral containers that have run in this pod. Each ephemeral container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStatus"
+        "$ref": "ContainerStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     },
     "extendedResourceClaimStatus": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodExtendedResourceClaimStatus",
+      "$ref": "PodExtendedResourceClaimStatus_v1.json",
       "description": "Status of extended resource claim backed by DRA."
     },
     "hostIP": {
@@ -51,7 +51,7 @@
     "hostIPs": {
       "description": "hostIPs holds the IP addresses allocated to the host. If this field is specified, the first entry must match the hostIP field. This list is empty if the pod has not started yet. A pod can be assigned to a node that has a problem in kubelet which in turns means that HostIPs will not be updated even if there is a node is assigned to this pod.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.HostIP"
+        "$ref": "HostIP_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic",
@@ -61,7 +61,7 @@
     "initContainerStatuses": {
       "description": "Statuses of init containers in this pod. The most recent successful non-restartable init container will have ready = true, the most recently started container will have startTime set. Each init container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-and-container-status",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.ContainerStatus"
+        "$ref": "ContainerStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -90,7 +90,7 @@
     "podIPs": {
       "description": "podIPs holds the IP addresses allocated to the pod. If this field is specified, the 0th entry must match the podIP field. Pods may be allocated at most 1 value for each of IPv4 and IPv6. This list is empty if no IPs have been allocated yet.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.PodIP"
+        "$ref": "PodIP_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -115,7 +115,7 @@
     "resourceClaimStatuses": {
       "description": "Status of resource claims.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.PodResourceClaimStatus"
+        "$ref": "PodResourceClaimStatus_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -126,13 +126,12 @@
       "x-kubernetes-patch-strategy": "merge,retainKeys"
     },
     "resources": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements",
+      "$ref": "ResourceRequirements_v1.json",
       "description": "Resources represents the compute resource requests and limits that have been applied at the pod level if pod-level requests or limits are set in PodSpec.Resources"
     },
     "startTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time",
+      "$ref": "../meta.api.k8s.io/Time_v1.json",
       "description": "RFC 3339 date and time at which the object was acknowledged by the Kubelet. This is before the Kubelet pulled the container image(s) for the pod."
     }
-  },
-  "required": null
+  }
 }

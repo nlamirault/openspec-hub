@@ -13,17 +13,16 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.policy.v1.PodDisruptionBudgetSpec",
+      "$ref": "PodDisruptionBudgetSpec_v1.json",
       "description": "Specification of the desired behavior of the PodDisruptionBudget."
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.api.policy.v1.PodDisruptionBudgetStatus",
+      "$ref": "PodDisruptionBudgetStatus_v1.json",
       "description": "Most recently observed status of the PodDisruptionBudget."
     }
-  },
-  "required": null
+  }
 }

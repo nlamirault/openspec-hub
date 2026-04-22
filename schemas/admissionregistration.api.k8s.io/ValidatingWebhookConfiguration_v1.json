@@ -13,13 +13,13 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata."
     },
     "webhooks": {
       "description": "Webhooks is a list of webhooks and the affected resources and operations.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ValidatingWebhook"
+        "$ref": "ValidatingWebhook_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -29,6 +29,5 @@
       "x-kubernetes-patch-merge-key": "name",
       "x-kubernetes-patch-strategy": "merge"
     }
-  },
-  "required": null
+  }
 }

@@ -10,6 +10,5 @@
     "url": {
       "type": "string"
     }
-  },
-  "required": null
+  }
 }

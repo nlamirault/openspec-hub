@@ -11,7 +11,7 @@
     "items": {
       "description": "items list individual CustomResourceDefinition objects",
       "items": {
-        "$ref": "#/definitions/io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1.CustomResourceDefinition"
+        "$ref": "CustomResourceDefinition_v1.json"
       },
       "type": "array"
     },
@@ -20,7 +20,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "../meta.api.k8s.io/ListMeta_v1.json",
       "description": "Standard object's metadata More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     }
   },

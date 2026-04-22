@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "labelSelector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "LabelSelector is used to find matching pods. Pods that match this label selector are counted to determine the number of pods in their corresponding topology domain."
     },
     "matchLabelKeys": {

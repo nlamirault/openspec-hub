@@ -11,7 +11,7 @@
     "items": {
       "description": "items is a list of schema objects.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.coordination.v1beta1.LeaseCandidate"
+        "$ref": "LeaseCandidate_v1beta1.json"
       },
       "type": "array"
     },
@@ -20,7 +20,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "../meta.api.k8s.io/ListMeta_v1.json",
       "description": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"
     }
   },

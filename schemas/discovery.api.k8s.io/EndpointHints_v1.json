@@ -7,7 +7,7 @@
     "forNodes": {
       "description": "forNodes indicates the node(s) this endpoint should be consumed by when using topology aware routing. May contain a maximum of 8 entries.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.discovery.v1.ForNode"
+        "$ref": "ForNode_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
@@ -15,11 +15,10 @@
     "forZones": {
       "description": "forZones indicates the zone(s) this endpoint should be consumed by when using topology aware routing. May contain a maximum of 8 entries.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.discovery.v1.ForZone"
+        "$ref": "ForZone_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

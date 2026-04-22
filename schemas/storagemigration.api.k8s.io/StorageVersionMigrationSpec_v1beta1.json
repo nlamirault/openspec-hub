@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "resource": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.GroupResource",
+      "$ref": "../meta.api.k8s.io/GroupResource_v1.json",
       "description": "The resource that is being migrated. The migrator sends requests to the endpoint serving the resource. Immutable."
     }
   },

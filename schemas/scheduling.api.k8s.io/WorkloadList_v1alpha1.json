@@ -11,7 +11,7 @@
     "items": {
       "description": "Items is the list of Workloads.",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.scheduling.v1alpha1.Workload"
+        "$ref": "Workload_v1alpha1.json"
       },
       "type": "array"
     },
@@ -20,7 +20,7 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta",
+      "$ref": "../meta.api.k8s.io/ListMeta_v1.json",
       "description": "Standard list metadata."
     }
   },

@@ -21,9 +21,8 @@
       "type": "string"
     },
     "user": {
-      "$ref": "#/definitions/io.k8s.api.authentication.v1.UserInfo",
+      "$ref": "UserInfo_v1.json",
       "description": "User is the UserInfo associated with the provided token."
     }
-  },
-  "required": null
+  }
 }

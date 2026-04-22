@@ -12,11 +12,10 @@
     "items": {
       "description": "Items is a list of downward API volume file",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.core.v1.DownwardAPIVolumeFile"
+        "$ref": "DownwardAPIVolumeFile_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-type": "atomic"
     }
-  },
-  "required": null
+  }
 }

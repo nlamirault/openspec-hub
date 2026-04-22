@@ -7,7 +7,7 @@
     "conditions": {
       "description": "`conditions` is the current state of \"request-priority\".",
       "items": {
-        "$ref": "#/definitions/io.k8s.api.flowcontrol.v1.PriorityLevelConfigurationCondition"
+        "$ref": "PriorityLevelConfigurationCondition_v1.json"
       },
       "type": "array",
       "x-kubernetes-list-map-keys": [
@@ -17,6 +17,5 @@
       "x-kubernetes-patch-merge-key": "type",
       "x-kubernetes-patch-strategy": "merge"
     }
-  },
-  "required": null
+  }
 }

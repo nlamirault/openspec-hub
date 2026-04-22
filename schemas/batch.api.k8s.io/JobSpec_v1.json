@@ -47,7 +47,7 @@
       "type": "integer"
     },
     "podFailurePolicy": {
-      "$ref": "#/definitions/io.k8s.api.batch.v1.PodFailurePolicy",
+      "$ref": "PodFailurePolicy_v1.json",
       "description": "Specifies the policy of handling failed pods. In particular, it allows to specify the set of actions and conditions which need to be satisfied to take the associated action. If empty, the default behaviour applies - the counter of failed pods, represented by the jobs's .status.failed field, is incremented and it is checked against the backoffLimit. This field cannot be used in combination with restartPolicy=OnFailure."
     },
     "podReplacementPolicy": {
@@ -55,11 +55,11 @@
       "type": "string"
     },
     "selector": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelector",
+      "$ref": "../meta.api.k8s.io/LabelSelector_v1.json",
       "description": "A label query over pods that should match the pod count. Normally, the system sets this field for you. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors"
     },
     "successPolicy": {
-      "$ref": "#/definitions/io.k8s.api.batch.v1.SuccessPolicy",
+      "$ref": "SuccessPolicy_v1.json",
       "description": "successPolicy specifies the policy when the Job can be declared as succeeded. If empty, the default behavior applies - the Job is declared as succeeded only when the number of succeeded pods equals to the completions. When the field is specified, it must be immutable and works only for the Indexed Jobs. Once the Job meets the SuccessPolicy, the lingering pods are terminated."
     },
     "suspend": {
@@ -67,7 +67,7 @@
       "type": "boolean"
     },
     "template": {
-      "$ref": "#/definitions/io.k8s.api.core.v1.PodTemplateSpec",
+      "$ref": "../core.api.k8s.io/PodTemplateSpec_v1.json",
       "description": "Describes the pod that will be created when executing a job. The only allowed template.spec.restartPolicy values are \"Never\" or \"OnFailure\". More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/"
     },
     "ttlSecondsAfterFinished": {

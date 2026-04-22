@@ -10,9 +10,8 @@
       "type": "integer"
     },
     "lastObservedTime": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime",
+      "$ref": "../meta.api.k8s.io/MicroTime_v1.json",
       "description": "Time of the last occurrence observed"
     }
-  },
-  "required": null
+  }
 }

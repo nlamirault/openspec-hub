@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "allocatable": {
-      "$ref": "#/definitions/io.k8s.api.storage.v1.VolumeNodeResources",
+      "$ref": "VolumeNodeResources_v1.json",
       "description": "allocatable represents the volume resources of a node that are available for scheduling. This field is beta."
     },
     "name": {

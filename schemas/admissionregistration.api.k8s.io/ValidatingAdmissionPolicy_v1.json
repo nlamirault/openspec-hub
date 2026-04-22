@@ -13,17 +13,16 @@
       "type": "string"
     },
     "metadata": {
-      "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+      "$ref": "../meta.api.k8s.io/ObjectMeta_v1.json",
       "description": "Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata."
     },
     "spec": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicySpec",
+      "$ref": "ValidatingAdmissionPolicySpec_v1.json",
       "description": "Specification of the desired behavior of the ValidatingAdmissionPolicy."
     },
     "status": {
-      "$ref": "#/definitions/io.k8s.api.admissionregistration.v1.ValidatingAdmissionPolicyStatus",
+      "$ref": "ValidatingAdmissionPolicyStatus_v1.json",
       "description": "The status of the ValidatingAdmissionPolicy, including warnings that are useful to determine if the policy behaves in the expected way. Populated by the system. Read-only."
     }
-  },
-  "required": null
+  }
 }
