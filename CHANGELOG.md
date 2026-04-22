@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.1](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v1.2.0...openspec-hub-v1.2.1) (2026-04-22)
+
+
+### 🚨 Maintenance
+
+* **deps:** update actions/checkout action to v6.0.2 ([#235](https://github.com/nlamirault/openspec-hub/issues/235)) ([0bddb2e](https://github.com/nlamirault/openspec-hub/commit/0bddb2ea0f191ae666024b83631f9f2a0364350b))
+* **deps:** update dependency argoproj/argo-workflows to v3.7.13 ([#237](https://github.com/nlamirault/openspec-hub/issues/237)) ([9598fb5](https://github.com/nlamirault/openspec-hub/commit/9598fb5bb33f60383211c203b38e28c7904cbab4))
+* **deps:** update dependency aws-controllers-k8s/acm-controller to v1.3.5 ([#238](https://github.com/nlamirault/openspec-hub/issues/238)) ([8165bb1](https://github.com/nlamirault/openspec-hub/commit/8165bb1efd0519d70afde4154a62d96b9351d9c3))
+* **deps:** update dependency aws-controllers-k8s/opensearchservice-controller to v1.2.4 ([#250](https://github.com/nlamirault/openspec-hub/issues/250)) ([86d5800](https://github.com/nlamirault/openspec-hub/commit/86d5800cc024dae8bb6fd0f786681fd1d6392bef))
+* **deps:** update dependency aws-controllers-k8s/rds-controller to v1.7.9 ([#239](https://github.com/nlamirault/openspec-hub/issues/239)) ([f34e14a](https://github.com/nlamirault/openspec-hub/commit/f34e14a918cada07c6e12be2ee93ba11c31f2df9))
+* **deps:** update dependency cilium/cilium to v1.19.3 ([#240](https://github.com/nlamirault/openspec-hub/issues/240)) ([f99a013](https://github.com/nlamirault/openspec-hub/commit/f99a0130268ba338e4ae73ae515a9cf2a2833557))
+* **deps:** update dependency crossplane/crossplane to v2.2.1 ([#251](https://github.com/nlamirault/openspec-hub/issues/251)) ([1f948aa](https://github.com/nlamirault/openspec-hub/commit/1f948aafd32c58e5fb3bafda92155e53f7153b70))
+* **deps:** update dependency kubernetes/kubernetes to v1.35.4 ([#242](https://github.com/nlamirault/openspec-hub/issues/242)) ([835f26f](https://github.com/nlamirault/openspec-hub/commit/835f26f8a440b28b31babed6165aef20bf2ce758))
+* **deps:** update dependency mariadb-operator/mariadb-operator to v25.10.4 ([#243](https://github.com/nlamirault/openspec-hub/issues/243)) ([a1a2781](https://github.com/nlamirault/openspec-hub/commit/a1a2781a3f0fe5670a7b3319e93a9f192eaba5ba))
+
 ## [1.2.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v1.1.0...openspec-hub-v1.2.0) (2026-04-17)
 
 
