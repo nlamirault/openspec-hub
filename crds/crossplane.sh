@@ -29,7 +29,7 @@ export FILES=(
 )
 
 # renovate: datasource=github-tags depName=crossplane/crossplane
-export VERSION=v2.2.0
+export VERSION=v2.2.1
 
 function generate_url {
   local crd_file=$1
