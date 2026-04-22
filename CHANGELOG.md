@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v1.1.0...openspec-hub-v1.2.0) (2026-04-17)
+
+
+### 🚀 Features
+
+* **crd:** add Cilium CRDs support ([#232](https://github.com/nlamirault/openspec-hub/issues/232)) ([2d951da](https://github.com/nlamirault/openspec-hub/commit/2d951da6e2c469d28652c40c2302c37b0d4053f5)), closes [#231](https://github.com/nlamirault/openspec-hub/issues/231)
+* **ui:** add copy yaml-language-server directive button ([#226](https://github.com/nlamirault/openspec-hub/issues/226)) ([75f96cd](https://github.com/nlamirault/openspec-hub/commit/75f96cd9dca3c7b66c668516493bcbf80106f74c))
+* **ui:** add schema diff viewer for api version progression ([#233](https://github.com/nlamirault/openspec-hub/issues/233)) ([21ccb85](https://github.com/nlamirault/openspec-hub/commit/21ccb85c9e8fb120c69e7facedab8fffd32d7a18)), closes [#224](https://github.com/nlamirault/openspec-hub/issues/224)
+* **ui:** add table view as alternative to schema tree on detail pages ([#234](https://github.com/nlamirault/openspec-hub/issues/234)) ([32aee20](https://github.com/nlamirault/openspec-hub/commit/32aee2093a5159ace82f3c1d7b5965e0e07fe899)), closes [#230](https://github.com/nlamirault/openspec-hub/issues/230)
+
+
+### 🚨 Maintenance
+
+* **deps:** update codelytv/pr-size-labeler action to v1.10.4 ([#236](https://github.com/nlamirault/openspec-hub/issues/236)) ([69394de](https://github.com/nlamirault/openspec-hub/commit/69394deb1f387c40ad4625ad8ac0984f4623edad))
+* **deps:** update googleapis/release-please-action action to v4.4.1 ([#244](https://github.com/nlamirault/openspec-hub/issues/244)) ([d41c1bc](https://github.com/nlamirault/openspec-hub/commit/d41c1bcccb331875a5f89fdd703a00d8013fb834))
+
 ## [1.1.0](https://github.com/nlamirault/openspec-hub/compare/openspec-hub-v1.0.0...openspec-hub-v1.1.0) (2026-04-01)
 
 
